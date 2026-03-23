@@ -1,11 +1,11 @@
 :root {
   --kareh-primary: #6BC4B5;
   --kareh-secondary: #A8E6CF;
-  --kareh-info: #5F7C8A;
+  --kareh-info: #4D6774;
   --kareh-white: #FFFFFF;
   --kareh-bg: #F4F7F8;
   --kareh-text: #2E3A3F;
-  --kareh-text-muted: #8A9BA8;
+  --kareh-text-muted: #5E707B;
   --kareh-accent: #F4A6A0;
   --kareh-border: rgba(95, 124, 138, 0.14);
   --kareh-shadow: 0 24px 60px rgba(46, 58, 63, 0.12);

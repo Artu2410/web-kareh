@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://tudominio.com/sitemap.xml
+Sitemap: https://artu2410.github.io/web-kareh/sitemap.xml
