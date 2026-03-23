@@ -98,7 +98,7 @@ button {
   top: 0;
   z-index: 20;
   padding: 1rem 0;
-  transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  transition: background-color 0.25s ease, backdrop-filter 0.25s ease;
 }
 
 .site-header.is-scrolled {
@@ -971,10 +971,10 @@ p {
   gap: 0.7rem;
   padding: 0.9rem 1.05rem;
   border-radius: 999px;
-  background: #1fbf63;
+  background: #148246;
   color: var(--kareh-white);
   box-shadow: 0 20px 38px rgba(31, 191, 99, 0.34);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .whatsapp-float:hover,
