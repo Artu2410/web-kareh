@@ -613,8 +613,91 @@
 
     <div class="container footer-bottom">
       <p>&copy; <span id="year"></span> Kareh. Todos los derechos reservados.</p>
+      <button class="admin-entry" type="button" aria-label="Abrir acceso administrador" title="Administrador">
+        Admin
+      </button>
     </div>
   </footer>
+
+  <div class="admin-modal" id="admin-modal" aria-hidden="true">
+    <div class="admin-modal__backdrop" data-admin-close></div>
+    <section class="admin-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+      <button class="admin-modal__close" type="button" aria-label="Cerrar acceso administrador" data-admin-close>
+        ×
+      </button>
+
+      <div class="admin-auth" id="admin-auth-view">
+        <p class="admin-kicker">Acceso privado</p>
+        <h2 id="admin-title">Administrador Kareh</h2>
+        <p class="admin-copy">
+          Usuario inicial <strong>kareh</strong> y clave inicial <strong>1234!</strong>.
+        </p>
+
+        <form class="admin-form" id="admin-login-form">
+          <label class="admin-field">
+            <span>Usuario</span>
+            <input type="text" name="username" autocomplete="username" value="kareh" required>
+          </label>
+
+          <label class="admin-field">
+            <span>Clave</span>
+            <input type="password" name="password" autocomplete="current-password" required>
+          </label>
+
+          <p class="admin-feedback" id="admin-login-feedback" role="status" aria-live="polite"></p>
+
+          <button class="admin-button admin-button--primary" type="submit">Ingresar como admin</button>
+        </form>
+      </div>
+
+      <div class="admin-panel" id="admin-panel-view" hidden>
+        <div class="admin-panel__header">
+          <div>
+            <p class="admin-kicker">Panel privado</p>
+            <h2>Visor de visitas</h2>
+            <p class="admin-copy">Resumen local de visitas del sitio y control de acceso administrador.</p>
+          </div>
+          <button class="admin-button admin-button--ghost" id="admin-logout-button" type="button">Cerrar sesión</button>
+        </div>
+
+        <div class="admin-stats" id="admin-stats-grid"></div>
+
+        <div class="admin-chart">
+          <div class="admin-chart__header">
+            <h3>Últimos 7 días</h3>
+            <p id="admin-last-visit"></p>
+          </div>
+          <div class="admin-bars" id="admin-bars"></div>
+        </div>
+
+        <form class="admin-form admin-form--secondary" id="admin-password-form">
+          <div class="admin-form__heading">
+            <h3>Cambiar clave</h3>
+            <p>Usa una clave fuerte para mejorar la seguridad del acceso local.</p>
+          </div>
+
+          <label class="admin-field">
+            <span>Clave actual</span>
+            <input type="password" name="currentPassword" autocomplete="current-password" required>
+          </label>
+
+          <label class="admin-field">
+            <span>Nueva clave</span>
+            <input type="password" name="newPassword" autocomplete="new-password" required>
+          </label>
+
+          <label class="admin-field">
+            <span>Confirmar nueva clave</span>
+            <input type="password" name="confirmPassword" autocomplete="new-password" required>
+          </label>
+
+          <p class="admin-feedback" id="admin-password-feedback" role="status" aria-live="polite"></p>
+
+          <button class="admin-button admin-button--primary" type="submit">Actualizar clave</button>
+        </form>
+      </div>
+    </section>
+  </div>
 
   <a class="whatsapp-float" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer"
     aria-label="Reservar turno por WhatsApp">
