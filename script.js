@@ -14,7 +14,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const initialHash = window.location.hash;
 const initialHashSection = initialHash ? document.querySelector(initialHash) : null;
 const adminModal = document.querySelector("#admin-modal");
-const adminEntryButton = document.querySelector(".admin-entry");
+const adminOpenButtons = [...document.querySelectorAll("[data-admin-open]")];
 const adminCloseButtons = [...document.querySelectorAll("[data-admin-close]")];
 const adminLoginForm = document.querySelector("#admin-login-form");
 const adminPasswordForm = document.querySelector("#admin-password-form");
@@ -531,11 +531,11 @@ if (!prefersReducedMotion.matches && window.matchMedia("(pointer: fine)").matche
 
 recordSiteVisit();
 
-if (adminEntryButton) {
-  adminEntryButton.addEventListener("click", () => {
+adminOpenButtons.forEach((button) => {
+  button.addEventListener("click", () => {
     void openAdminModal();
   });
-}
+});
 
 adminCloseButtons.forEach((button) => {
   button.addEventListener("click", closeAdminModal);

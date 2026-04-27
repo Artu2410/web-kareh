@@ -179,9 +179,28 @@ button {
   color: var(--kareh-info);
 }
 
+.nav-admin {
+  border: 1px solid rgba(95, 124, 138, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--kareh-info);
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
 .site-nav a:hover,
-.site-nav a:focus-visible {
+.site-nav a:focus-visible,
+.nav-admin:hover,
+.nav-admin:focus-visible {
   color: var(--kareh-text);
+}
+
+.nav-admin:hover,
+.nav-admin:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(107, 196, 181, 0.3);
 }
 
 .site-nav a.is-active {
@@ -1470,6 +1489,13 @@ p {
     color: var(--kareh-info);
   }
 
+  .nav-admin {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+  }
+
   .site-nav a::after {
     content: "";
     position: absolute;
@@ -1487,6 +1513,25 @@ p {
   .site-nav a:hover::after,
   .site-nav a:focus-visible::after,
   .site-nav a.is-active::after {
+    transform: scaleX(1);
+  }
+
+  .nav-admin::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--kareh-primary), var(--kareh-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-admin:hover::after,
+  .nav-admin:focus-visible::after {
     transform: scaleX(1);
   }
 
