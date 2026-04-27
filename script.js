@@ -26,6 +26,7 @@ const adminStatsGrid = document.querySelector("#admin-stats-grid");
 const adminBars = document.querySelector("#admin-bars");
 const adminLastVisit = document.querySelector("#admin-last-visit");
 const adminLogoutButton = document.querySelector("#admin-logout-button");
+const adminUsernameInput = document.querySelector("[data-admin-username]");
 
 const ADMIN_STORAGE_KEYS = {
   auth: "kareh_admin_auth",
@@ -78,6 +79,12 @@ const buildRecentDayKeys = (days = 7) => {
     keys.push(getTodayKey(nextDate));
   }
   return keys;
+};
+
+const getMonthKey = (date = new Date()) => {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  return `${year}-${month}`;
 };
 
 const createSalt = () => {
@@ -165,12 +172,17 @@ const getVisitSummary = () => {
   }));
   const today = last7Days[last7Days.length - 1]?.count || 0;
   const week = last7Days.reduce((sum, item) => sum + item.count, 0);
+  const currentMonthKey = getMonthKey();
+  const month = Object.entries(visitStore.days).reduce((sum, [key, count]) => {
+    return key.startsWith(currentMonthKey) ? sum + Number(count || 0) : sum;
+  }, 0);
 
   return {
     total: Number(visitStore.total || 0),
     uniqueSessions: Number(visitStore.uniqueSessions || 0),
     today,
     week,
+    month,
     lastVisitAt: visitStore.lastVisitAt,
     last7Days,
   };
@@ -216,9 +228,18 @@ const isAdminSessionActive = () => {
 const openAdminModal = async () => {
   if (!adminModal) return;
   await ensureAdminCredentials();
+  if (!isAdminSessionActive() && adminLoginForm) {
+    adminLoginForm.reset();
+  }
+  if (!isAdminSessionActive() && adminUsernameInput) {
+    adminUsernameInput.value = "";
+  }
   adminModal.classList.add("is-open");
   adminModal.setAttribute("aria-hidden", "false");
   renderAdminState();
+  if (!isAdminSessionActive() && adminUsernameInput) {
+    window.requestAnimationFrame(() => adminUsernameInput.focus());
+  }
 };
 
 const closeAdminModal = () => {
@@ -234,6 +255,7 @@ const renderAdminStats = () => {
   const cards = [
     { label: "Visitas hoy", value: stats.today },
     { label: "Últimos 7 días", value: stats.week },
+    { label: "Este mes", value: stats.month },
     { label: "Total acumulado", value: stats.total },
     { label: "Sesiones únicas", value: stats.uniqueSessions },
   ];

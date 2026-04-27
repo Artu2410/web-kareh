@@ -632,10 +632,19 @@
         <h2 id="admin-title">Administrador Kareh</h2>
         <p class="admin-copy">Ingresá con tus credenciales de administrador.</p>
 
-        <form class="admin-form" id="admin-login-form">
+        <form class="admin-form" id="admin-login-form" autocomplete="off">
           <label class="admin-field">
             <span>Usuario</span>
-            <input type="text" name="username" autocomplete="username" value="kareh" required>
+            <input
+              type="text"
+              name="username"
+              autocomplete="off"
+              autocapitalize="off"
+              autocorrect="off"
+              spellcheck="false"
+              data-admin-username
+              required
+            >
           </label>
 
           <label class="admin-field">
