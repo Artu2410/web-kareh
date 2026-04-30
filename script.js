@@ -35,9 +35,11 @@ const ADMIN_STORAGE_KEYS = {
   attempts: "kareh_admin_attempts",
 };
 
+const ADMIN_CREDENTIALS_VERSION = 2;
+
 const DEFAULT_ADMIN = {
-  username: "kareh",
-  password: "1234!",
+  username: "karehuser",
+  password: "Anzoategui-01",
 };
 
 const formatDateTime = (value) => {
@@ -119,7 +121,10 @@ const derivePasswordHash = async (password, salt) => {
 
 const ensureAdminCredentials = async () => {
   const stored = readJsonStorage(ADMIN_STORAGE_KEYS.credentials, null);
-  if (stored?.username && stored?.passwordHash && stored?.salt) {
+  const isLegacyDefaultUser = stored?.username === "kareh";
+  const isCurrentVersion = stored?.version === ADMIN_CREDENTIALS_VERSION;
+
+  if (stored?.username && stored?.passwordHash && stored?.salt && isCurrentVersion && !isLegacyDefaultUser) {
     return stored;
   }
 
@@ -130,6 +135,7 @@ const ensureAdminCredentials = async () => {
     passwordHash,
     salt,
     mustChangePassword: true,
+    version: ADMIN_CREDENTIALS_VERSION,
     updatedAt: new Date().toISOString(),
   };
   writeJsonStorage(ADMIN_STORAGE_KEYS.credentials, bootstrap);
