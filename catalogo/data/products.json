@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "name": "SET BANDAS TELA (X3)",
+    "description": "Set x3 banda circular de tela",
+    "stock": 5,
+    "costPrice": 14500,
+    "cashPrice": 25000,
+    "transferPrice": 26000,
+    "image": "SET BANDAS TELA (X3).png"
+  },
+  {
+    "id": "2",
+    "name": "BANDAS (X5)",
+    "description": "Set banda azul x5 TPE",
+    "stock": 4,
+    "costPrice": 6100,
+    "cashPrice": 13000,
+    "transferPrice": 14000,
+    "image": "BANDAS (X5).png"
+  },
+  {
+    "id": "3",
+    "name": "TIRABANDAS",
+    "description": "Tirabanda abierta azul 1500*1500*55mm",
+    "stock": 3,
+    "costPrice": 4100,
+    "cashPrice": 8000,
+    "transferPrice": 9000,
+    "image": "TIRABANDAS AZUL.png"
+  },
+  {
+    "id": "4",
+    "name": "HAND GRIP",
+    "description": "Kit hand grip x5",
+    "stock": 2,
+    "costPrice": 14500,
+    "cashPrice": 22500,
+    "transferPrice": 23500,
+    "image": "HAND GRIP.png"
+  },
+  {
+    "id": "5",
+    "name": "MINI BOZU",
+    "description": "Mini bozu con pinche boluo 8*16cm",
+    "stock": 2,
+    "costPrice": 6100,
+    "cashPrice": 11500,
+    "transferPrice": 12000,
+    "image": "MINI BOZU.png"
+  },
+  {
+    "id": "6",
+    "name": "PELOTAS MASAJE",
+    "description": "Bola masajes soft 7.5cm",
+    "stock": 2,
+    "costPrice": 2500,
+    "cashPrice": 3500,
+    "transferPrice": 4000,
+    "image": "PELOTAS MASAJE.png"
+  },
+  {
+    "name": "BANDA CIRCULA TELA VERDE 60LB 74*8cm",
+    "description": "banda circular de tela",
+    "stock": 1,
+    "costPrice": 4500,
+    "cashPrice": 9500,
+    "transferPrice": 10000,
+    "image": "BANDA CIRCULA TELA VERDE 60LB 74*8cm.png",
+    "id": "1778631727112"
+  },
+  {
+    "name": "BANDA CIRCULA TELA ROSA 90LB 74*8cm",
+    "description": "banda circular de tela",
+    "stock": 1,
+    "costPrice": 5000,
+    "cashPrice": 10500,
+    "transferPrice": 11000,
+    "image": "BANDA CIRCULA TELA ROSA 90LB 74*8cm.png",
+    "id": "1778631860441"
+  },
+  {
+    "name": "BANDA CIRCULA TELA VIOLETA 120LB 74*8cm",
+    "description": "banda circular de tela",
+    "stock": 1,
+    "costPrice": 6000,
+    "cashPrice": 11500,
+    "transferPrice": 12000,
+    "image": "BANDA CIRCULA TELA VIOLETA 120LB 74*8cm.png",
+    "id": "1778631942272"
+  }
+]

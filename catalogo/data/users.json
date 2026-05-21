@@ -1,0 +1,9 @@
+[
+  {
+    "id": "1",
+    "name": "Admin Kareh",
+    "email": "centrokareh@gmail.com",
+    "password": "$2b$10$8FfONxP3PzJJHJ54JeiWruZj8yzo5GyZSLE7oWmgX5IebVC4zzLIy",
+    "role": "admin"
+  }
+]
