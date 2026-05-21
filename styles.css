@@ -236,6 +236,10 @@ button {
   gap: 2rem;
 }
 
+.about-grid--spaced {
+  margin-top: 3rem;
+}
+
 .hero-copy {
   display: grid;
   gap: 1.2rem;
@@ -388,6 +392,14 @@ p {
   color: var(--kareh-text);
 }
 
+.button--top-sm {
+  margin-top: 0.75rem;
+}
+
+.button--top-md {
+  margin-top: 1rem;
+}
+
 .hero-trust {
   display: grid;
   gap: 0.9rem;
@@ -452,6 +464,12 @@ p {
   position: relative;
   min-height: 28rem;
   padding: 1.5rem 0 4.5rem;
+}
+
+.section-specialties-strip {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  background: var(--surface-2, #f8f9fb);
 }
 
 .hero-motion {
@@ -652,6 +670,11 @@ p {
   text-transform: uppercase;
 }
 
+.card-kicker--stacked {
+  display: block;
+  margin-top: 0.75rem;
+}
+
 .profile-card {
   display: grid;
   gap: 1.5rem;
@@ -736,6 +759,10 @@ p {
   margin-top: 0.5rem;
 }
 
+.detail-list--top-tight {
+  margin-top: 0.5rem;
+}
+
 .transport-copy {
   margin-bottom: 0.95rem;
 }
@@ -745,6 +772,12 @@ p {
   flex-wrap: wrap;
   gap: 0.65rem;
   margin: 1rem 0 1.25rem;
+}
+
+.area-tags--centered {
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0;
 }
 
 .area-tag {
@@ -761,6 +794,10 @@ p {
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
+.area-tag--link {
+  text-decoration: none;
+}
+
 .area-tag:hover {
   transform: translateY(-2px);
   background: rgba(107, 196, 181, 0.2);
@@ -772,12 +809,45 @@ p {
   margin-bottom: 0.55rem;
 }
 
+.info-card--centered {
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent, #0ea5e9);
+}
+
+.metric-title {
+  margin-top: 0.25rem;
+}
+
+.service-note {
+  margin-top: 0.75rem;
+  font-size: 0.85em;
+  color: var(--text-2, #555);
+}
+
 .profile-highlights > * {
   height: 100%;
 }
 
 .faq-card {
   height: 100%;
+}
+
+.badge-grid--spaced {
+  margin-top: 3rem;
+}
+
+.badge-grid--auto-compact {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.badge-card--compact {
+  padding: 1rem 1.25rem;
 }
 
 .profile-highlights > *:hover {
@@ -998,6 +1068,15 @@ p {
   border-top: 1px solid rgba(95, 124, 138, 0.12);
   color: var(--kareh-text-muted);
   font-size: 0.95rem;
+}
+
+.list-plain {
+  list-style: none;
+  padding: 0;
+}
+
+.list-plain--relaxed {
+  line-height: 2;
 }
 
 .whatsapp-float {
