@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Kareh</title>
+  <meta name="description" content="Catálogo Kareh: aplicación importada en la carpeta catalogo. Requiere despliegue como app Next.js." />
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #f7fafc; color: #1f2937; display: grid; min-height: 100vh; place-items: center; padding: 1.5rem; }
+    .card { max-width: 42rem; width: 100%; background: #fff; border-radius: 1.5rem; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08); padding: 2rem; }
+    h1 { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 2.75rem); }
+    p { margin: 0 0 1rem 0; line-height: 1.75; color: #374151; }
+    a { color: #0f766e; font-weight: 700; text-decoration: none; }
+    code { background: #f3f4f6; padding: 0.2rem 0.45rem; border-radius: 0.35rem; }
+  </style>
+</head>
+<body>
+  <article class="card">
+    <h1>Catálogo importado</h1>
+    <p>Ya está presente en el repositorio dentro de <code>catalogo/</code>, pero esta carpeta contiene una aplicación <strong>Next.js</strong>. Eso significa que no se muestra automáticamente desde la página principal estática.</p>
+    <p>Para ver el catálogo en funcionamiento, necesitás desplegar la app Next.js de <code>catalogo/</code> en un servidor que soporte Node, o convertirlo a un sitio estático exportado.</p>
+    <p>Si querés, puedo ayudarte a:</p>
+    <ul>
+      <li>crear un build estático para servirlo en este mismo dominio</li>
+      <li>integrar solo el catálogo en la página principal</li>
+      <li>configurar un despliegue separado con Vercel/Render</li>
+    </ul>
+    <p><a href="../index.html">Volver a la página principal</a></p>
+  </article>
+</body>
+</html>
