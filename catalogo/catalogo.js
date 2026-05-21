@@ -1,29 +1,96 @@
-const PRODUCTS_URL = './data/products.json';
+const PRODUCTS_API_URL = './api/products';
+const PRODUCTS_FALLBACK_URL = './data/products.json';
 const WA_NUMBER = '5491132016039';
+
+const KNOWN_DRIVE_IMAGE_IDS = {
+  'set bandas tela (x3).png': '1CK4ub-WBmYa4mGUSj72r0TGDY6swgyHg',
+  'set bandas tela (x3)': '1CK4ub-WBmYa4mGUSj72r0TGDY6swgyHg',
+  'bandas (x5).png': '1SKtjaf0zOzXBa_gQecfuXvNQFtmVXcBj',
+  'bandas (x5)': '1SKtjaf0zOzXBa_gQecfuXvNQFtmVXcBj',
+  'tirabandas azul.png': '1fAvuXT9tPhzSeFZSA-8gHSIJ0dsrHz92',
+  'tirabandas azul': '1fAvuXT9tPhzSeFZSA-8gHSIJ0dsrHz92',
+  'hand grip.png': '15_dcqfrUK90SFaCRKD7YNkjgCfwpYFKe',
+  'hand grip': '15_dcqfrUK90SFaCRKD7YNkjgCfwpYFKe',
+  'mini bozu.png': '17WdJslI-fqJ80qCpmwaKdrM2tUO2u83U',
+  'mini bozu': '17WdJslI-fqJ80qCpmwaKdrM2tUO2u83U',
+  'pelotas masaje.png': '1s6oE-Wl7zzGKFKj1mCAWm2Jgm5t9vECc',
+  'pelotas masaje': '1s6oE-Wl7zzGKFKj1mCAWm2Jgm5t9vECc',
+  'banda circula tela verde 60lb 74*8cm.png': '1NoSE3Tnb5MW4vUJjqu0py8nf4__uYZG-',
+  'banda circula tela verde 60lb 74*8cm': '1NoSE3Tnb5MW4vUJjqu0py8nf4__uYZG-',
+  'banda circula tela rosa 90lb 74*8cm.png': '1073t5_zHQ9znTT-0h2pfapDP0RiJVuIU',
+  'banda circula tela rosa 90lb 74*8cm': '1073t5_zHQ9znTT-0h2pfapDP0RiJVuIU',
+  'banda circula tela violeta 120lb 74*8cm.png': '1F7Yde605eiKtKYsO8lCeGnvnzO35Jv9f',
+  'banda circula tela violeta 120lb 74*8cm': '1F7Yde605eiKtKYsO8lCeGnvnzO35Jv9f',
+};
 
 const formatPrice = (value) => {
   return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(value);
 };
 
-const getImageSrc = (product) => {
-  if (!product.image) return null;
-  const image = String(product.image).trim();
+const normalizeKey = (value) => String(value || '').trim().toLowerCase();
+
+const getDriveIdFromString = (value) => {
+  if (!value) return null;
+  const trimmed = String(value).trim();
+  const idMatch = trimmed.match(/(?:\/file\/d\/|[?&]id=)([a-zA-Z0-9_-]{20,})/);
+  if (idMatch) return idMatch[1];
+  if (/^[a-zA-Z0-9_-]{20,}$/.test(trimmed)) return trimmed;
+  return null;
+};
+
+const FALLBACK_IMAGE = 'data:image/svg+xml;charset=UTF-8,' +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">' +
+      '<rect width="400" height="300" fill="#f2f4f8"/>' +
+      '<text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#8a8f9f" font-family="Arial, Helvetica, sans-serif">Imagen no disponible</text>' +
+    '</svg>'
+  );
+
+const buildDriveImageUrl = (id) => `https://drive.google.com/uc?export=view&id=${encodeURIComponent(id)}`;
+const buildDriveImageProxyUrl = (id) => `./api/drive-image?id=${encodeURIComponent(id)}`;
+const buildDriveDownloadUrl = (id) => `https://drive.google.com/uc?export=download&id=${encodeURIComponent(id)}`;
+
+function getImageSrc(product) {
+  const image = String(product.image || '').trim();
+  if (!image) return { src: null, driveId: null };
 
   if (image.startsWith('http://') || image.startsWith('https://')) {
-    return image;
+    const driveId = getDriveIdFromString(image);
+    return { src: image, driveId: driveId || null };
   }
 
-  if (image.includes('drive.google.com')) {
-    if (image.includes('/file/d/')) {
-      const id = image.split('/file/d/')[1]?.split('/')[0];
-      return id ? `https://drive.google.com/uc?export=view&id=${id}` : null;
-    }
-    const idMatch = image.match(/id=([a-zA-Z0-9_-]+)/);
-    return idMatch ? `https://drive.google.com/uc?export=view&id=${idMatch[1]}` : null;
+  const driveId = getDriveIdFromString(image);
+  if (driveId) {
+    return { src: buildDriveImageUrl(driveId), driveId };
   }
 
-  return `./images/${encodeURIComponent(image)}`;
-};
+  const knownId = KNOWN_DRIVE_IMAGE_IDS[normalizeKey(image)] || KNOWN_DRIVE_IMAGE_IDS[normalizeKey(product.name)] || KNOWN_DRIVE_IMAGE_IDS[normalizeKey(product.description)];
+  if (knownId) {
+    return { src: buildDriveImageUrl(knownId), driveId: knownId };
+  }
+
+  return { src: `./images/${encodeURIComponent(image)}`, driveId: null };
+}
+
+function handleImageError(event) {
+  const img = event.target;
+  if (!img || img.dataset.retry === '1') return;
+
+  img.dataset.retry = '1';
+  const driveId = img.dataset.driveId;
+
+  if (driveId) {
+    img.src = buildDriveImageProxyUrl(driveId);
+    return;
+  }
+
+  if (img.src.includes('export=view')) {
+    img.src = img.src.replace('export=view', 'export=download');
+    return;
+  }
+
+  img.src = FALLBACK_IMAGE;
+}
 
 const state = {
   products: [],
@@ -41,13 +108,26 @@ const elements = {
 };
 
 const loadProducts = async () => {
-  try {
-    const response = await fetch(PRODUCTS_URL);
-    state.products = await response.json();
-  } catch (error) {
-    console.error('No se pudo cargar el catálogo:', error);
-    state.products = [];
+  const sources = [PRODUCTS_API_URL, PRODUCTS_FALLBACK_URL];
+
+  for (const source of sources) {
+    try {
+      const response = await fetch(source);
+      if (!response.ok) {
+        continue;
+      }
+
+      const data = await response.json();
+      if (Array.isArray(data) && data.length) {
+        state.products = data;
+        return;
+      }
+    } catch (error) {
+      console.warn(`No se pudo cargar el catálogo desde ${source}:`, error);
+    }
   }
+
+  state.products = [];
 };
 
 const getFilteredProducts = () => {
@@ -132,11 +212,14 @@ const renderProducts = () => {
 
   elements.products.innerHTML = items
     .map((product) => {
-      const imageSrc = getImageSrc(product);
+      const imageData = getImageSrc(product);
+      const imageSrc = imageData.src;
+      const driveId = imageData.driveId;
+
       return `
         <article class="product-card">
           <div class="product-image">
-            ${imageSrc ? `<img src="${imageSrc}" alt="${product.name}" loading="lazy">` : `<span>${product.name}</span>`}
+            ${imageSrc ? `<img src="${imageSrc}" alt="${product.name}" loading="lazy" data-drive-id="${driveId || ''}" onerror="handleImageError(event)">` : `<span>${product.name}</span>`}
           </div>
           <div>
             <h2 class="product-title">${product.name}</h2>
