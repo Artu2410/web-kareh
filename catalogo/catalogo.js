@@ -5,6 +5,26 @@ const formatPrice = (value) => {
   return new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS', maximumFractionDigits: 0 }).format(value);
 };
 
+const getImageSrc = (product) => {
+  if (!product.image) return null;
+  const image = String(product.image).trim();
+
+  if (image.startsWith('http://') || image.startsWith('https://')) {
+    return image;
+  }
+
+  if (image.includes('drive.google.com')) {
+    if (image.includes('/file/d/')) {
+      const id = image.split('/file/d/')[1]?.split('/')[0];
+      return id ? `https://drive.google.com/uc?export=view&id=${id}` : null;
+    }
+    const idMatch = image.match(/id=([a-zA-Z0-9_-]+)/);
+    return idMatch ? `https://drive.google.com/uc?export=view&id=${idMatch[1]}` : null;
+  }
+
+  return `./images/${encodeURIComponent(image)}`;
+};
+
 const state = {
   products: [],
   cart: []
@@ -112,9 +132,12 @@ const renderProducts = () => {
 
   elements.products.innerHTML = items
     .map((product) => {
+      const imageSrc = getImageSrc(product);
       return `
         <article class="product-card">
-          <div class="product-image">${product.name}</div>
+          <div class="product-image">
+            ${imageSrc ? `<img src="${imageSrc}" alt="${product.name}" loading="lazy">` : `<span>${product.name}</span>`}
+          </div>
           <div>
             <h2 class="product-title">${product.name}</h2>
             <p class="product-description">${product.description}</p>
