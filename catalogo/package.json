@@ -1,0 +1,32 @@
+{
+  "name": "kareh-catalogo",
+  "version": "0.1.0",
+  "private": true,
+  "author": "jose arturo azocar perez",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@vercel/postgres": "^0.10.0",
+    "bcryptjs": "^3.0.3",
+    "lucide-react": "^1.14.0",
+    "next": "16.2.6",
+    "next-auth": "^4.24.14",
+    "nodemailer": "^8.0.7",
+    "postcss": "^8.5.14",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zustand": "^5.0.13"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "16.2.6"
+  },
+  "overrides": {
+    "nodemailer": "$nodemailer"
+  }
+}
