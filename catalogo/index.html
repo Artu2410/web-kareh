@@ -4,28 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo Kareh</title>
-  <meta name="description" content="Catálogo Kareh: aplicación importada en la carpeta catalogo. Requiere despliegue como app Next.js." />
-  <style>
-    body { margin: 0; font-family: system-ui, sans-serif; background: #f7fafc; color: #1f2937; display: grid; min-height: 100vh; place-items: center; padding: 1.5rem; }
-    .card { max-width: 42rem; width: 100%; background: #fff; border-radius: 1.5rem; box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08); padding: 2rem; }
-    h1 { margin: 0 0 1rem; font-size: clamp(2rem, 4vw, 2.75rem); }
-    p { margin: 0 0 1rem 0; line-height: 1.75; color: #374151; }
-    a { color: #0f766e; font-weight: 700; text-decoration: none; }
-    code { background: #f3f4f6; padding: 0.2rem 0.45rem; border-radius: 0.35rem; }
-  </style>
+  <meta name="description" content="Catálogo de productos de Kareh. Elegí tu equipamiento, armá el pedido y envialo por WhatsApp." />
+  <link rel="stylesheet" href="catalogo.css">
 </head>
 <body>
-  <article class="card">
-    <h1>Catálogo importado</h1>
-    <p>Ya está presente en el repositorio dentro de <code>catalogo/</code>, pero esta carpeta contiene una aplicación <strong>Next.js</strong>. Eso significa que no se muestra automáticamente desde la página principal estática.</p>
-    <p>Para ver el catálogo en funcionamiento, necesitás desplegar la app Next.js de <code>catalogo/</code> en un servidor que soporte Node, o convertirlo a un sitio estático exportado.</p>
-    <p>Si querés, puedo ayudarte a:</p>
-    <ul>
-      <li>crear un build estático para servirlo en este mismo dominio</li>
-      <li>integrar solo el catálogo en la página principal</li>
-      <li>configurar un despliegue separado con Vercel/Render</li>
-    </ul>
-    <p><a href="../index.html">Volver a la página principal</a></p>
-  </article>
+  <header class="catalog-header">
+    <div class="catalog-brand">
+      <strong>Kareh Catálogo</strong>
+      <span>Comprá equipamiento de rehabilitación directamente desde la web</span>
+    </div>
+    <a class="catalog-back" href="../index.html">Volver a Kareh</a>
+  </header>
+
+  <main class="catalog-main">
+    <section class="catalog-intro">
+      <div>
+        <h1>Catálogo de productos</h1>
+        <p>Buscá, seleccioná y armá tu pedido. Al finalizar, enviamos tu compra por WhatsApp para coordinar el pago y envío.</p>
+      </div>
+      <div class="catalog-controls">
+        <label>
+          Buscar
+          <input id="search" type="search" placeholder="Buscar producto...">
+        </label>
+        <label>
+          Ordenar
+          <select id="sort">
+            <option value="relevant">Más relevante</option>
+            <option value="name-asc">Nombre A-Z</option>
+            <option value="name-desc">Nombre Z-A</option>
+            <option value="price-asc">Precio más bajo</option>
+            <option value="price-desc">Precio más alto</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="catalog-layout">
+      <div class="catalog-products" id="products"></div>
+
+      <aside class="catalog-cart">
+        <div class="cart-card">
+          <h2>Carrito</h2>
+          <p class="cart-subtitle">Seleccioná productos y envialos por WhatsApp.</p>
+          <div id="cart-items" class="cart-items"></div>
+          <div class="cart-summary">
+            <div>
+              <span>Total efectivo</span>
+              <strong id="total-cash">$0</strong>
+            </div>
+            <div>
+              <span>Total transferencia</span>
+              <strong id="total-transfer">$0</strong>
+            </div>
+          </div>
+          <button id="checkout" class="button-primary" disabled>Enviar pedido por WhatsApp</button>
+          <p class="cart-note">Te contactaremos al +54 9 11 3201 6039 con tu pedido.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="catalogo.js" defer></script>
 </body>
 </html>
