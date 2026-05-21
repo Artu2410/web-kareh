@@ -798,6 +798,192 @@ p {
   text-decoration: none;
 }
 
+.dashboard-page {
+  padding-bottom: 4rem;
+}
+
+.soft-bg {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 2rem;
+  box-shadow: var(--kareh-shadow-soft);
+  padding: 2rem;
+}
+
+.metrics-grid,
+.messages-grid,
+.seo-grid,
+.agenda-summary {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.metrics-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.metric-card {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid rgba(95, 124, 138, 0.1);
+  box-shadow: var(--kareh-shadow-soft);
+}
+
+.metric-card-primary {
+  background: rgba(107, 196, 181, 0.12);
+}
+
+.metric-card-accent {
+  background: rgba(244, 166, 160, 0.12);
+}
+
+.metric-card-info {
+  background: rgba(77, 103, 116, 0.11);
+}
+
+.metric-card-danger {
+  background: rgba(244, 166, 160, 0.18);
+}
+
+.metric-label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: var(--kareh-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+}
+
+.metric-card strong {
+  display: block;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: var(--kareh-text);
+}
+
+.agenda-summary {
+  grid-template-columns: 1fr;
+}
+
+.agenda-card {
+  border-radius: 1.75rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  box-shadow: var(--kareh-shadow-soft);
+  border: 1px solid rgba(95, 124, 138, 0.08);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.table-dashboard {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table-dashboard th,
+.table-dashboard td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid rgba(95, 124, 138, 0.08);
+}
+
+.table-dashboard th {
+  color: var(--kareh-info);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.table-dashboard td {
+  font-size: 0.95rem;
+  color: var(--kareh-text);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge-particular {
+  background: #4d6774;
+}
+
+.badge-pami {
+  background: #f4a6a0;
+}
+
+.badge-ioma {
+  background: #6bc4b5;
+}
+
+.badge-sancor {
+  background: #91c7d0;
+}
+
+.badge-medife {
+  background: #7256b8;
+}
+
+.badge-ospe {
+  background: #d68845;
+}
+
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.copy-btn {
+  margin-top: 1rem;
+}
+
+.messages-grid,
+.seo-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.message-card,
+.seo-card {
+  border-radius: 1.5rem;
+  background: #ffffff;
+  padding: 1.5rem;
+  box-shadow: var(--kareh-shadow-soft);
+  border: 1px solid rgba(95, 124, 138, 0.08);
+}
+
+.message-card h3,
+.seo-card h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+.message-card p,
+.seo-card p,
+.seo-card ul {
+  color: var(--kareh-text-muted);
+  line-height: 1.7;
+}
+
+.export-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .agenda-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .area-tag:hover {
   transform: translateY(-2px);
   background: rgba(107, 196, 181, 0.2);

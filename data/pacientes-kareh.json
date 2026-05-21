@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lucía Gómez",
+    "cobertura": "IOMA",
+    "servicio": "Kinesiología respiratoria pediátrica",
+    "fecha": "2026-05-22",
+    "hora": "17:30",
+    "estado": "Confirmado",
+    "docsFaltantes": ["Orden médica"],
+    "pago": "Pendiente",
+    "importe": 4200,
+    "nuevo": true
+  },
+  {
+    "id": 2,
+    "nombre": "Martín Pérez",
+    "cobertura": "Particular",
+    "servicio": "Rehabilitación postoperatoria de rodilla",
+    "fecha": "2026-05-23",
+    "hora": "14:00",
+    "estado": "Confirmado",
+    "docsFaltantes": [],
+    "pago": "Pagado",
+    "importe": 5400,
+    "nuevo": false
+  },
+  {
+    "id": 3,
+    "nombre": "Carla Díaz",
+    "cobertura": "SANCOR",
+    "servicio": "Kinesiología de piso pélvico",
+    "fecha": "2026-05-24",
+    "hora": "17:30",
+    "estado": "Alternativa",
+    "docsFaltantes": ["DNI"],
+    "pago": "Pendiente",
+    "importe": 4300,
+    "nuevo": true
+  },
+  {
+    "id": 4,
+    "nombre": "Jorge López",
+    "cobertura": "Medife",
+    "servicio": "Rehabilitación respiratoria adultos",
+    "fecha": "2026-05-25",
+    "hora": "17:30",
+    "estado": "Asistió",
+    "docsFaltantes": [],
+    "pago": "Pagado",
+    "importe": 3800,
+    "nuevo": false
+  },
+  {
+    "id": 5,
+    "nombre": "Ana Romero",
+    "cobertura": "PAMI",
+    "servicio": "Kinesiología general",
+    "fecha": "2026-05-26",
+    "hora": "08:00",
+    "estado": "Inasistencia",
+    "docsFaltantes": ["Estudios"],
+    "pago": "Pendiente",
+    "importe": 3600,
+    "nuevo": false
+  },
+  {
+    "id": 6,
+    "nombre": "Pedro Suárez",
+    "cobertura": "OSPE",
+    "servicio": "Neurorehabilitación",
+    "fecha": "2026-05-26",
+    "hora": "09:00",
+    "estado": "Confirmado",
+    "docsFaltantes": [],
+    "pago": "Pendiente",
+    "importe": 6200,
+    "nuevo": false
+  }
+]

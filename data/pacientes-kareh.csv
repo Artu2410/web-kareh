@@ -1,0 +1,7 @@
+id;nombre;cobertura;servicio;fecha;hora;estado;docsFaltantes;pago;importe;nuevo
+1;Lucía Gómez;IOMA;Kinesiología respiratoria pediátrica;2026-05-22;17:30;Confirmado;"Orden médica";Pendiente;4200;true
+2;Martín Pérez;Particular;Rehabilitación postoperatoria de rodilla;2026-05-23;14:00;Confirmado;"";Pagado;5400;false
+3;Carla Díaz;SANCOR;Kinesiología de piso pélvico;2026-05-24;17:30;Alternativa;"DNI";Pendiente;4300;true
+4;Jorge López;Medife;Rehabilitación respiratoria adultos;2026-05-25;17:30;Asistió;"";Pagado;3800;false
+5;Ana Romero;PAMI;Kinesiología general;2026-05-26;08:00;Inasistencia;"Estudios";Pendiente;3600;false
+6;Pedro Suárez;OSPE;Neurorehabilitación;2026-05-26;09:00;Confirmado;"";Pendiente;6200;false

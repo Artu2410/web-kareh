@@ -74,6 +74,10 @@ En `index.html` podés actualizar:
 - dirección y zonas de atención
 - enlaces a redes sociales
 
+### Gestión interna
+
+Se agregó `gestion.html` como panel de gestión con agenda semanal, indicadores KPI, alertas de documentación, plantillas de WhatsApp y exportación de datos en CSV/JSON. La carpeta `data/` incluye `pacientes-kareh.json` y `pacientes-kareh.csv` para integraciones.
+
 ### Contacto
 
 Buscá el número `5491132016039` para cambiar todos los accesos a WhatsApp.
