@@ -1009,6 +1009,59 @@ p {
   margin-top: 0.25rem;
 }
 
+.reviews-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.reviews-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.reviews-panel {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+  border: 1px solid var(--kareh-border);
+  border-radius: var(--kareh-radius);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--kareh-shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+.review-summary {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.5rem 0.35rem 0;
+}
+
+.review-summary p {
+  color: var(--kareh-info);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.review-stars {
+  color: #d99024;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.reviews-panel iframe {
+  width: 100%;
+  min-height: 20rem;
+  border: 0;
+  border-radius: 1.3rem;
+  background: #eef4f5;
+}
+
 .service-note {
   margin-top: 0.75rem;
   font-size: 0.85em;
@@ -1406,6 +1459,10 @@ p {
   .profile-highlights,
   .faq-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reviews-grid {
+    grid-template-columns: minmax(0, 0.86fr) minmax(20rem, 1.14fr);
   }
 
   .cta-card {
