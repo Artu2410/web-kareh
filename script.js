@@ -38,6 +38,14 @@ const syncHeaderState = () => {
     header.classList.toggle("is-scrolled", window.scrollY > 12);
   }
 
+  if (
+    window.scrollY > 24 &&
+    window.innerWidth < 980 &&
+    navToggle?.getAttribute("aria-expanded") === "true"
+  ) {
+    closeMenu();
+  }
+
   syncScrollProgress();
 };
 
