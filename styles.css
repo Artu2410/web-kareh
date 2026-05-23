@@ -13,6 +13,8 @@
   --kareh-radius: 28px;
   --container-width: 1180px;
   --header-height: 86px;
+  --utility-height: 44px;
+  --sticky-offset: calc(var(--header-height) + var(--utility-height) + 2rem);
   --scroll-progress: 0;
 }
 
@@ -24,11 +26,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 1.5rem);
+  scroll-padding-top: calc(var(--sticky-offset) + 0.25rem);
 }
 
 section[id] {
-  scroll-margin-top: calc(var(--header-height) + 1.5rem);
+  scroll-margin-top: calc(var(--sticky-offset) + 0.25rem);
 }
 
 body {
@@ -102,12 +104,12 @@ button {
   position: sticky;
   top: 0;
   z-index: 50;
-  padding: 1rem 0;
+  padding: 0.6rem 0 1rem;
   transition: background-color 0.25s ease, backdrop-filter 0.25s ease;
 }
 
 .site-header.is-scrolled {
-  padding: 0.75rem 0;
+  padding: 0.45rem 0 0.8rem;
   background: rgba(244, 247, 248, 0.86);
   backdrop-filter: blur(16px);
   box-shadow: 0 10px 30px rgba(46, 58, 63, 0.08);
@@ -122,6 +124,58 @@ button {
 
 .page-shell--compact main > .section:first-child {
   padding-top: 3.25rem;
+}
+
+.header-utility {
+  position: relative;
+  z-index: 2;
+}
+
+.utility-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.55rem;
+}
+
+.utility-hours,
+.utility-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.3rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(95, 124, 138, 0.12);
+  box-shadow: var(--kareh-shadow-soft);
+  font-size: 0.8rem;
+  line-height: 1.25;
+}
+
+.utility-hours {
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--kareh-info);
+  font-weight: 700;
+}
+
+.utility-hours strong {
+  color: var(--kareh-text);
+}
+
+.utility-link {
+  background: rgba(46, 58, 63, 0.94);
+  color: var(--kareh-white);
+  font-weight: 800;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.utility-link:hover,
+.utility-link:focus-visible {
+  transform: translateY(-1px);
+  background: #2d7f78;
 }
 
 .nav-shell {
@@ -170,7 +224,7 @@ button {
 
 .site-nav {
   position: fixed;
-  inset: calc(var(--header-height) + 0.75rem) 1rem auto 1rem;
+  inset: calc(var(--sticky-offset) - 0.2rem) 1rem auto 1rem;
   display: grid;
   gap: 0.7rem;
   padding: 1rem;
@@ -1063,6 +1117,11 @@ p {
   line-height: 1.7;
 }
 
+.reviews-stack {
+  display: grid;
+  gap: 1rem;
+}
+
 .review-stars {
   color: #d99024;
   font-size: 1.35rem;
@@ -1070,12 +1129,130 @@ p {
   line-height: 1;
 }
 
-.reviews-panel iframe {
+.testimonial-card {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.25rem 1.35rem;
+  border: 1px solid var(--kareh-border);
+  border-radius: 1.45rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.testimonial-stars {
+  color: #d99024;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+}
+
+.testimonial-quote {
+  color: var(--kareh-text);
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.testimonial-author {
+  color: var(--kareh-info);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.testimonial-card small,
+.footer-meta {
+  color: var(--kareh-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.footer-meta {
+  margin: 0;
+}
+
+.faq-link-row {
+  margin-top: 1.25rem;
+}
+
+.faq-accordion {
+  display: grid;
+  gap: 1rem;
+}
+
+.faq-group {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.faq-group-title {
+  margin-bottom: 0.1rem;
+}
+
+.faq-item {
+  border: 1px solid var(--kareh-border);
+  border-radius: var(--kareh-radius);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--kareh-shadow-soft);
+  overflow: hidden;
+}
+
+.faq-trigger {
   width: 100%;
-  min-height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.35rem;
   border: 0;
-  border-radius: 1.3rem;
-  background: #eef4f5;
+  background: transparent;
+  color: var(--kareh-text);
+  text-align: left;
+  font-weight: 800;
+}
+
+.faq-trigger:hover,
+.faq-trigger:focus-visible {
+  color: #2d7f78;
+}
+
+.faq-indicator {
+  flex: 0 0 auto;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(107, 196, 181, 0.16);
+  color: #2d7f78;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.faq-trigger[aria-expanded="true"] .faq-indicator {
+  transform: rotate(45deg);
+  background: rgba(244, 166, 160, 0.18);
+}
+
+.faq-panel {
+  padding: 0 1.35rem 1.35rem;
+  color: var(--kareh-info);
+}
+
+.faq-panel[hidden] {
+  display: none;
+}
+
+.faq-panel p + p,
+.faq-panel ul + p,
+.faq-panel ol + p {
+  margin-top: 0.85rem;
+}
+
+.faq-panel ul,
+.faq-panel ol {
+  margin: 0.85rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.faq-panel li + li {
+  margin-top: 0.45rem;
 }
 
 .service-note {
@@ -1424,8 +1601,14 @@ p {
   }
 
   .hero-actions,
-  .location-actions {
+  .location-actions,
+  .utility-bar {
     flex-direction: column;
+  }
+
+  .utility-hours,
+  .utility-link {
+    width: 100%;
   }
 
   .hero-motion {
@@ -1488,7 +1671,7 @@ p {
 
 @media (min-width: 980px) {
   .site-header {
-    padding-top: 1.2rem;
+    padding-top: 0.85rem;
   }
 
   .nav-toggle {
@@ -1575,6 +1758,10 @@ p {
 
   .footer-grid {
     grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  }
+
+  .utility-bar {
+    flex-wrap: nowrap;
   }
 }
 

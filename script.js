@@ -10,6 +10,7 @@ const sections = sectionLinks
 const yearNode = document.querySelector("#year");
 const revealItems = [...document.querySelectorAll(".reveal")];
 const tiltItems = [...document.querySelectorAll("[data-tilt]")];
+const accordionTriggers = [...document.querySelectorAll("[data-accordion-trigger]")];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const initialHash = window.location.hash;
 const initialHashSection = initialHash ? document.querySelector(initialHash) : null;
@@ -86,6 +87,23 @@ if (navToggle && siteNav) {
     if (window.innerWidth >= 980) {
       closeMenu();
     }
+  });
+}
+
+if (accordionTriggers.length) {
+  accordionTriggers.forEach((trigger) => {
+    const panelId = trigger.getAttribute("aria-controls");
+    const panel = panelId ? document.getElementById(panelId) : null;
+
+    if (!panel) return;
+
+    panel.hidden = trigger.getAttribute("aria-expanded") !== "true";
+
+    trigger.addEventListener("click", () => {
+      const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+      trigger.setAttribute("aria-expanded", String(!isExpanded));
+      panel.hidden = isExpanded;
+    });
   });
 }
 
