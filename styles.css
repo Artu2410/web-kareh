@@ -1052,6 +1052,34 @@ p {
   backdrop-filter: blur(10px);
 }
 
+.reviews-panel h3 {
+  margin: 0;
+}
+
+.space-placeholder {
+  min-height: 12rem;
+  border-style: dashed;
+  border-color: rgba(95, 124, 138, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 250, 250, 0.86)),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(107, 196, 181, 0.06),
+      rgba(107, 196, 181, 0.06) 12px,
+      transparent 12px,
+      transparent 24px
+    );
+}
+
+.map-frame {
+  width: 100%;
+  min-height: 22rem;
+  margin-top: 1.1rem;
+  border: 0;
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
 .review-summary {
   display: grid;
   gap: 0.45rem;
