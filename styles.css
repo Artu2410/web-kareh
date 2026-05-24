@@ -1056,6 +1056,56 @@ p {
   margin: 0;
 }
 
+.reviews-proof {
+  display: grid;
+  gap: 1.15rem;
+  padding: 1.5rem;
+  border: 1px solid var(--kareh-border);
+  border-radius: var(--kareh-radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.86)),
+    linear-gradient(135deg, rgba(107, 196, 181, 0.14), rgba(244, 166, 160, 0.08));
+  box-shadow: var(--kareh-shadow-soft);
+  backdrop-filter: blur(10px);
+}
+
+.reviews-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: fit-content;
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(217, 144, 36, 0.16);
+}
+
+.reviews-rating strong {
+  color: var(--kareh-text);
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.reviews-proof-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.review-quote-card {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid var(--kareh-border);
+  border-radius: 1.35rem;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.reviews-note {
+  color: var(--kareh-text-muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
 .space-placeholder {
   min-height: 12rem;
   border-style: dashed;
