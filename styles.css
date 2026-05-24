@@ -13,8 +13,7 @@
   --kareh-radius: 28px;
   --container-width: 1180px;
   --header-height: 86px;
-  --utility-height: 44px;
-  --sticky-offset: calc(var(--header-height) + var(--utility-height) + 2rem);
+  --sticky-offset: calc(var(--header-height) + 2rem);
   --scroll-progress: 0;
 }
 
@@ -124,71 +123,6 @@ button {
 
 .page-shell--compact main > .section:first-child {
   padding-top: 3.25rem;
-}
-
-.header-utility {
-  position: relative;
-  z-index: 2;
-  margin-bottom: 0.25rem;
-}
-
-.utility-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.55rem 1rem;
-  flex-wrap: wrap;
-  padding-bottom: 0.35rem;
-  border-bottom: 1px solid rgba(95, 124, 138, 0.1);
-}
-
-.utility-hours,
-.utility-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: auto;
-  padding: 0;
-  border: 0;
-  box-shadow: none;
-  font-size: 0.76rem;
-  line-height: 1.25;
-}
-
-.utility-hours {
-  flex: 1 1 32rem;
-  justify-content: flex-start;
-  gap: 0.4rem;
-  color: var(--kareh-text-muted);
-  font-weight: 600;
-  text-align: left;
-}
-
-.utility-hours strong {
-  color: var(--kareh-text);
-  font-weight: 800;
-}
-
-.utility-link {
-  flex-shrink: 0;
-  gap: 0.45rem;
-  color: var(--kareh-info);
-  font-weight: 800;
-  transition: color 0.2s ease, opacity 0.2s ease;
-}
-
-.utility-link::before {
-  content: "";
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 999px;
-  background: #2d7f78;
-  box-shadow: 0 0 0 0.18rem rgba(45, 127, 120, 0.12);
-}
-
-.utility-link:hover,
-.utility-link:focus-visible {
-  color: #2d7f78;
-  opacity: 0.9;
 }
 
 .nav-shell {
@@ -1614,34 +1548,12 @@ p {
   }
 
   .hero-actions,
-  .location-actions,
-  .utility-bar {
+  .location-actions {
     flex-direction: column;
-  }
-
-  .utility-hours,
-  .utility-link {
-    width: auto;
-    align-self: flex-start;
   }
 
   .hero-motion {
     min-height: 31rem;
-  }
-}
-
-@media (max-width: 719px) {
-  .utility-bar {
-    align-items: flex-start;
-  }
-
-  .utility-hours {
-    font-size: 0.72rem;
-    line-height: 1.4;
-  }
-
-  .utility-link {
-    font-size: 0.74rem;
   }
 }
 
@@ -1789,9 +1701,6 @@ p {
     grid-template-columns: 1.2fr 1fr 1fr 1fr;
   }
 
-  .utility-bar {
-    flex-wrap: nowrap;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
