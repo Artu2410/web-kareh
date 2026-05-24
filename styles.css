@@ -1080,6 +1080,10 @@ p {
   background: rgba(255, 255, 255, 0.9);
 }
 
+.map-frame--flush {
+  margin-top: 0;
+}
+
 .review-summary {
   display: grid;
   gap: 0.45rem;
