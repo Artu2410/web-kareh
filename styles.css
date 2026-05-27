@@ -1108,6 +1108,7 @@ p {
 
 .space-gallery {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
   gap: 1rem;
 }
 
@@ -1129,21 +1130,26 @@ p {
 
 .space-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: clamp(11rem, 28vw, 16rem);
   object-fit: cover;
   background: #eef4f5;
 }
 
 .space-card-content {
   display: grid;
-  gap: 0.55rem;
-  padding: 1.2rem;
+  gap: 0.45rem;
+  padding: 1rem;
+}
+
+.space-card-content h3 {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.2;
 }
 
 .space-card-content p {
   color: var(--kareh-info);
-  font-size: 0.94rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .map-frame {
@@ -1697,10 +1703,6 @@ p {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .space-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .profile-card {
     grid-template-columns: 18rem minmax(0, 1fr);
     align-items: center;
@@ -1789,10 +1791,6 @@ p {
   }
 
   .cards-grid--three {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .space-gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
