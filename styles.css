@@ -1106,19 +1106,50 @@ p {
   line-height: 1.6;
 }
 
-.space-placeholder {
-  min-height: 12rem;
-  border-style: dashed;
-  border-color: rgba(95, 124, 138, 0.24);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 250, 250, 0.86)),
-    repeating-linear-gradient(
-      -45deg,
-      rgba(107, 196, 181, 0.06),
-      rgba(107, 196, 181, 0.06) 12px,
-      transparent 12px,
-      transparent 24px
-    );
+.space-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+}
+
+.space-card {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--kareh-border);
+  border-radius: var(--kareh-radius);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--kareh-shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.space-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--kareh-shadow);
+  border-color: rgba(107, 196, 181, 0.28);
+}
+
+.space-card img {
+  width: 100%;
+  height: clamp(11rem, 28vw, 16rem);
+  object-fit: cover;
+  background: #eef4f5;
+}
+
+.space-card-content {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+}
+
+.space-card-content h3 {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.2;
+}
+
+.space-card-content p {
+  color: var(--kareh-info);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .map-frame {
