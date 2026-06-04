@@ -15,6 +15,25 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const initialHash = window.location.hash;
 const initialHashSection = initialHash ? document.querySelector(initialHash) : null;
 
+const sendGaEvent = (eventName, params = {}) => {
+  if (typeof window.gtag !== "function") return;
+
+  window.gtag("event", eventName, {
+    page_path: window.location.pathname,
+    page_title: document.title,
+    ...params,
+  });
+};
+
+const getLinkLabel = (link) => link.textContent?.replace(/\s+/g, " ").trim() || link.getAttribute("aria-label") || "";
+
+const getConversionParams = (element) => ({
+  service_area: element.dataset.service || "",
+  patient_segment: element.dataset.segment || "",
+  coverage: element.dataset.coverage || "",
+  conversion_context: element.dataset.conversionContext || "",
+});
+
 const setActiveLink = (id) => {
   sectionLinks.forEach((link) => {
     const isActive = link.getAttribute("href") === `#${id}`;
@@ -110,6 +129,50 @@ if (accordionTriggers.length) {
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
 }
+
+[...document.querySelectorAll("a[href]")].forEach((link) => {
+  const href = link.getAttribute("href") || "";
+
+  if (href.includes("wa.me")) {
+    link.addEventListener("click", () => {
+      const isAppointmentRequest = link.dataset.conversion === "turno" || /turno|coordinar|consultar|whatsapp/i.test(getLinkLabel(link));
+
+      sendGaEvent("click_whatsapp", {
+        link_url: link.href,
+        link_text: getLinkLabel(link),
+        ...getConversionParams(link),
+      });
+
+      if (isAppointmentRequest) {
+        sendGaEvent("solicitud_turno", {
+          link_url: link.href,
+          link_text: getLinkLabel(link),
+          ...getConversionParams(link),
+        });
+      }
+    });
+  }
+
+  if (href.startsWith("tel:")) {
+    link.addEventListener("click", () => {
+      sendGaEvent("click_llamar", {
+        link_url: link.href,
+        link_text: getLinkLabel(link),
+        ...getConversionParams(link),
+      });
+    });
+  }
+});
+
+[...document.querySelectorAll("form")].forEach((form) => {
+  form.addEventListener("submit", () => {
+    sendGaEvent("formulario_enviado", {
+      form_id: form.id || "",
+      form_name: form.getAttribute("name") || "",
+      ...getConversionParams(form),
+    });
+  });
+});
 
 revealItemsInViewport();
 
