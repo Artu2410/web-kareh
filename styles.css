@@ -138,6 +138,7 @@ button {
   align-items: center;
   gap: 0.65rem;
   min-width: 0;
+  flex: 0 0 auto;
 }
 
 .brand-logo-shell {
@@ -1734,9 +1735,12 @@ p {
 
   .site-nav {
     position: static;
+    flex: 1 1 auto;
     display: inline-flex;
     align-items: center;
-    gap: 1.4rem;
+    justify-content: flex-end;
+    gap: clamp(0.65rem, 0.85vw, 1rem);
+    min-width: 0;
     padding: 0;
     border: 0;
     border-radius: 0;
@@ -1750,6 +1754,11 @@ p {
   .site-nav a {
     position: relative;
     color: var(--kareh-info);
+    white-space: nowrap;
+  }
+
+  .site-header .brand-copy {
+    display: none;
   }
 
   .site-nav a::after {
@@ -1814,6 +1823,47 @@ p {
     grid-template-columns: 1.2fr 1fr 1fr 1fr;
   }
 
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+  .nav-toggle {
+    display: inline-grid;
+  }
+
+  .site-header .brand-copy {
+    display: flex;
+  }
+
+  .site-nav {
+    position: fixed;
+    inset: calc(var(--sticky-offset) - 0.2rem) 1rem auto 1rem;
+    display: grid;
+    justify-content: stretch;
+    gap: 0.7rem;
+    min-width: auto;
+    padding: 1rem;
+    border: 1px solid var(--kareh-border);
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--kareh-shadow-soft);
+    transform: scale(0.98);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .site-nav.is-open {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .site-nav a {
+    white-space: normal;
+  }
+
+  .site-nav a::after {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
