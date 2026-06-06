@@ -108,7 +108,9 @@ button {
 }
 
 .site-header.is-scrolled {
-  padding: 0.45rem 0 0.8rem;
+  /* Mantener el mismo padding que el estado por defecto para evitar cambios de altura
+     que provoquen reflow/CLS al alternar la clase */
+  padding: 0.6rem 0 1rem;
   background: rgba(244, 247, 248, 0.86);
   backdrop-filter: blur(16px);
   box-shadow: 0 10px 30px rgba(46, 58, 63, 0.08);
@@ -1726,6 +1728,11 @@ p {
 
 @media (min-width: 980px) {
   .site-header {
+    padding-top: 0.85rem;
+  }
+
+  /* Asegurar que el estado is-scrolled mantenga la misma padding-top en pantallas anchas */
+  .site-header.is-scrolled {
     padding-top: 0.85rem;
   }
 
