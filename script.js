@@ -260,3 +260,51 @@ if (!prefersReducedMotion.matches && window.matchMedia("(pointer: fine)").matche
     });
   });
 }
+
+// Smart CTA Logic
+(function() {
+  const SMART_CTA_HTML = \
+    <div class="smart-cta" id="smart-cta-popup" aria-live="polite" hidden>
+      <div class="smart-cta-content">
+        <strong>¿Tenés obra social?</strong>
+        <p>Consultanos si trabajamos con la tuya y coordinamos disponibilidad.</p>
+        <div class="smart-cta-actions">
+          <a href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" class="button button-primary smart-cta-btn" data-conversion="turno" data-obra-social="smart-cta">
+            Consultar por WhatsApp
+          </a>
+          <button type="button" class="smart-cta-close" aria-label="Cerrar" id="smart-cta-close">×</button>
+        </div>
+      </div>
+    </div>
+  \;
+
+  document.body.insertAdjacentHTML('beforeend', SMART_CTA_HTML);
+
+  const popup = document.getElementById('smart-cta-popup');
+  const closeBtn = document.getElementById('smart-cta-close');
+  if (!popup || !closeBtn) return;
+
+  const storageKey = 'kareh_smart_cta_dismissed';
+  const dismissedUntil = localStorage.getItem(storageKey);
+  const now = Date.now();
+
+  if (!dismissedUntil || now > parseInt(dismissedUntil, 10)) {
+    setTimeout(() => {
+      popup.removeAttribute('hidden');
+      // Forzar un reflow para que la transición funcione
+      void popup.offsetWidth;
+      popup.classList.add('is-visible');
+      if (window.kareh && window.kareh.track) {
+        window.kareh.track('smart_cta_show', { page_path: window.location.pathname });
+      }
+    }, 20000); // 20 segundos
+  }
+
+  closeBtn.addEventListener('click', () => {
+    popup.classList.remove('is-visible');
+    setTimeout(() => popup.setAttribute('hidden', 'true'), 400);
+    // Persist for 7 days
+    const nextWeek = Date.now() + 7 * 24 * 60 * 60 * 1000;
+    localStorage.setItem(storageKey, nextWeek.toString());
+  });
+})();

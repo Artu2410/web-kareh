@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <title>Kareh - Dashboard Marketing</title>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    body { padding: 2rem; background: #f4f7f8; }
+    .dashboard-container { max-width: 1000px; margin: 0 auto; display: none; }
+    .login-container { max-width: 400px; margin: 4rem auto; background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .login-container h2 { margin-bottom: 1rem; font-size: 1.5rem; }
+    .login-container input { width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 0.5rem; font-size: 1rem; }
+    .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    .widget { background: white; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .widget h3 { margin-top: 0; font-size: 0.9rem; color: #5e707b; margin-bottom: 0.5rem; }
+    .widget .value { font-size: 2rem; font-weight: 800; color: #2e3a3f; }
+    .data-table { width: 100%; border-collapse: collapse; background: white; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2rem; }
+    .data-table th, .data-table td { padding: 1rem; text-align: left; border-bottom: 1px solid #eee; }
+    .data-table th { background: #f9fbfb; color: #5e707b; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="login-container" id="login-view">
+    <h2>Acceso Admin Kareh</h2>
+    <p style="color:#5e707b;margin-bottom:1rem;font-size:0.9rem;">Ingrese su contraseña para ver los datos de marketing locales.</p>
+    <input type="password" id="admin-pass" placeholder="Contraseña">
+    <button class="button button-primary" style="width:100%" onclick="login()">Ingresar</button>
+  </div>
+
+  <div class="dashboard-container" id="dashboard-view">
+    <h2 style="margin-bottom:0.5rem;">Dashboard Marketing Kareh</h2>
+    <p style="margin-bottom:2rem;color:#5e707b;">Datos recopilados en este navegador. Para datos globales, ver <a href="https://analytics.google.com" target="_blank" style="color:#6BC4B5;text-decoration:underline;">Google Analytics (GA4)</a>.</p>
+    
+    <div class="dashboard-grid">
+      <div class="widget">
+        <h3>Total Eventos Trackeados</h3>
+        <div class="value" id="val-events">0</div>
+      </div>
+      <div class="widget">
+        <h3>Clicks WhatsApp</h3>
+        <div class="value" id="val-wa">0</div>
+      </div>
+      <div class="widget">
+        <h3>Consultas de Turno</h3>
+        <div class="value" id="val-turnos">0</div>
+      </div>
+      <div class="widget">
+        <h3>Top Obra Social</h3>
+        <div class="value" id="val-top-os" style="font-size: 1.5rem;">-</div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom:1rem;">Top Páginas Vistas (Trackeadas)</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Página</th>
+          <th>Vistas / Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="pages-table-body">
+      </tbody>
+    </table>
+
+    <h3 style="margin-bottom:1rem;">Conversiones por Obra Social</h3>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Obra Social</th>
+          <th>Vistas en Buscador/Cards</th>
+          <th>Consultas Turno</th>
+        </tr>
+      </thead>
+      <tbody id="os-table-body">
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function login() {
+      const pass = document.getElementById('admin-pass').value;
+      if (pass === 'kareh2026') {
+        document.getElementById('login-view').style.display = 'none';
+        document.getElementById('dashboard-view').style.display = 'block';
+        loadData();
+      } else {
+        alert('Contraseña incorrecta');
+      }
+    }
+
+    function loadData() {
+      try {
+        const raw = localStorage.getItem('kareh_events');
+        const events = raw ? JSON.parse(raw) : [];
+        
+        document.getElementById('val-events').innerText = events.length;
+        
+        let wa = 0;
+        let turnos = 0;
+        const osData = {};
+        const pagesData = {};
+        
+        events.forEach(e => {
+          if (e.event === 'click_whatsapp' || e.event === 'conversion_whatsapp') wa++;
+          if (e.event === 'click_turno' || e.event === 'conversion_turno') turnos++;
+          
+          if (e.path) {
+            pagesData[e.path] = (pagesData[e.path] || 0) + 1;
+          }
+          
+          const os = e.params?.obra_social;
+          if (os) {
+            if (!osData[os]) osData[os] = { views: 0, turnos: 0 };
+            if (e.event === 'obra_social_view') osData[os].views++;
+            if (e.event === 'click_turno' || e.event === 'conversion_turno') osData[os].turnos++;
+          }
+        });
+        
+        document.getElementById('val-wa').innerText = Math.floor(wa/2); // Divido por 2 porque ahora mandamos 2 eventos (click y conversion)
+        document.getElementById('val-turnos').innerText = Math.floor(turnos/2);
+        
+        let topOs = '-';
+        let maxTurnos = -1;
+        let osTbody = '';
+        
+        // Sort OS data
+        const sortedOs = Object.entries(osData).sort((a,b) => b[1].turnos - a[1].turnos);
+        
+        for (const [os, data] of sortedOs) {
+          if (data.turnos > maxTurnos) {
+            maxTurnos = data.turnos;
+            topOs = os;
+          }
+          const realTurnos = Math.floor(data.turnos/2) || data.turnos;
+          osTbody += `<tr><td>${os}</td><td>${data.views}</td><td>${realTurnos}</td></tr>`;
+        }
+        
+        document.getElementById('val-top-os').innerText = topOs;
+        document.getElementById('os-table-body').innerHTML = osTbody || '<tr><td colspan="3">Sin datos</td></tr>';
+        
+        // Sort Pages data
+        const sortedPages = Object.entries(pagesData).sort((a,b) => b[1] - a[1]).slice(0, 5);
+        let pagesTbody = '';
+        for (const [path, count] of sortedPages) {
+          pagesTbody += `<tr><td>${path}</td><td>${count}</td></tr>`;
+        }
+        document.getElementById('pages-table-body').innerHTML = pagesTbody || '<tr><td colspan="2">Sin datos</td></tr>';
+        
+      } catch(e) {
+        console.error(e);
+      }
+    }
+  </script>
+</body>
+</html>
