@@ -800,6 +800,43 @@ p {
   margin: 0;
 }
 
+/* Secciones nuevas para conversión y obras sociales rápidas */
+.hero-benefits {
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  color: var(--kareh-info);
+  font-weight: 700;
+}
+
+.section-coverage-quick .coverage-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1rem;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.section-coverage-quick .coverage-list span {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid var(--kareh-border);
+  color: var(--kareh-text);
+  font-weight: 800;
+}
+
+.section-conversion .conversion-steps ol {
+  margin: 0.6rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--kareh-info);
+}
+
+/* Reducir ornamentos en hero para enfocarnos en conversión */
+.hero-backdrop { display: none !important; }
+
 .area-tag {
   display: inline-flex;
   align-items: center;
