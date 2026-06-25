@@ -144,7 +144,7 @@ if (yearNode) {
       });
 
       if (isAppointmentRequest) {
-        sendGaEvent("solicitud_turno", {
+        sendGaEvent("click_turno", {
           link_url: link.href,
           link_text: getLinkLabel(link),
           ...getConversionParams(link),
