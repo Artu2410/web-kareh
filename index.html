@@ -55,7 +55,7 @@
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "@id": "https://kareh.com.ar/#medicalbusiness",
-      "name": "Kareh",
+      "name": "Kareh - Centro de Kinesiología y Fisiatría",
       "url": "https://kareh.com.ar/",
       "image": "https://kareh.com.ar/logo-icon.png",
       "description": "Centro de kinesiología y rehabilitación en Bella Vista. Atención en traumatología, rehabilitación respiratoria y piso pélvico. Turnos por WhatsApp.",
@@ -73,6 +73,26 @@
         "addressRegion": "Buenos Aires",
         "addressCountry": "AR"
       },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Wednesday", "Friday"],
+          "opens": "14:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Thursday"],
+          "opens": "17:30",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
       "areaServed": [
         {
           "@type": "City",
@@ -112,52 +132,46 @@
         "Electroanalgesia"
       ],
       "knowsAbout": [
-       "knowsAbout": [
-  "Fracturas",
-  "Luxaciones",
-  "Esguinces",
-  "Torceduras",
-  "Desgarros musculares",
-  "Lesiones musculares",
-  "Tendinitis",
-  "Tendinopatías",
-  "Bursitis",
-  "Fascitis plantar",
-  "Epicondilitis",
-  "Trocanteritis",
-  "Artrosis",
-  "Artritis",
-  "Escoliosis",
-  "Condromalacia rotuliana",
-  "Lesiones de rodilla",
-  "Lesiones de hombro",
-  "Lesion de manguito rotador",
-  "Sindrome manguito rotador",
-  "Dolor cervical",
-  "Cervicalgia",
-  "Dorsalgia",
-  "Lumbalgia",
-  "Lumbociatalgia",
-  "Ciatalgia",
-  "Coxalgia",
-  "Rehabilitación postoperatoria",
-  "Reemplazo de cadera",
-  "Reemplazo de rodilla",
-  "Parálisis facial",
-  "Bronquiolitis",
-  "Asma",
-  "Neumonía",
-  "EPOC",
-  "Bronquitis",
-  "Rehabilitación respiratoria",
-  "Kinesiología respiratoria pediátrica",
-  "Kinesiología respiratoria para adultos",
-  "Piso pélvico",
-  "Incontinencia urinaria",
-  "Dolor crónico",
-  ],
+        "Fracturas",
+        "Luxaciones",
+        "Esguinces",
+        "Torceduras",
+        "Desgarros musculares",
+        "Lesiones musculares",
+        "Tendinitis",
+        "Tendinopatías",
+        "Artrosis",
+        "Escoliosis",
+        "Dolor lumbar",
+        "Cervicalgias",
+        "Rehabilitación postoperatoria",
+        "Kinesiología respiratoria",
+        "Kinesiología respiratoria pediátrica",
+        "Piso pélvico",
+        "Incontinencia urinaria",
+        "Lesiones deportivas"
+      ],
       "sameAs": [
         "https://instagram.com/Centro.kareh"
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://kareh.com.ar/#katia-alumine-romero",
+      "name": "Lic. Katia Aluminé Romero",
+      "jobTitle": "Licenciada en Kinesiología y Fisiatría",
+      "worksFor": {
+        "@id": "https://kareh.com.ar/#medicalbusiness"
+      },
+      "knowsAbout": [
+        "Rehabilitación traumatológica",
+        "Rehabilitación postoperatoria",
+        "Kinesiología respiratoria",
+        "Piso pélvico",
+        "Incontinencia urinaria"
       ]
     }
   </script>
@@ -248,6 +262,7 @@
         <a href="servicios/">Tratamientos</a>
         <a href="cobertura-y-convenios/">Cobertura</a>
         <a href="obras-sociales/">Obras Sociales</a>
+        <a href="localidades/san-miguel/">Zonas</a>
         <a href="faqs/">Preguntas</a>
         <a href="contacto/">Contacto</a>
         <a class="nav-cta" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-segment="particular">WhatsApp</a>
@@ -671,6 +686,49 @@
       </div>
     </section>
 
+    <section class="section" id="zonas">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Zonas de atención</p>
+          <h2>Kinesiología para pacientes de Bella Vista y localidades cercanas</h2>
+          <p>
+            El centro está ubicado en Av. Senador Morón 782, Bella Vista, con turnos coordinados por WhatsApp para
+            pacientes de San Miguel, Muñiz, José C. Paz, Hurlingham y alrededores.
+          </p>
+        </div>
+
+        <div class="cards-grid cards-grid--four">
+          <article class="service-card reveal">
+            <span class="card-kicker">San Miguel</span>
+            <h3><a href="localidades/san-miguel/">Kinesiología para pacientes de San Miguel</a></h3>
+            <p>Atención cercana para rehabilitación traumatológica, postoperatoria, respiratoria y piso pélvico.</p>
+            <a class="button button-secondary button--top-sm" href="localidades/san-miguel/">Ver zona</a>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-kicker">Muñiz</span>
+            <h3><a href="localidades/muniz/">Kinesiología para pacientes de Muñiz</a></h3>
+            <p>Orientación y turnos para pacientes que se acercan desde Muñiz con orden médica vigente.</p>
+            <a class="button button-secondary button--top-sm" href="localidades/muniz/">Ver zona</a>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-kicker">José C. Paz</span>
+            <h3><a href="localidades/jose-c-paz/">Kinesiología para pacientes de José C. Paz</a></h3>
+            <p>Tratamientos de rehabilitación organizados según diagnóstico, cobertura y disponibilidad de turnos.</p>
+            <a class="button button-secondary button--top-sm" href="localidades/jose-c-paz/">Ver zona</a>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-kicker">Hurlingham</span>
+            <h3><a href="localidades/hurlingham/">Kinesiología para pacientes de Hurlingham</a></h3>
+            <p>Atención para lesiones, dolor lumbar, tendinitis y consultas respiratorias con indicación médica.</p>
+            <a class="button button-secondary button--top-sm" href="localidades/hurlingham/">Ver zona</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="espacios">
       <div class="container">
         <div class="section-heading reveal">
@@ -952,6 +1010,10 @@
       <div class="footer-card">
         <h3>Accesos</h3>
         <a class="footer-link" href="servicios/">Tratamientos</a>
+        <a class="footer-link" href="localidades/san-miguel/">San Miguel</a>
+        <a class="footer-link" href="localidades/muniz/">Muñiz</a>
+        <a class="footer-link" href="localidades/jose-c-paz/">José C. Paz</a>
+        <a class="footer-link" href="localidades/hurlingham/">Hurlingham</a>
         <a class="footer-link" href="cobertura-y-convenios/">Cobertura</a>
         <a class="footer-link" href="obras-sociales/">Obras Sociales</a>
         <a class="footer-link" href="faqs/">Preguntas frecuentes</a>

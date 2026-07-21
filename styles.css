@@ -1608,6 +1608,46 @@ p {
   line-height: 2;
 }
 
+.article-layout,
+.locality-layout {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 52rem;
+}
+
+.article-body,
+.locality-body {
+  display: grid;
+  gap: 1rem;
+}
+
+.article-body h2,
+.locality-body h2 {
+  margin-top: 1rem;
+  font-size: clamp(1.55rem, 3vw, 2rem);
+}
+
+.article-body h3,
+.locality-body h3 {
+  margin-top: 0.5rem;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+}
+
+.article-body p,
+.article-body li,
+.locality-body p,
+.locality-body li {
+  color: var(--kareh-info);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.article-body ul,
+.locality-body ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
 .whatsapp-float {
   position: fixed;
   right: 1rem;
