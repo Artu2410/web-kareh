@@ -37,7 +37,7 @@
   <meta name="twitter:image" content="https://kareh.com.ar/logo-icon.png">
   <meta name="twitter:image:alt" content="Kareh - Contacto y ubicación">
   <title>Turnos de Kinesiología en Bella Vista | Kareh</title>
-  <link rel="canonical" href="https://kareh.com.ar/contacto">
+  <link rel="canonical" href="https://kareh.com.ar/contacto/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style"
@@ -53,7 +53,7 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": ["MedicalBusiness", "LocalBusiness"],
+      "@type": "MedicalBusiness",
       "@id": "https://kareh.com.ar/#medicalbusiness",
       "name": "Kareh",
       "url": "https://kareh.com.ar/",
@@ -66,12 +66,30 @@
         "addressCountry": "AR"
       },
       "areaServed": [
-        "Bella Vista",
-        "San Miguel",
-        "Muñiz",
-        "José C. Paz",
-        "Los Polvorines",
-        "Malvinas Argentinas"
+        {
+          "@type": "AdministrativeArea",
+          "name": "Bella Vista"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "San Miguel"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Muñiz"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "José C. Paz"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Los Polvorines"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Malvinas Argentinas"
+        }
       ]
     }
   </script>
