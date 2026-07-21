@@ -44,7 +44,7 @@
       "name": "Ultrasonido terapéutico en Bella Vista",
       "serviceType": "Agente físico de apoyo en kinesiología",
       "provider": {
-        "@type": ["MedicalBusiness", "LocalBusiness"],
+        "@type": "MedicalBusiness",
         "name": "Kareh",
         "url": "https://kareh.com.ar/",
         "telephone": "+5491132016039",
@@ -56,7 +56,32 @@
           "addressCountry": "AR"
         }
       },
-      "areaServed": ["Bella Vista", "San Miguel", "Muñiz", "José C. Paz", "Los Polvorines", "Malvinas Argentinas"],
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Bella Vista"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "San Miguel"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Muñiz"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "José C. Paz"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Los Polvorines"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Malvinas Argentinas"
+        }
+      ],
       "description": "Ultrasonido terapéutico como apoyo en tratamientos de kinesiología y rehabilitación, indicado según evaluación clínica."
     }
   </script>
@@ -65,9 +90,24 @@
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://kareh.com.ar/" },
-        { "@type": "ListItem", "position": 2, "name": "Tratamientos", "item": "https://kareh.com.ar/servicios/" },
-        { "@type": "ListItem", "position": 3, "name": "Ultrasonido terapéutico", "item": "https://kareh.com.ar/servicios/ultrasonido-terapeutico/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://kareh.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tratamientos",
+          "item": "https://kareh.com.ar/servicios/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ultrasonido terapéutico",
+          "item": "https://kareh.com.ar/servicios/ultrasonido-terapeutico/"
+        }
       ]
     }
   </script>

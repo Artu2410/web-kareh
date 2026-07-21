@@ -46,7 +46,7 @@
       "name": "Rehabilitación postoperatoria en Bella Vista",
       "serviceType": "Kinesiología postoperatoria traumatológica",
       "provider": {
-        "@type": ["MedicalBusiness", "LocalBusiness"],
+        "@type": "MedicalBusiness",
         "name": "Kareh",
         "url": "https://kareh.com.ar/",
         "telephone": "+5491132016039",
@@ -58,7 +58,32 @@
           "addressCountry": "AR"
         }
       },
-      "areaServed": ["Bella Vista", "San Miguel", "Muñiz", "José C. Paz", "Los Polvorines", "Malvinas Argentinas"],
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Bella Vista"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "San Miguel"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Muñiz"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "José C. Paz"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Los Polvorines"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Malvinas Argentinas"
+        }
+      ],
       "description": "Rehabilitación kinésica para recuperación después de cirugías traumatológicas, con seguimiento funcional y atención personalizada."
     }
   </script>
@@ -67,9 +92,24 @@
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://kareh.com.ar/" },
-        { "@type": "ListItem", "position": 2, "name": "Tratamientos", "item": "https://kareh.com.ar/servicios/" },
-        { "@type": "ListItem", "position": 3, "name": "Rehabilitación postoperatoria Bella Vista", "item": "https://kareh.com.ar/servicios/rehabilitacion-postoperatoria-bella-vista/" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://kareh.com.ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tratamientos",
+          "item": "https://kareh.com.ar/servicios/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Rehabilitación postoperatoria Bella Vista",
+          "item": "https://kareh.com.ar/servicios/rehabilitacion-postoperatoria-bella-vista/"
+        }
       ]
     }
   </script>
