@@ -76,20 +76,34 @@ const closeMenu = () => {
   siteNav.classList.remove("is-open");
 };
 
-revealItems.forEach((item, index) => {
-  item.style.setProperty("--reveal-delay", `${Math.min((index % 4) * 0.08, 0.24)}s`);
-});
-
-const revealItemsInViewport = () => {
-  revealItems.forEach((item) => {
-    const rect = item.getBoundingClientRect();
-    const isVisibleOnLoad = rect.top < window.innerHeight && rect.bottom > 0;
-
-    if (isVisibleOnLoad) {
-      item.classList.add("is-visible");
-    }
+// Defer reveal initialization to the next animation frame to avoid
+// expensive write->read->layout during initial critical rendering.
+const initRevealItems = () => {
+  revealItems.forEach((item, index) => {
+    item.style.setProperty("--reveal-delay", `${Math.min((index % 4) * 0.08, 0.24)}s`);
   });
+
+  const revealItemsInViewport = () => {
+    revealItems.forEach((item) => {
+      const rect = item.getBoundingClientRect();
+      const isVisibleOnLoad = rect.top < window.innerHeight && rect.bottom > 0;
+
+      if (isVisibleOnLoad) {
+        item.classList.add("is-visible");
+      }
+    });
+  };
+
+  revealItemsInViewport();
 };
+
+// Schedule reveal initialization after the first frame to let the browser
+// complete initial layout/paint (especially the LCP) first.
+if (typeof window.requestAnimationFrame === "function") {
+  window.requestAnimationFrame(initRevealItems);
+} else {
+  setTimeout(initRevealItems, 0);
+}
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
