@@ -28,7 +28,7 @@
    <meta property="og:description"
      content="Kareh - Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitación traumatológica, postoperatoria, kinesiología respiratoria, piso pélvico e incontinencia urinaria. Turnos por WhatsApp.">
   <meta property="og:url" content="https://kareh.com.ar/">
-  <meta property="og:image" content="https://kareh.com.ar/logo-icon.png/">
+  <meta property="og:image" content="https://kareh.com.ar/logo-icon.png">
   <meta property="og:image:alt" content="Kareh - Centro de Kinesiología y Rehabilitación">
   <meta name="twitter:card" content="summary_large_image">
    <meta name="twitter:title" content="Kareh - Centro de Kinesiología y Fisiatría | Bella Vista">
@@ -49,7 +49,32 @@
       rel="stylesheet">
   </noscript>
   <link rel="icon" href="logo-icon.png" type="image/png">
-  <link rel="stylesheet" href="styles.css?v=20260524-clinical-refresh">
+  <!-- Critical CSS for initial hero render (inline to reduce LCP element render delay) -->
+  <style id="critical-css">
+    :root{--kareh-primary:#6BC4B5;--kareh-info:#4D6774;--kareh-white:#FFFFFF;--kareh-bg:#F4F7F8;--kareh-text:#2E3A3F;--container-width:1180px;--header-height:86px}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Manrope",sans-serif;color:var(--kareh-text);background:var(--kareh-bg);-webkit-font-smoothing:antialiased}
+    .container{width:min(calc(100% - 2rem),var(--container-width));margin:0 auto}
+    .hero{position:relative;padding-top:2rem;overflow:clip}
+    .hero-grid{display:grid;gap:2rem;grid-template-columns:1fr 1fr;align-items:start}
+    .hero-copy{display:grid;gap:1.2rem;max-width:39rem;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;gap:0.45rem;margin:0;color:var(--kareh-info);font-weight:800;font-size:0.84rem;letter-spacing:0.12em;text-transform:uppercase}
+    h1{margin:0;font-family:"Manrope",sans-serif;font-weight:800;line-height:1.1;letter-spacing:-0.04em;font-size:clamp(2.45rem,7vw,4.2rem)}
+    .hero-text{color:var(--kareh-info);font-size:0.98rem;line-height:1.75}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:0.9rem}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:3.4rem;padding:0.9rem 1.35rem;border-radius:999px;border:1px solid transparent;font-weight:800}
+    .button-primary{background:linear-gradient(135deg,var(--kareh-primary),#4f9fa2);color:var(--kareh-white)}
+    .brand-logo-shell{display:grid;place-items:center;width:4.4rem;height:3.2rem;overflow:hidden;flex-shrink:0}
+    .brand-logo{width:100%;height:100%;object-fit:contain}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:20rem}}
+  </style>
+
+  <!-- Load full stylesheet non-blocking (preload + swap) -->
+  <link rel="preload" href="styles.css?v=20260524-clinical-refresh" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="styles.css?v=20260524-clinical-refresh">
+  </noscript>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -265,7 +290,7 @@
         <a href="localidades/san-miguel/">Zonas</a>
         <a href="faqs/">Preguntas</a>
         <a href="contacto/">Contacto</a>
-        <a class="nav-cta" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-segment="particular">WhatsApp</a>
+        <a class="nav-cta" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank" rel="noopener noreferrer" data-conversion="turno" data-segment="particular">WhatsApp</a>
       </nav>
     </div>
   </header>
@@ -290,7 +315,7 @@
           </ul>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank"
+            <a class="button button-primary" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank"
               rel="noopener noreferrer" data-conversion="turno" data-segment="particular">CONSULTAR POR WHATSAPP</a>
             <a class="button button-secondary" href="/obras-sociales/">VER OBRAS SOCIALES</a>
           </div>
@@ -380,7 +405,7 @@
         </div>
 
         <div class="hero-actions button--top-md">
-          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank"
+          <a class="button button-primary" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank"
             rel="noopener noreferrer" data-conversion="consulta">QUIERO CONSULTAR</a>
         </div>
       </div>
@@ -681,7 +706,7 @@
 
         <div class="hero-actions button--top-md">
           <a class="button button-secondary" href="cobertura-y-convenios/">Ver cobertura y convenios</a>
-          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-segment="particular" data-coverage="particular">Consultar por WhatsApp</a>
+          <a class="button button-primary" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank" rel="noopener noreferrer" data-conversion="turno" data-segment="particular" data-coverage="particular">Consultar por WhatsApp</a>
         </div>
       </div>
     </section>
@@ -944,7 +969,7 @@
           <h2>Coordiná tu atención por WhatsApp</h2>
           <p>Envíanos tu orden médica y te orientamos según el diagnóstico, la cobertura y el tipo de tratamiento.</p>
         </div>
-        <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank"
+        <a class="button button-primary" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank"
           rel="noopener noreferrer" data-conversion="turno" data-segment="particular">Escribir por WhatsApp</a>
       </div>
     </section>
@@ -978,7 +1003,7 @@
           Av. Senador Morón 782, Bella Vista, Buenos Aires
         </a>
        <p class="footer-meta">Lunes, miércoles y viernes 14 a 18 hs | Martes y jueves 17:30 a 18 hs | Sábados 8 a 12 hs</p>
-        <a class="footer-link" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer">
+        <a class="footer-link" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank" rel="noopener noreferrer" data-conversion="turno" data-segment="particular">
           WhatsApp: +54 9 11 3201-6039
         </a>
       </div>
@@ -1014,8 +1039,8 @@
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer"
-    aria-label="Escribir por WhatsApp para coordinar turnos">
+  <a class="whatsapp-float" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank" rel="noopener noreferrer"
+    aria-label="Escribir por WhatsApp para coordinar turnos" data-conversion="turno" data-service="general">
     <svg viewBox="0 0 32 32" aria-hidden="true">
       <path
         d="M19.11 17.31c-.29-.15-1.69-.84-1.95-.93-.26-.1-.45-.15-.64.15-.19.29-.74.93-.9 1.12-.17.19-.33.22-.62.07-.29-.15-1.2-.44-2.28-1.41-.84-.75-1.41-1.68-1.58-1.96-.17-.29-.02-.44.13-.59.13-.13.29-.33.44-.49.15-.17.19-.29.29-.49.1-.19.05-.37-.02-.52-.07-.15-.64-1.55-.87-2.11-.23-.56-.46-.48-.64-.49h-.54c-.19 0-.49.07-.75.37-.26.29-.98.96-.98 2.34s1 2.71 1.14 2.9c.15.19 1.96 2.99 4.74 4.19.66.28 1.18.44 1.58.56.67.21 1.28.18 1.76.11.54-.08 1.69-.69 1.93-1.36.24-.67.24-1.24.17-1.36-.07-.11-.26-.19-.55-.34Z">
