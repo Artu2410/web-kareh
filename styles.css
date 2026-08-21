@@ -1,11 +1,11 @@
 :root {
   --kareh-primary: #6BC4B5;
   --kareh-secondary: #A8E6CF;
-  --kareh-info: #4D6774;
+  --kareh-info: #3a5560;
   --kareh-white: #FFFFFF;
   --kareh-bg: #F4F7F8;
   --kareh-text: #2E3A3F;
-  --kareh-text-muted: #5E707B;
+  --kareh-text-muted: #3d4f5a;
   --kareh-accent: #F4A6A0;
   --kareh-border: rgba(95, 124, 138, 0.14);
   --kareh-shadow: 0 24px 60px rgba(46, 58, 63, 0.12);
@@ -285,7 +285,6 @@ button {
   border-radius: 50%;
   filter: blur(10px);
   opacity: 0.8;
-  animation: orbDrift 16s ease-in-out infinite;
 }
 
 .orb-one {
@@ -514,7 +513,6 @@ p {
   border-radius: 50%;
   background: radial-gradient(circle, rgba(107, 196, 181, 0.3), transparent 68%);
   filter: blur(22px);
-  animation: pulseGlow 8s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -532,7 +530,6 @@ p {
 .hero-panel {
   display: grid;
   gap: 1.25rem;
-  animation: softFloat 8s ease-in-out infinite;
 }
 
 .hero-panel::after {
@@ -541,7 +538,6 @@ p {
   inset: 0;
   background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.34), transparent 60%);
   transform: translateX(-130%);
-  animation: sheen 8s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -1210,7 +1206,7 @@ p {
 
 .map-frame {
   width: 100%;
-  min-height: 22rem;
+  aspect-ratio: 16 / 9;
   margin-top: 1.1rem;
   border: 0;
   border-radius: 1.4rem;
@@ -1475,7 +1471,6 @@ p {
   inset: 0;
   background: linear-gradient(120deg, transparent 18%, rgba(255, 255, 255, 0.22), transparent 48%);
   transform: translateX(-135%);
-  animation: sheen 7s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -1747,7 +1742,6 @@ p {
   font-size: 0.72rem;
   font-weight: 900;
   line-height: 1;
-  animation: badgePulse 2.8s ease-in-out 2.4s infinite;
 }
 
 .whatsapp-float:hover,
@@ -1794,6 +1788,7 @@ p {
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
   transition-delay: var(--reveal-delay, 0s);
+  will-change: transform, opacity;
 }
 
 .reveal.is-visible {
