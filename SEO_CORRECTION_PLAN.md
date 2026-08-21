@@ -14,7 +14,7 @@
 
 3. **INCONSISTENCIAS DE DATOS**:
    - Nombre: "Kareh" vs "Kareh - Centro de Kinesiología y Fisiatría"
-   - Horarios: index.html dice 18:00, otros lados dice 19:00
+   - Horarios: index.html dice 19:00, otros lados dice 19:00
    - og:url con doble slash: `https://kareh.com.ar/servicios//`
    - og:url sin https:// en algunas páginas
 
