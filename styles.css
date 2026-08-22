@@ -1612,6 +1612,67 @@ p {
   color: var(--kareh-text-muted);
   font-size: 0.95rem;
 }
+.footer-legal {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: var(--kareh-text-muted);
+  font-size: 0.9rem;
+}
+
+.footer-legal a {
+  color: var(--kareh-text-muted);
+  text-decoration: none;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: var(--kareh-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.error-page-content {
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.error-page-content h1 {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+}
+
+.error-page-content h2 {
+  margin-top: 1rem;
+}
+
+.error-page-content > p {
+  max-width: 52ch;
+  margin: 1rem auto 0;
+  color: var(--kareh-info);
+}
+
+.error-page-actions,
+.error-page-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.error-page-actions {
+  margin-top: 2rem;
+}
+
+.error-page-links {
+  margin-top: 2.5rem;
+}
+
+.error-page-links a {
+  color: var(--kareh-info);
+}
+
+.list-plain {
 
 .list-plain {
   list-style: none;
@@ -1964,6 +2025,65 @@ p {
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.2s ease;
+  .site-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.35rem;
+    width: 100%;
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--kareh-primary), var(--kareh-accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+
+  .site-nav a.is-active::after,
+  .site-nav a:hover::after,
+  .site-nav a:focus-visible::after {
+    transform: scaleX(1);
+  }
+}
+
+/* Accesibilidad */
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.7rem 1rem;
+  background: var(--kareh-text);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 0 0 1rem 1rem;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(107, 196, 181, 0.55);
+  outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
   }
 
   .site-nav a:hover::after,
