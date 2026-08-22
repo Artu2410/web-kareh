@@ -1723,25 +1723,51 @@ p {
   padding-left: 1.2rem;
 }
 
+.whatsapp-float {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.9rem 1.05rem;
+  border-radius: 999px;
+  background: #148246;
+  color: var(--kareh-white);
+  box-shadow: 0 20px 38px rgba(31, 191, 99, 0.34);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 46px rgba(31, 191, 99, 0.4);
+}
+
+.whatsapp-float svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: currentColor;
+}
+
 .whatsapp-toast {
   position: fixed;
   right: 6.1rem;
   bottom: 5.4rem;
-  z-index: 9999;
+  z-index: 31;
   display: grid;
   gap: 0.15rem;
   padding: 0.72rem 0.95rem 0.76rem 1rem;
   border: 1px solid rgba(20, 130, 70, 0.12);
   border-radius: 1.15rem 1.15rem 1.15rem 0.45rem;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 255, 247, 0.96));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 18px 34px rgba(12, 31, 25, 0.12), 0 8px 18px rgba(20, 130, 70, 0.08);
   color: var(--kareh-text);
   transform: translate3d(0, 18px, 0) scale(0.98);
   opacity: 0;
   pointer-events: none;
-  animation: whatsappToastIn 0.8s cubic-bezier(0.2, 0.75, 0.2, 1) 2.4s forwards;
+  animation: whatsappToastIn 0.8s cubic-bezier(0.2, 0.75, 0.2, 1) 5s forwards;
 }
 
 .whatsapp-toast::after {
@@ -1769,54 +1795,6 @@ p {
   line-height: 1.4;
 }
 
-.whatsapp-float {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 100;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 0.9rem 1.05rem;
-  border: 1px solid rgba(14, 126, 56, 0.18);
-  border-radius: 999px;
-  background: linear-gradient(180deg, #1abb5a 0%, #138d46 100%);
-  color: var(--kareh-white);
-  box-shadow: 0 18px 34px rgba(22, 145, 81, 0.3), 0 10px 18px rgba(22, 145, 81, 0.18);
-  transition: transform 0.35s cubic-bezier(0.2, 0.75, 0.2, 1), box-shadow 0.35s ease;
-}
-
-.whatsapp-float::after {
-  content: "1";
-  position: absolute;
-  top: -0.55rem;
-  right: -0.2rem;
-  display: grid;
-  place-items: center;
-  width: 1.7rem;
-  height: 1.7rem;
-  border-radius: 50%;
-  background: linear-gradient(180deg, #ff6666, #e43d46);
-  border: 2px solid rgba(255, 255, 255, 0.96);
-  box-shadow: 0 8px 18px rgba(228, 61, 70, 0.32);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.whatsapp-float:hover,
-.whatsapp-float:focus-visible {
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 22px 46px rgba(22, 145, 81, 0.38), 0 14px 24px rgba(22, 145, 81, 0.2);
-}
-
-.whatsapp-float svg {
-  width: 1.4rem;
-  height: 1.4rem;
-  fill: currentColor;
-}
-
 @keyframes whatsappToastIn {
   0% {
     opacity: 0;
@@ -1829,18 +1807,6 @@ p {
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
-  }
-}
-
-@keyframes badgePulse {
-  0%,
-  100% {
-    transform: scale(1);
-    box-shadow: 0 8px 18px rgba(228, 61, 70, 0.32);
-  }
-  50% {
-    transform: scale(1.08);
-    box-shadow: 0 12px 22px rgba(228, 61, 70, 0.45);
   }
 }
 
