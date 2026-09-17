@@ -321,7 +321,7 @@ c:\web-kareh/
 **Title**: Obras Sociales y Convenios | Kareh Bella Vista  
 **Meta Description**: Kareh trabaja con múltiples obras sociales y prepagas en Bella Vista. Consultá disponibilidad, cobertura y requisitos para comenzar tratamiento.  
 **Canonical**: https://kareh.com.ar/obras-sociales/  
-**H1**: Consultá cobertura disponible para atención kinésica  
+**H1**: Consultá cobertura disponible para  
 **H2**: 1  
 **H3**: 0  
 **JSON-LD**: 2 bloques (MedicalBusiness, BreadcrumbList)
