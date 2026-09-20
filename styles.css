@@ -724,6 +724,8 @@ p {
   display: grid;
   width: 18rem;
   height: 18rem;
+  min-width: 18rem;
+  min-height: 18rem;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   overflow: hidden;
@@ -834,6 +836,17 @@ p {
   margin: 0.6rem 0 0;
   padding-left: 1.1rem;
   color: var(--kareh-info);
+}
+
+#como-empezar {
+  min-height: 22rem;
+}
+
+.space-card picture {
+  display: block;
+  width: 100%;
+  height: clamp(11rem, 28vw, 16rem);
+  background: #eef4f5;
 }
 
 /* Reducir ornamentos en hero para enfocarnos en conversión */
@@ -1182,7 +1195,7 @@ p {
 
 .space-card img {
   width: 100%;
-  height: clamp(11rem, 28vw, 16rem);
+  height: 100%;
   object-fit: cover;
   background: #eef4f5;
 }
@@ -1238,9 +1251,9 @@ p {
 
 .map-frame {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  min-height: 18rem;
   margin-top: 1.1rem;
-  border: 0;
+  padding: 1.6rem;
   border-radius: 1.4rem;
   background: rgba(255, 255, 255, 0.9);
 }
