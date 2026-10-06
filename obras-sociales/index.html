@@ -35,7 +35,7 @@
     content="Consultá disponibilidad y modalidad de atención con obras sociales y prepagas en Kareh.">
   <meta name="twitter:image" content="https://kareh.com.ar/logo-icon.png">
   <meta name="twitter:image:alt" content="Kareh - Obras sociales y convenios">
-  <title>Obras Sociales y Convenios | Kareh Bella Vista</title>
+  <title>Obras Sociales y Convenios | Kinesiología en Bella Vista | Kareh</title>
   <link rel="canonical" href="https://kareh.com.ar/obras-sociales/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,8 +127,8 @@
       <div class="container">
         <div class="section-heading reveal">
           <p class="eyebrow">Coberturas</p>
-          <h1>Consultá cobertura disponible para atención kinésica</h1>
-          <p>Atendemos pacientes de Bella Vista, San Miguel y zona noroeste. Consultanos disponibilidad y requisitos según cobertura.</p>
+          <h1>Obras Sociales y Convenios</h1>
+          <p>En Kareh atendemos pacientes de distintas obras sociales y modalidades de cobertura en nuestro centro de kinesiología en Bella Vista.</p>
         </div>
 
         <div class="hero-actions button--top-md reveal">
@@ -137,19 +137,19 @@
       </div>
     </section>
 
-    <!-- OBRAS DESTACADAS -->
+    <!-- Listado administrado desde Supabase -->
     <section class="section" id="destacadas">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow">Principales</p>
-          <h2>Obras sociales y prepagas</h2>
+          <p class="eyebrow">Coberturas</p>
+          <h2>Obras sociales y prepagas activas</h2>
         </div>
 
-        <div style="text-align: center; margin: 2rem 0;">
-          <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto;">
-            Trabajamos con <strong>obras sociales y prepagas seleccionadas</strong>. Escribinos por WhatsApp para confirmar si tu cobertura está incluida y coordinar tu atención.
-          </p>
-        </div>
+        <label class="coverage-search-label" for="coverage-search">¿Buscás tu obra social?</label>
+        <input id="coverage-search" class="coverage-search" type="search" placeholder="Buscar obra social..." autocomplete="off">
+        <div id="coverage-grid" class="coverage-grid" aria-live="polite"></div>
+        <p id="coverage-empty" class="coverage-empty" hidden>No encontramos esa obra social en nuestro listado actual. Consultanos por WhatsApp para verificar tu cobertura.</p>
+        <p class="coverage-admin-link"><a id="coverage-admin-link" href="../admin/login/?next=/obras-sociales/">Acceso administrativo</a></p>
       </div>
     </section>
 
@@ -163,7 +163,7 @@
             <p>Si tu obra social o prepaga no aparece en la lista, consultanos igual. Te orientamos sobre disponibilidad y requisitos.</p>
           </div>
 
-          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-segment="particular" data-coverage="consulta">Consultar por WhatsApp</a>
+          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-coverage-whatsapp data-conversion="turno" data-segment="particular" data-coverage="consulta">Consultar cobertura</a>
         </div>
       </div>
     </section>
@@ -277,6 +277,9 @@
   </a>
 
   <script src="../script.js?v=20260624-coverage"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/supabase-config.js"></script>
+  <script src="../assets/js/obras-sociales.js?v=20261006-logos-locales"></script>
 </body>
 
 </html>
