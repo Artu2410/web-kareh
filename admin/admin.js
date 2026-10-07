@@ -20,7 +20,8 @@
 
   if (isLogin) {
     const next = new URLSearchParams(location.search).get('next');
-    const destination = next && next.startsWith('/') ? next : '../';
+    // Only permit simple, same-site paths; never trust an arbitrary redirect target.
+    const destination = next && /^\/(?:[a-zA-Z0-9_-]+\/)*$/.test(next) ? next : '../';
     let recoveryMode = false;
     client.auth.onAuthStateChange((event) => { if (event === 'PASSWORD_RECOVERY') { recoveryMode = true; loginForm.classList.add('hidden'); document.querySelector('#new-password-form').classList.remove('hidden'); } });
     client.auth.getUser().then(({ data }) => { if (data.user && !recoveryMode) location.assign(destination); });
