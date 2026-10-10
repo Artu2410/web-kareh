@@ -3,7 +3,6 @@
 ## 📊 ESTADÍSTICAS GENERALES
 
 - **Total archivos procesados**: 26 HTML
-- **Páginas eliminadas**: 1 (lesiones deportivas)
 - **Páginas corregidas**: 26
 - **Scripts utilizados**: 3 (fix-seo-complete.js, correcciones manuales, auditorías)
 
@@ -27,17 +26,6 @@
   - JSON-LD openingHoursSpecification
   - Páginas de servicios
 - **Estado**: ✅ Completado (26/26 archivos)
-
-#### Página de lesiones deportivas eliminada
-- **Cambio**: Eliminada carpeta `/servicios/lesiones-deportivas-bella-vista/`
-- **Motivo**: Contradice posicionamiento (deportología no es servicio principal)
-- **Estado**: ✅ Completado
-
-#### Enlaces a lesiones deportivas removidos
-- **Archivos corregidos**:
-  - `index.html` (cards de servicios)
-  - `servicios/rehabilitacion-traumatologica-bella-vista/index.html` (nav y footer)
-- **Estado**: ✅ Completado
 
 ---
 

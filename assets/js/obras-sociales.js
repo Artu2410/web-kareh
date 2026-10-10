@@ -17,7 +17,6 @@
     'FEDERADA SALUD': '../assets/logos/federada-salud.jpg',
     'IOMA': '../assets/logos/ioma.png',
     'JERARQUICOS': '../assets/logos/jerarquicos.png',
-    'LA SEGUNDA ART': '../assets/logos/la-segunda.jpg',
     'LA SEGUNDA PERSONAS': '../assets/logos/la-segunda.jpg',
     'LUIS PASTEUR': '../assets/logos/luis-pasteur.png',
     'MEDIFE SA': '../assets/logos/medife.svg',

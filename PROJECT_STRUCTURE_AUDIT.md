@@ -147,8 +147,6 @@ c:\web-kareh/
     │   └── index.html
     ├── kinesiologia-respiratoria-pediatrica/
     │   └── index.html
-    ├── lesiones-deportivas-bella-vista/
-    │   └── index.html
     ├── piso-pelvico/
     │   └── index.html
     ├── piso-pelvico-bella-vista/
@@ -189,7 +187,7 @@ c:\web-kareh/
 #### 2. SERVICIOS - `/servicios/`
 **Archivo**: servicios/index.html  
 **Title**: Kinesiología en Bella Vista y San Miguel | Kareh  
-**Meta Description**: Kinesiología en Bella Vista y San Miguel: rehabilitación traumatológica, postoperatoria, respiratoria, piso pélvico, dolor lumbar, tendinitis y lesiones deportivas.  
+**Meta Description**: Kinesiología en Bella Vista y San Miguel: rehabilitación traumatológica, postoperatoria, respiratoria, piso pélvico, dolor lumbar y tendinitis.  
 **Canonical**: https://kareh.com.ar/servicios/  
 **H1**: Tratamientos de kinesiología y rehabilitación en Bella Vista  
 **H2**: 0  
@@ -199,7 +197,7 @@ c:\web-kareh/
 #### 3. REHABILITACIÓN TRAUMATOLÓGICA - `/servicios/rehabilitacion-traumatologica-bella-vista/`
 **Archivo**: servicios/rehabilitacion-traumatologica-bella-vista/index.html  
 **Title**: Rehabilitación Traumatológica Bella Vista | Kareh  
-**Meta Description**: Rehabilitación traumatológica en Bella Vista para fracturas, esguinces, tendinitis, cervicalgias, dolor lumbar y lesiones deportivas. Turnos por WhatsApp en Kareh.  
+**Meta Description**: Rehabilitación traumatológica en Bella Vista para fracturas, esguinces, tendinitis, cervicalgias y dolor lumbar. Turnos por WhatsApp en Kareh.  
 **Canonical**: https://kareh.com.ar/servicios/rehabilitacion-traumatologica-bella-vista/  
 **H1**: Rehabilitación traumatológica en Bella Vista  
 **H2**: 1  
@@ -209,7 +207,7 @@ c:\web-kareh/
 #### 4. REHABILITACIÓN POSTOPERATORIA - `/servicios/rehabilitacion-postoperatoria/`
 **Archivo**: servicios/rehabilitacion-postoperatoria/index.html  
 **Title**: Rehabilitación Musculoesquelética en Bella Vista | Kareh  
-**Meta Description**: Hub de rehabilitación musculoesquelética en Bella Vista: traumatológica, postoperatoria, dolor lumbar, tendinitis, lesiones deportivas y ultrasonido.  
+**Meta Description**: Hub de rehabilitación musculoesquelética en Bella Vista: traumatológica, postoperatoria, dolor lumbar, tendinitis y ultrasonido.  
 **Canonical**: https://kareh.com.ar/servicios/rehabilitacion-postoperatoria/  
 **H1**: Rehabilitación musculoesquelética en Bella Vista  
 **H2**: 1  
@@ -286,15 +284,6 @@ c:\web-kareh/
 **H3**: 0  
 **JSON-LD**: 3 bloques (Service, BreadcrumbList, FAQPage)
 
-#### 12. LESIONES DEPORTIVAS - `/servicios/lesiones-deportivas-bella-vista/`
-**Archivo**: servicios/lesiones-deportivas-bella-vista/index.html  
-**Title**: Lesiones Deportivas en Bella Vista | Kareh  
-**Meta Description**: Rehabilitación de lesiones deportivas en Bella Vista. Kinesiología para esguinces, desgarros, tendinitis y retorno progresivo al deporte en Kareh.  
-**Canonical**: https://kareh.com.ar/servicios/lesiones-deportivas-bella-vista/  
-**H1**: Rehabilitación de lesiones deportivas en Bella Vista  
-**H2**: 1  
-**H3**: 0  
-**JSON-LD**: 3 bloques (Service, BreadcrumbList, FAQPage)
 
 #### 13. ULTRASONIDO TERAPÉUTICO - `/servicios/ultrasonido-terapeutico/`
 **Archivo**: servicios/ultrasonido-terapeutico/index.html  
@@ -614,7 +603,6 @@ c:\web-kareh/
 - servicios/ultrasonido-terapeutico/
 - servicios/dolor-lumbar-bella-vista/
 - servicios/tendinitis-bella-vista/
-- servicios/lesiones-deportivas-bella-vista/
 - servicios/rehabilitacion-postoperatoria-bella-vista/
 - servicios/tratamiento-incontinencia-urinaria/
 - servicios/kinesiologia-respiratoria-pediatrica/
@@ -656,7 +644,6 @@ c:\web-kareh/
 - servicios/ultrasonido-terapeutico/
 - servicios/dolor-lumbar-bella-vista/
 - servicios/tendinitis-bella-vista/
-- servicios/lesiones-deportivas-bella-vista/
 - servicios/rehabilitacion-postoperatoria-bella-vista/
 - servicios/tratamiento-incontinencia-urinaria/
 - servicios/kinesiologia-respiratoria-pediatrica/
@@ -699,7 +686,6 @@ c:\web-kareh/
 - servicios/ultrasonido-terapeutico/
 - servicios/dolor-lumbar-bella-vista/
 - servicios/tendinitis-bella-vista/
-- servicios/lesiones-deportivas-bella-vista/
 - servicios/rehabilitacion-postoperatoria-bella-vista/
 - servicios/tratamiento-incontinencia-urinaria/
 - servicios/kinesiologia-respiratoria-pediatrica/
@@ -720,7 +706,6 @@ c:\web-kareh/
 - servicios/ultrasonido-terapeutico/ (3 preguntas)
 - servicios/dolor-lumbar-bella-vista/ (2 preguntas)
 - servicios/tendinitis-bella-vista/ (2 preguntas)
-- servicios/lesiones-deportivas-bella-vista/ (2 preguntas)
 - servicios/rehabilitacion-postoperatoria-bella-vista/ (3 preguntas)
 - servicios/tratamiento-incontinencia-urinaria/ (3 preguntas)
 - servicios/kinesiologia-respiratoria-pediatrica/ (3 preguntas)
@@ -768,7 +753,6 @@ c:\web-kareh/
 11. https://kareh.com.ar/servicios/ultrasonido-terapeutico/ (priority: 0.8, changefreq: weekly)
 12. https://kareh.com.ar/servicios/dolor-lumbar-bella-vista/ (priority: 0.85, changefreq: weekly)
 13. https://kareh.com.ar/servicios/tendinitis-bella-vista/ (priority: 0.8, changefreq: weekly)
-14. https://kareh.com.ar/servicios/lesiones-deportivas-bella-vista/ (priority: 0.8, changefreq: weekly)
 15. https://kareh.com.ar/localidades/san-miguel/ (priority: 0.75, changefreq: monthly)
 16. https://kareh.com.ar/localidades/muniz/ (priority: 0.75, changefreq: monthly)
 17. https://kareh.com.ar/localidades/jose-c-paz/ (priority: 0.75, changefreq: monthly)
@@ -934,7 +918,6 @@ Sitemap: https://kareh.com.ar/sitemap.xml
 6. **Incontinencia Urinaria** - /servicios/tratamiento-incontinencia-urinaria/
 7. **Dolor Lumbar** - /servicios/dolor-lumbar-bella-vista/
 8. **Tendinitis** - /servicios/tendinitis-bella-vista/
-9. **Lesiones Deportivas** - /servicios/lesiones-deportivas-bella-vista/
 10. **Ultrasonido Terapéutico** - /servicios/ultrasonido-terapeutico/
 11. **Rehabilitación Musculoesquelética (Hub)** - /servicios/rehabilitacion-postoperatoria/
 12. **Piso Pélvico Bella Vista** - /servicios/piso-pelvico-bella-vista/ (NO LEÍDO)
@@ -944,7 +927,6 @@ Sitemap: https://kareh.com.ar/sitemap.xml
 #### Traumatología y Postoperatorio
 - Rehabilitación Traumatológica
 - Rehabilitación Postoperatoria
-- Lesiones Deportivas
 - Dolor Lumbar
 - Tendinitis
 - Rehabilitación Musculoesquelética (Hub)
@@ -1232,7 +1214,6 @@ Sitemap: https://kareh.com.ar/sitemap.xml
 - Incontinencia urinaria
 - Dolor lumbar
 - Tendinitis
-- Lesiones deportivas
 
 ### Zonas
 **Consistente**: ✅
