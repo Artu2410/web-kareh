@@ -2216,5 +2216,4 @@ p {
 .home-main > #especialidades,
 .home-main > #nosotros,
 .home-main > #casos-frecuentes,
-.home-main > #zonas,
-.home-main > #consultorios { display: none; }
+.home-main > #zonas { display: none; }
