@@ -11,7 +11,7 @@
 
     gtag('config', 'G-FDLH4H45N5');
   </script>
-  <meta name="theme-color" content="#6BC4B5">
+  <meta name="theme-color" content="#176F64">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description"
@@ -50,7 +50,7 @@
   <link rel="icon" href="logo-icon.png" type="image/png">
   <!-- Critical CSS for initial hero render (inline to reduce LCP element render delay) -->
   <style id="critical-css">
-    :root{--kareh-primary:#6BC4B5;--kareh-info:#4D6774;--kareh-white:#FFFFFF;--kareh-bg:#F4F7F8;--kareh-text:#2E3A3F;--container-width:1180px;--header-height:86px}
+    :root{--kareh-primary:#176F64;--kareh-info:#4D6774;--kareh-white:#FFFFFF;--kareh-bg:#F4F7F8;--kareh-text:#2E3A3F;--container-width:1180px;--header-height:86px}
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font-family:"Manrope",sans-serif;color:var(--kareh-text);background:var(--kareh-bg);-webkit-font-smoothing:antialiased}
@@ -63,7 +63,7 @@
     .hero-text{color:var(--kareh-info);font-size:0.98rem;line-height:1.75}
     .hero-actions{display:flex;flex-wrap:wrap;gap:0.9rem}
     .button{display:inline-flex;align-items:center;justify-content:center;min-height:3.4rem;padding:0.9rem 1.35rem;border-radius:999px;border:1px solid transparent;font-weight:800}
-    .button-primary{background:linear-gradient(135deg,var(--kareh-primary),#4f9fa2);color:var(--kareh-white)}
+    .button-primary{background:linear-gradient(135deg,var(--kareh-primary),#2f7d78);color:var(--kareh-white)}
     .brand-logo-shell{display:grid;place-items:center;width:4.4rem;height:3.2rem;overflow:hidden;flex-shrink:0}
     .brand-logo{width:100%;height:100%;object-fit:contain}
     @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero-visual{min-height:20rem}}
@@ -85,10 +85,12 @@
       "description": "Centro de kinesiología y rehabilitación en Bella Vista. Atención en traumatología, rehabilitación respiratoria y piso pélvico. Turnos por WhatsApp.",
       "priceRange": "$$",
       "telephone": "+5491132016039",
+      "medicalSpecialty": "https://schema.org/Physiotherapy",
       "founder": {
         "@type": "Person",
         "name": "Lic. Katia Aluminé Romero",
-        "jobTitle": "Licenciada en Kinesiología y Fisiatría"
+        "jobTitle": "Licenciada en Kinesiología y Fisiatría",
+        "hasCredential": "M.P. 10.318 · M.N. 18.900"
       },
       "address": {
         "@type": "PostalAddress",
@@ -168,18 +170,12 @@
         "Kinesiología respiratoria",
         "Kinesiología respiratoria pediátrica",
         "Piso pélvico",
-        "Incontinencia urinaria",
+        "Incontinencia urinaria"
       ],
       "sameAs": [
-        "https://instagram.com/Centro.kareh"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "47",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
+        "https://instagram.com/Centro.kareh",
+        "https://www.facebook.com/profile.php?id=61580911341091"
+      ]
     }
   </script>
   <script type="application/ld+json">
@@ -253,7 +249,7 @@
           "name": "¿Qué modalidades de atención tienen?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Trabajamos con distintas modalidades de atención. Antes de comenzar revisamos la orden médica y la documentación necesaria para organizar cada caso de forma adecuada."
+            "text": "Atendemos pacientes particulares y con las obras sociales y prepagas incluidas en nuestro listado. La documentación requerida se revisa según la cobertura y la indicación médica."
           }
         }
       ]
@@ -293,7 +289,7 @@
     </div>
   </header>
 
-  <main id="contenido">
+  <main id="contenido" class="home-main">
     <section class="hero section">
       <div class="hero-backdrop" aria-hidden="true">
         <span class="hero-orb orb-one"></span>
@@ -303,13 +299,13 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Kareh</p>
-          <h1>Kinesiología en Bella Vista</h1>
-          <p class="hero-text">Kinesiología y rehabilitación con atención personalizada en Bella Vista.</p>
+          <h1>Kinesiología y rehabilitación en Bella Vista</h1>
+          <p class="hero-text">Atención personalizada en rehabilitación traumatológica, respiratoria pediátrica y piso pélvico.</p>
 
           <ul class="hero-benefits">
-            <li>✔ Turnos rápidos</li>
-            <li>✔ Atención personalizada</li>
-            <li>✔ Obras sociales seleccionadas</li>
+            <li>Atención personalizada</li>
+            <li>Respiratoria pediátrica y piso pélvico</li>
+            <li>Particular, obras sociales y prepagas activas</li>
           </ul>
 
           <div class="hero-actions">
@@ -341,21 +337,21 @@
             <div class="hero-glow" aria-hidden="true"></div>
 
             <div class="glass-card hero-panel">
-              <span class="panel-badge">Antes de iniciar</span>
-              <h2>Para comenzar el tratamiento necesitamos la orden médica completa</h2>
+              <span class="panel-badge">Áreas destacadas</span>
+              <h2>Tratamientos con evaluación y seguimiento profesional</h2>
 
               <div class="panel-grid panel-grid--three">
                 <article>
-                  <strong>Orden vigente</strong>
-                  <span>La coordinación se realiza con indicación médica actualizada.</span>
+                  <strong>Respiratoria pediátrica</strong>
+                  <span>Atención respiratoria para niños con indicación médica.</span>
                 </article>
                 <article>
-                  <strong>Diagnóstico y fecha</strong>
-                  <span>Nos ayudan a ubicar el motivo de consulta desde el primer mensaje.</span>
+                  <strong>Piso pélvico</strong>
+                  <span>Abordaje personalizado y confidencial.</span>
                 </article>
                 <article>
-                  <strong>Firma y sello</strong>
-                  <span>Son necesarios para validar la atención y orientar la cobertura.</span>
+                  <strong>Rehabilitación</strong>
+                  <span>Plan de trabajo según indicación médica y evaluación kinésica.</span>
                 </article>
               </div>
             </div>
@@ -486,10 +482,12 @@
           <div class="profile-content">
             <span class="profile-role">Dirección técnica</span>
             <h3>Evaluación personalizada, planificación responsable y acompañamiento durante todo el tratamiento.</h3>
+            <p class="profile-copy"><strong>Lic. en Kinesiología y Fisiatría · M.P. 10.318 · M.N. 18.900</strong></p>
             <p class="profile-copy">
               La atención se adapta a la patología, la indicación médica y los objetivos funcionales de cada paciente,
               tanto en rehabilitación traumatológica como en respiratorio y piso pélvico.
             </p>
+            <p class="profile-copy">4 años de experiencia profesional en atención kinésica y rehabilitación.</p>
           </div>
         </article>
       </div>
@@ -508,14 +506,13 @@
               <svg viewBox="0 0 24 24" role="img"><path d="M12 2a5 5 0 0 1 5 5c0 1.7-.85 3.2-2.15 4.1L15 17a3 3 0 1 1-6 0l.15-5.9A5 5 0 0 1 7 7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-2.12 5.12l.59.59L10 17a1 1 0 0 0 2 0l-.47-7.29.59-.59A3 3 0 0 0 12 4Z"/></svg>
             </div>
             <span class="card-kicker">Traumatológica</span>
-            <h3>Rehabilitación traumatológica y postoperatoria</h3>
+            <h3>Rehabilitación traumatológica</h3>
             <ul class="detail-list">
               <li>Fracturas, luxaciones, esguinces y torceduras</li>
               <li>Desgarros musculares y tendinitis</li>
-              <li>Rehabilitación postoperatoria traumatológica</li>
+              <li>Recuperación funcional según indicación médica</li>
             </ul>
             <a class="button button-secondary button--top-sm" href="servicios/rehabilitacion-traumatologica-bella-vista/">Ver traumatológica</a>
-            <a class="button button-secondary button--top-sm" href="servicios/rehabilitacion-postoperatoria-bella-vista/">Postoperatoria</a>
           </article>
 
           <article class="service-card reveal">
@@ -685,9 +682,10 @@
             <span class="card-kicker">Modalidades</span>
             <h3>Modalidades de atención</h3>
             <p>
-              Podés escribirnos por WhatsApp para contarnos tu motivo de consulta y recibir orientación sobre cómo
-              coordinar la atención.
+              Atendemos pacientes particulares y con obras sociales y prepagas activas. Podés consultar el listado
+              completo de coberturas antes de coordinar tu turno.
             </p>
+            <a class="button button-secondary button--top-sm" href="obras-sociales/">Ver obras sociales y prepagas</a>
           </article>
 
           <article class="badge-card reveal">
@@ -774,7 +772,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/area_de_rehabilitacion.webp" type="image/webp">
-              <img src="assets/consultorio/area_de_rehabilitacion.jpeg"
+              <img src="assets/consultorio/area_de_rehabilitacion.webp"
                 alt="Área de rehabilitación kinésica en Bella Vista - Kareh" width="1254" height="1254" loading="lazy"
                 decoding="async">
             </picture>
@@ -788,7 +786,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/5_consultorios.webp" type="image/webp">
-              <img src="assets/consultorio/5_consultorios.jpeg"
+              <img src="assets/consultorio/5_consultorios.webp"
                 alt="Cinco consultorios de kinesiología y rehabilitación en Bella Vista - Kareh" width="1254" height="1254"
                 loading="lazy" decoding="async">
             </picture>
@@ -802,7 +800,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/consultorio-box-1.webp" type="image/webp">
-              <img src="assets/consultorio/consultorio-box-1.jpg"
+              <img src="assets/consultorio/consultorio-box-1.webp"
                 alt="Consultorio de kinesiología con camilla y equipamiento en Bella Vista - Kareh" width="1254"
                 height="1254" loading="lazy" decoding="async">
             </picture>
@@ -816,7 +814,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/consultorio-box-2.webp" type="image/webp">
-              <img src="assets/consultorio/consultorio-box-2.jpg"
+              <img src="assets/consultorio/consultorio-box-2.webp"
                 alt="Box de tratamiento de Kareh con camilla y silla de atención" width="1254" height="1254"
                 loading="lazy" decoding="async">
             </picture>
@@ -830,7 +828,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/frente-local.webp" type="image/webp">
-              <img src="assets/consultorio/frente-local.jpg" alt="Frente del local de Kareh en Av. Senador Morón 782"
+              <img src="assets/consultorio/frente-local.webp" alt="Frente del local de Kareh en Av. Senador Morón 782"
                 width="1254" height="1254" loading="lazy" decoding="async">
             </picture>
             <div class="space-card-content">
@@ -843,7 +841,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/recepcion.webp" type="image/webp">
-              <img src="assets/consultorio/recepcion.jpg" alt="Recepción de Kareh en Bella Vista" width="1254"
+              <img src="assets/consultorio/recepcion.webp" alt="Recepción de Kareh en Bella Vista" width="1254"
                 height="1254" loading="lazy" decoding="async">
             </picture>
             <div class="space-card-content">
@@ -856,7 +854,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/sala-de-espera.webp" type="image/webp">
-              <img src="assets/consultorio/sala-de-espera.jpg" alt="Sala de espera de Kareh" width="1254" height="1254"
+              <img src="assets/consultorio/sala-de-espera.webp" alt="Sala de espera de Kareh" width="1254" height="1254"
                 loading="lazy" decoding="async">
             </picture>
             <div class="space-card-content">
@@ -869,7 +867,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/magnetoterapia-electroanalgesia.webp" type="image/webp">
-              <img src="assets/consultorio/magnetoterapia-electroanalgesia.jpg"
+              <img src="assets/consultorio/magnetoterapia-electroanalgesia.webp"
                 alt="Equipos de magnetoterapia y electroanalgesia de Kareh" width="1254" height="1254" loading="lazy"
                 decoding="async">
             </picture>
@@ -883,7 +881,7 @@
           <article class="space-card reveal">
             <picture>
               <source srcset="assets/consultorio/magnetoterapia-ultrasonido.webp" type="image/webp">
-              <img src="assets/consultorio/magnetoterapia-ultrasonido.jpg"
+              <img src="assets/consultorio/magnetoterapia-ultrasonido.webp"
                 alt="Equipos de magnetoterapia y ultrasonido del consultorio" width="1254" height="1254" loading="lazy"
                 decoding="async">
             </picture>
@@ -906,8 +904,10 @@
 
         <div class="reviews-proof reveal">
           <div class="reviews-rating">
-            <span class="review-stars" aria-label="Calificación en Google">⭐⭐⭐⭐⭐</span>
-            <strong>5.0 en Google</strong>
+            <span class="review-stars" aria-label="Calificación en Google: 5 de 5 estrellas">
+              <svg viewBox="0 0 120 24" aria-hidden="true"><path d="m12 2.5 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-1L12 2.5Zm24 0 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-1L36 2.5Zm24 0 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-1L60 2.5Zm24 0 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-1L84 2.5Zm24 0 2.9 5.9 6.5 1-4.7 4.6 1.1 6.5-5.8-3.1-5.8 3.1 1.1-6.5-4.7-4.6 6.5-1L108 2.5Z"/></svg>
+            </span>
+            <strong>5.0 en Google · 39 reseñas</strong>
           </div>
 
           <div class="reviews-proof-list">
@@ -933,6 +933,9 @@
           </div>
 
           <p class="reviews-note">Opiniones reales de pacientes que eligieron Kareh para su tratamiento y confianza en el proceso de rehabilitación.</p>
+          <div class="reviews-actions">
+            <a class="button button-primary" href="https://share.google/w06L6NqSR31JXN094" target="_blank" rel="noopener noreferrer">Ver reseñas en Google</a>
+          </div>
         </div>
       </div>
     </section>
@@ -968,7 +971,7 @@
 
           <article class="info-card faq-card reveal">
             <h3>¿Qué modalidades de atención tienen?</h3>
-            <p>Trabajamos con distintas modalidades de atención. Antes de comenzar revisamos la orden médica y la documentación necesaria.</p>
+            <p>Atendemos pacientes particulares y con obras sociales y prepagas activas. La documentación requerida se revisa según la cobertura y la indicación médica.</p>
           </article>
         </div>
 
@@ -1078,6 +1081,10 @@
             </svg>
             <span>Instagram</span>
           </a>
+          <a class="social-link" href="https://www.facebook.com/profile.php?id=61580911341091" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kareh">
+            <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.35h2.47l.37-2.86H13.5V8.97c0-.83.23-1.39 1.41-1.39h1.51V5.02c-.74-.08-1.49-.11-2.24-.1c-2.22 0-3.74 1.35-3.74 3.84v2.03H8v2.86h2.44V21h3.06Z"></path></svg>
+            <span>Facebook</span>
+          </a>
         </div>
       </div>
 
@@ -1107,8 +1114,8 @@
   </a>
 
   <div class="whatsapp-toast" aria-live="polite">
-    <span>Hola 👋</span>
-    <small>¿Querés consultar?</small>
+    <span>¿Necesitás un turno?</span>
+    <small>Escribinos por WhatsApp.</small>
   </div>
 
   <script src="script.js?v=20260603-seo-events"></script>

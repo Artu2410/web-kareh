@@ -1,5 +1,5 @@
 :root {
-  --kareh-primary: #6BC4B5;
+  --kareh-primary: #176F64;
   --kareh-secondary: #A8E6CF;
   --kareh-info: #3a5560;
   --kareh-white: #FFFFFF;
@@ -406,7 +406,7 @@ p {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--kareh-primary), #4f9fa2);
+  background: linear-gradient(135deg, var(--kareh-primary), #2f7d78);
   color: var(--kareh-white);
   box-shadow: 0 18px 36px rgba(107, 196, 181, 0.28);
 }
@@ -976,7 +976,7 @@ p {
 
 
 .badge-ioma {
-  background: #6bc4b5;
+  background: #176f64;
 }
 
 .badge-sancor {
@@ -1268,9 +1268,14 @@ p {
 
 .review-stars {
   color: #d99024;
-  font-size: 1.35rem;
-  letter-spacing: 0.04em;
+  display: inline-flex;
+  width: 7rem;
   line-height: 1;
+}
+
+.review-stars svg {
+  width: 100%;
+  fill: currentColor;
 }
 
 .testimonial-card {
@@ -1491,7 +1496,7 @@ p {
   border-radius: calc(var(--kareh-radius) + 0.6rem);
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.26), transparent 26%),
-    linear-gradient(135deg, #2f5d66, #4f8e91 42%, #6bc4b5 100%);
+    linear-gradient(135deg, #2f5d66, #397b7c 42%, #2f7d78 100%);
   color: var(--kareh-white);
   box-shadow: var(--kareh-shadow);
   overflow: hidden;
@@ -1771,7 +1776,7 @@ p {
 }
 
 .whatsapp-float::after {
-  content: "1";
+  display: none;
   position: absolute;
   top: -0.55rem;
   right: -0.2rem;
@@ -1932,7 +1937,8 @@ p {
 @media (max-width: 359px) {
   .button,
   .whatsapp-float {
-    width: 100%;
+    width: auto;
+    max-width: calc(100vw - 2rem);
   }
 
   .hero-actions,
@@ -2194,3 +2200,21 @@ p {
 }
 
 .coverage-search-label{display:block;font-weight:700;max-width:42rem;margin:1.5rem auto .5rem}.coverage-search{display:block;width:min(42rem,100%);margin:0 auto 1.5rem;padding:.8rem 1rem;border:1px solid #bdd3ce;border-radius:.7rem;font:inherit}.coverage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem}.coverage-card{min-height:150px;padding:1.25rem;border:1px solid #d8e6e2;border-radius:1rem;background:#fff;box-shadow:0 5px 18px rgba(18,62,55,.07);transition:transform .2s ease,box-shadow .2s ease}.coverage-card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(18,62,55,.13)}.coverage-card img,.coverage-monogram{display:grid;place-items:center;width:44px;height:44px;object-fit:contain;border-radius:.65rem;background:#e7f5f1;color:#176f64;font-weight:800}.coverage-card h3{margin:.8rem 0 .35rem;font-size:1rem}.coverage-card p{margin:.25rem 0;font-size:.9rem}.coverage-card a{color:#176f64;font-weight:700;font-size:.9rem}.coverage-empty{text-align:center;padding:1rem}
+
+/* Home: recorrido de consulta breve y centrado en la decisión del paciente. */
+.home-main { display: flex; flex-direction: column; }
+.home-main > .hero { order: 1; }
+.home-main > #areas { order: 2; }
+.home-main > #cobertura { order: 3; }
+.home-main > #profesional { order: 4; }
+.home-main > #resenas { order: 5; }
+.home-main > #faq { order: 6; }
+.home-main > #llegar { order: 7; }
+.home-main > #turno { order: 8; }
+.home-main > #obras-rapidas,
+.home-main > #como-empezar,
+.home-main > #especialidades,
+.home-main > #nosotros,
+.home-main > #casos-frecuentes,
+.home-main > #zonas,
+.home-main > #consultorios { display: none; }

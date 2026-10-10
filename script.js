@@ -45,6 +45,33 @@ const getConversionParams = (element) => ({
   conversion_context: element.dataset.conversionContext || "",
 });
 
+const addWhatsAppContext = () => {
+  const path = window.location.pathname.replace(/\/$/, "");
+  const isServicePage = path.startsWith("/servicios/") && path !== "/servicios";
+  const isLocalityPage = path.startsWith("/localidades/");
+
+  if (!isServicePage && !isLocalityPage) return;
+
+  const heading = document.querySelector("main h1")?.textContent?.replace(/\s+/g, " ").trim();
+  if (!heading) return;
+
+  const context = isServicePage ? "service_detail" : "locality";
+  const message = isServicePage
+    ? `Hola, quisiera consultar por ${heading}.`
+    : `Hola, quisiera consultar por atención desde ${heading.replace(/^Kinesiología para pacientes de\s+/i, "")}.`;
+
+  document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+    if (!link.dataset.service) link.dataset.service = heading;
+    if (!link.dataset.conversionContext) link.dataset.conversionContext = context;
+
+    const url = new URL(link.href);
+    if (!url.searchParams.has("text")) {
+      url.searchParams.set("text", message);
+      link.href = url.toString();
+    }
+  });
+};
+
 const setActiveLink = (id) => {
   sectionLinks.forEach((link) => {
     const isActive = link.getAttribute("href") === `#${id}`;
@@ -143,6 +170,8 @@ if (accordionTriggers.length) {
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
 }
+
+addWhatsAppContext();
 
 [...document.querySelectorAll("a[href]")].forEach((link) => {
   const href = link.getAttribute("href") || "";
