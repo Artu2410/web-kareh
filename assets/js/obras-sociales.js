@@ -30,8 +30,6 @@
     'SCIS S.A.': '../assets/logos/scis.png',
     'SWISS MEDICAL S.A.': '../assets/logos/swiss-medical.png'
   };
-  const adminLink = document.querySelector('#coverage-admin-link');
-  client.auth.getUser().then(async ({ data: { user } }) => { if (!user || !adminLink) return; const { data: profile } = await client.from('profiles').select('role').eq('id', user.id).maybeSingle(); if (profile?.role === 'admin') { adminLink.href = '../admin/'; adminLink.textContent = 'Administrar obras sociales'; } });
   const esc = (v = '') => v.replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
   const draw = () => { const items = covers.filter(x => x.name.toLocaleLowerCase().includes(input.value.trim().toLocaleLowerCase())); grid.innerHTML = items.map(x => { const logoUrl = x.logo_url || localLogos[x.name]; return `<article class="coverage-card">${logoUrl ? `<img src="${esc(logoUrl)}" alt="Logo de ${esc(x.name)}" loading="lazy">` : '<span class="coverage-monogram" aria-hidden="true">K</span>'}<h3>${esc(x.name)}</h3>${x.description ? `<p>${esc(x.description)}</p>` : ''}${x.official_url ? `<a href="${esc(x.official_url)}" target="_blank" rel="noopener noreferrer">Sitio oficial</a>` : ''}</article>`; }).join(''); empty.hidden = items.length > 0; };
   input.addEventListener('input', draw);
