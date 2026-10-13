@@ -114,8 +114,6 @@ const closeMenu = () => {
   siteNav.classList.remove("is-open");
 };
 
-// Defer reveal initialization to the next animation frame to avoid
-// expensive write->read->layout during initial critical rendering.
 const initRevealItems = () => {
   revealItems.forEach((item, index) => {
     item.style.setProperty("--reveal-delay", `${Math.min((index % 4) * 0.08, 0.24)}s`);
@@ -124,8 +122,6 @@ const initRevealItems = () => {
   revealItemsInViewport();
 };
 
-// Schedule reveal initialization after the first frame to let the browser
-// complete initial layout/paint (especially the LCP) first.
 if (typeof window.requestAnimationFrame === "function") {
   window.requestAnimationFrame(initRevealItems);
 } else {
@@ -302,4 +298,12 @@ if (!prefersReducedMotion.matches && window.matchMedia("(pointer: fine)").matche
       }
     });
   });
+}
+
+// Cálculo dinámico de años de experiencia profesional (Inicio en 2022)
+const expElement = document.getElementById('years-experience');
+if (expElement) {
+  const startYear = 2022;
+  const currentYear = new Date().getFullYear();
+  expElement.textContent = Math.max(1, currentYear - startYear);
 }
