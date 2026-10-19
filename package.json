@@ -4,7 +4,8 @@
   "description": "Sitio web estático de Kareh, un centro de kinesiología y fisiatría ubicado en Bella Vista, Buenos Aires. El proyecto está pensado como una landing page orientada a captación de consultas por WhatsApp, con navegación interna, diseño responsive y base SEO local.",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync:coverage": "node scripts/sync-coverage-fallback.js"
   },
   "repository": {
     "type": "git",
