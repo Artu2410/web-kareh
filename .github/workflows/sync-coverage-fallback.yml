@@ -1,8 +1,6 @@
 name: Sincronizar respaldo de coberturas
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '17 */6 * * *'
 permissions:
   contents: write
 jobs:
