@@ -1891,6 +1891,15 @@ p {
   transform: translateY(0);
 }
 
+/* La portada tiene muchos bloques; evitar animarlos todos durante la carga mejora
+   la respuesta inicial sin ocultar contenido ni afectar las páginas internas. */
+.page-home .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  will-change: auto;
+}
+
 @keyframes softFloat {
   0%,
   100% {

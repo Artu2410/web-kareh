@@ -10,15 +10,11 @@
 
     (function () {
       var analyticsLoaded = false;
-      var analyticsTimer;
-
       function loadAnalytics() {
         if (analyticsLoaded) return;
         analyticsLoaded = true;
-        window.clearTimeout(analyticsTimer);
         window.removeEventListener('pointerdown', loadAnalytics);
         window.removeEventListener('keydown', loadAnalytics);
-        window.removeEventListener('scroll', loadAnalytics);
 
         window.gtag('js', new Date());
         window.gtag('config', 'G-FDLH4H45N5');
@@ -31,8 +27,6 @@
 
       window.addEventListener('pointerdown', loadAnalytics, { once: true, passive: true });
       window.addEventListener('keydown', loadAnalytics, { once: true });
-      window.addEventListener('scroll', loadAnalytics, { once: true, passive: true });
-      analyticsTimer = window.setTimeout(loadAnalytics, 8000);
     }());
   </script>
   <meta name="theme-color" content="#176F64">
@@ -281,7 +275,7 @@
   </script>
 </head>
 
-<body>
+<body class="page-home">
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
