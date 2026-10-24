@@ -2,14 +2,38 @@
 <html lang="es-AR">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDLH4H45N5"></script>
+  <!-- Google tag (gtag.js): se difiere para no bloquear la primera interacción. -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    window.gtag = window.gtag || gtag;
 
-    gtag('config', 'G-FDLH4H45N5');
+    (function () {
+      var analyticsLoaded = false;
+      var analyticsTimer;
+
+      function loadAnalytics() {
+        if (analyticsLoaded) return;
+        analyticsLoaded = true;
+        window.clearTimeout(analyticsTimer);
+        window.removeEventListener('pointerdown', loadAnalytics);
+        window.removeEventListener('keydown', loadAnalytics);
+        window.removeEventListener('scroll', loadAnalytics);
+
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-FDLH4H45N5');
+
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDLH4H45N5';
+        document.head.appendChild(script);
+      }
+
+      window.addEventListener('pointerdown', loadAnalytics, { once: true, passive: true });
+      window.addEventListener('keydown', loadAnalytics, { once: true });
+      window.addEventListener('scroll', loadAnalytics, { once: true, passive: true });
+      analyticsTimer = window.setTimeout(loadAnalytics, 8000);
+    }());
   </script>
   <meta name="theme-color" content="#176F64">
   <meta charset="UTF-8">
