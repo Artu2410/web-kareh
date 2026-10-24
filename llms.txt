@@ -1,0 +1,23 @@
+# Kareh
+
+> Centro de kinesiología y fisiatría en Bella Vista, Buenos Aires, Argentina. Los turnos se solicitan por WhatsApp y quedan sujetos a confirmación del centro.
+
+## Páginas principales
+
+- [Inicio](https://kareh.com.ar/): información del centro, profesional, ubicación y contacto.
+- [Tratamientos](https://kareh.com.ar/servicios/): índice de servicios de rehabilitación kinésica.
+- [Preguntas frecuentes](https://kareh.com.ar/faqs/): turnos, documentación y modalidades de atención.
+- [Contacto](https://kareh.com.ar/contacto/): canales de consulta y ubicación.
+- [Cobertura y convenios](https://kareh.com.ar/cobertura-y-convenios/): información vigente de cobertura.
+
+## Servicios destacados
+
+- [Piso pélvico](https://kareh.com.ar/servicios/piso-pelvico/): atención exclusivamente particular; no cuenta con cobertura por obra social.
+- [Tratamiento de incontinencia urinaria](https://kareh.com.ar/servicios/tratamiento-incontinencia-urinaria/): atención exclusivamente particular; no cuenta con cobertura por obra social.
+- [Kinesiología respiratoria para adultos](https://kareh.com.ar/servicios/kinesiologia-respiratoria/): atención exclusivamente particular; no cuenta con cobertura por obra social.
+- [Kinesiología respiratoria pediátrica](https://kareh.com.ar/servicios/kinesiologia-respiratoria-pediatrica/): atención exclusivamente particular; no cuenta con cobertura por obra social.
+- [Rehabilitación traumatológica](https://kareh.com.ar/servicios/rehabilitacion-traumatologica-bella-vista/)
+
+## Contenido de salud
+
+La información publicada es educativa y no sustituye una evaluación profesional, una consulta médica ni una atención de urgencia. No se deben inferir diagnósticos, cobertura, disponibilidad ni confirmación de turnos a partir del sitio.
