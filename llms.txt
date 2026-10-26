@@ -5,18 +5,22 @@
 ## Páginas principales
 
 - [Inicio](https://kareh.com.ar/): información del centro, profesional, ubicación y contacto.
-- [Tratamientos](https://kareh.com.ar/servicios/): índice de servicios de rehabilitación kinésica.
-- [Preguntas frecuentes](https://kareh.com.ar/faqs/): turnos, documentación y modalidades de atención.
+- [Nosotros](https://kareh.com.ar/nosotros/): Lic. Katia Aluminé Romero, credenciales y filosofía de trabajo.
+- [Servicios](https://kareh.com.ar/servicios/): índice de tratamientos de rehabilitación kinésica.
+- [Obras Sociales](https://kareh.com.ar/obras-sociales/): coberturas y convenios vigentes.
+- [Preguntas frecuentes](https://kareh.com.ar/preguntas/): turnos, documentación y modalidades de atención.
 - [Contacto](https://kareh.com.ar/contacto/): canales de consulta y ubicación.
-- [Cobertura y convenios](https://kareh.com.ar/cobertura-y-convenios/): información vigente de cobertura.
 
 ## Servicios destacados
 
+- [Rehabilitación traumatológica](https://kareh.com.ar/servicios/rehabilitacion-traumatologica/)
+- [Rehabilitación postoperatoria](https://kareh.com.ar/servicios/rehabilitacion-postoperatoria/)
+- [Dolor lumbar](https://kareh.com.ar/servicios/dolor-lumbar/)
+- [Tendinitis](https://kareh.com.ar/servicios/tendinitis/)
 - [Piso pélvico](https://kareh.com.ar/servicios/piso-pelvico/): atención exclusivamente particular; no cuenta con cobertura por obra social.
 - [Tratamiento de incontinencia urinaria](https://kareh.com.ar/servicios/tratamiento-incontinencia-urinaria/): atención exclusivamente particular; no cuenta con cobertura por obra social.
-- [Kinesiología respiratoria para adultos](https://kareh.com.ar/servicios/kinesiologia-respiratoria/): atención exclusivamente particular; no cuenta con cobertura por obra social.
-- [Kinesiología respiratoria pediátrica](https://kareh.com.ar/servicios/kinesiologia-respiratoria-pediatrica/): atención exclusivamente particular; no cuenta con cobertura por obra social.
-- [Rehabilitación traumatológica](https://kareh.com.ar/servicios/rehabilitacion-traumatologica-bella-vista/)
+- [Kinesiología respiratoria](https://kareh.com.ar/servicios/kinesiologia-respiratoria/): adultos y pediátrica; atención exclusivamente particular; no cuenta con cobertura por obra social.
+- [Ultrasonido terapéutico](https://kareh.com.ar/servicios/ultrasonido-terapeutico/)
 
 ## Contenido de salud
 
