@@ -31,5 +31,3 @@ npx @11ty/eleventy --serve
 - `script.js`: punto de entrada de los módulos del sitio.
 - `admin/`: panel administrativo estático.
 - `scripts/`: build y sincronización del respaldo de obras sociales.
-
-La arquitectura, rutas de salida, publicación, SEO y conexión con Supabase están descritos en [ARCHITECTURE.md](./ARCHITECTURE.md). Las credenciales públicas y políticas del panel se explican en [SUPABASE_SETUP.md](./SUPABASE_SETUP.md).
