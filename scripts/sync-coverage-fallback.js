@@ -11,11 +11,11 @@ async function main() {
   if (!response.ok) throw new Error(`Supabase respondió ${response.status}.`);
   const covers = await response.json();
   if (!Array.isArray(covers)) throw new Error('La respuesta de Supabase no tiene el formato esperado.');
-  const file = path.resolve(__dirname, '..', 'obras-sociales', 'index.html');
+  const file = path.resolve(__dirname, '..', 'src', 'obras-sociales', 'index.njk');
   const html = fs.readFileSync(file, 'utf8');
   const fallback = `          <!-- coverage-fallback:start -->\n${covers.map(card).join('\n')}\n          <!-- coverage-fallback:end -->`;
   const updated = html.replace(/          <!-- coverage-fallback:start -->[\s\S]*?          <!-- coverage-fallback:end -->/, fallback);
-  if (updated === html) throw new Error('No se encontraron los marcadores coverage-fallback en obras-sociales/index.html.');
+  if (updated === html) throw new Error('No se encontraron los marcadores coverage-fallback en src/obras-sociales/index.njk.');
   fs.writeFileSync(file, updated);
   console.log(`Respaldo actualizado: ${covers.length} coberturas activas.`);
 }

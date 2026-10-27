@@ -1,0 +1,34 @@
+{
+  "navigation": {
+    "/": {
+      "segment": "particular"
+    },
+    "/blog/": {
+      "segment": "particular"
+    },
+    "/obras-sociales/": {
+      "segment": "particular",
+      "coverage": "particular"
+    },
+    "/servicios/kinesiologia-respiratoria/": {
+      "service": "respiratoria",
+      "segment": "particular"
+    },
+    "/servicios/piso-pelvico/": {
+      "service": "piso_pelvico",
+      "segment": "particular"
+    },
+    "/servicios/rehabilitacion-postoperatoria/": {
+      "service": "musculoesqueletica",
+      "segment": "particular"
+    },
+    "/servicios/rehabilitacion-traumatologica/": {
+      "service": "traumatologia",
+      "segment": "particular"
+    },
+    "/servicios/ultrasonido-terapeutico/": {
+      "service": "ultrasonido",
+      "segment": "particular"
+    }
+  }
+}

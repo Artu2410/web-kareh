@@ -1,6 +1,8 @@
 # PROJECT_STRUCTURE_AUDIT.md
 ## Auditoría Completa del Proyecto Kareh
 
+> Informe histórico de una estructura anterior. No describe el estado actual del proyecto; para arquitectura, build y rutas vigentes, consultar [ARCHITECTURE.md](./ARCHITECTURE.md).
+
 **Fecha de auditoría**: 29/7/2026  
 **URL del sitio**: https://kareh.com.ar  
 **Repositorio**: https://github.com/Artu2410/web-kareh.git  
