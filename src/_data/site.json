@@ -1,34 +1,40 @@
 {
-  "navigation": {
-    "/": {
-      "segment": "particular"
+  "url": "https://kareh.com.ar",
+  "name": "Kareh",
+  "whatsapp": "5491132016039",
+  "whatsappDisplay": "+54 9 11 3201-6039",
+  "whatsappDefaultText": "Hola, quisiera consultar por disponibilidad de turnos en Kareh.",
+  "address": {
+    "label": "Av. Senador Morón 782, Bella Vista, Buenos Aires",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Senador+Mor%C3%B3n+782,+Bella+Vista,+Buenos+Aires",
+    "streetAddress": "Av. Senador Morón 782",
+    "locality": "Bella Vista",
+    "region": "Buenos Aires",
+    "country": "AR"
+  },
+  "hours": [
+    {
+      "days": "Lunes, miércoles y viernes",
+      "time": "14 a 19 hs",
+      "dayOfWeek": ["Monday", "Wednesday", "Friday"]
     },
-    "/blog/": {
-      "segment": "particular"
+    {
+      "days": "Martes y jueves",
+      "time": "17:30 a 19 hs",
+      "dayOfWeek": ["Tuesday", "Thursday"]
     },
-    "/obras-sociales/": {
-      "segment": "particular",
-      "coverage": "particular"
-    },
-    "/servicios/kinesiologia-respiratoria/": {
-      "service": "respiratoria",
-      "segment": "particular"
-    },
-    "/servicios/piso-pelvico/": {
-      "service": "piso_pelvico",
-      "segment": "particular"
-    },
-    "/servicios/rehabilitacion-postoperatoria/": {
-      "service": "musculoesqueletica",
-      "segment": "particular"
-    },
-    "/servicios/rehabilitacion-traumatologica/": {
-      "service": "traumatologia",
-      "segment": "particular"
-    },
-    "/servicios/ultrasonido-terapeutico/": {
-      "service": "ultrasonido",
-      "segment": "particular"
+    {
+      "days": "Sábados",
+      "time": "8 a 12 hs",
+      "dayOfWeek": ["Saturday"]
     }
+  ],
+  "professional": {
+    "name": "Lic. Katia Aluminé Romero",
+    "credentials": "M.P. 10.318 · M.N. 18.900"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/centro.kareh/",
+    "facebook": "https://www.facebook.com/profile.php?id=61580911341091"
   }
 }

@@ -2,6 +2,8 @@ const isHomepage = document.body.classList.contains("page-home");
 const revealItems = [...document.querySelectorAll(".reveal")];
 const tiltItems = [...document.querySelectorAll("[data-tilt]")];
 const accordionTriggers = [...document.querySelectorAll("[data-accordion-trigger]")];
+const stickyTurnCta = document.querySelector(".whatsapp-float");
+const siteFooter = document.querySelector(".site-footer");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const revealItemsInViewport = () => {
@@ -48,6 +50,14 @@ if (accordionTriggers.length) {
 }
 
 revealItemsInViewport();
+
+if (stickyTurnCta && siteFooter && "IntersectionObserver" in window) {
+  const footerObserver = new IntersectionObserver(
+    ([entry]) => stickyTurnCta.classList.toggle("is-hidden", entry.isIntersecting),
+    { threshold: 0.01 },
+  );
+  footerObserver.observe(siteFooter);
+}
 
 if (!isHomepage && "IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  {% include "partials/analytics.njk" %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#176F64">
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="{{ robots | default('index,follow,max-image-preview:large') }}">
+  <meta name="author" content="{{ site.professional.name }}">
+  <title>{{ title }}</title>
+  <link rel="canonical" href="{{ site.url }}{{ canonicalPath | default(page.url) }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:url" content="{{ site.url }}{{ canonicalPath | default(page.url) }}">
+  <meta property="og:image" content="{{ site.url }}{{ ogImage | default('/assets/img/logo-icon.png') }}">
+  <meta property="og:image:alt" content="{{ ogImageAlt | default('Kareh - Centro de Kinesiología y Rehabilitación') }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ ogImage | default('/assets/img/logo-icon.png') }}">
+  <meta name="twitter:image:alt" content="{{ ogImageAlt | default('Kareh - Centro de Kinesiología y Rehabilitación') }}">
+  <link rel="icon" href="/assets/img/logo-icon-96.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/img/logo-icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/styles.css">
+  {% for block in schema %}
+  <script type="application/ld+json">{{ block | dump | safe }}</script>
+  {% endfor %}
+</head>
+<body class="{{ bodyClass | default('page-shell') }}">
+  {% if bodyClass == 'page-home' %}<div class="scroll-progress" aria-hidden="true"></div>{% endif %}
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+  {% include "header.njk" %}
+  {{ content | safe }}
+  {% include "footer.njk" %}
+  <script type="module" src="/script.js"></script>
+</body>
+</html>

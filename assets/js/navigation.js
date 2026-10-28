@@ -61,6 +61,16 @@ const syncHeaderState = () => {
   syncScrollProgress();
 };
 
+let viewportSyncFrame = null;
+const scheduleViewportSync = () => {
+  if (viewportSyncFrame !== null) return;
+
+  viewportSyncFrame = window.requestAnimationFrame(() => {
+    viewportSyncFrame = null;
+    syncHeaderState();
+  });
+};
+
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
     const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
@@ -75,9 +85,6 @@ if (navToggle && siteNav) {
     });
   });
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 980) closeMenu();
-  });
 }
 
 serviceDropdownToggles.forEach((toggle) => {
@@ -106,6 +113,11 @@ document.addEventListener("keydown", (event) => {
     (toggle) => toggle.getAttribute("aria-expanded") === "true",
   );
   closeServiceDropdowns();
+  if (navToggle?.getAttribute("aria-expanded") === "true") {
+    closeMenu();
+    navToggle.focus();
+    return;
+  }
   expandedToggle?.focus();
 });
 
@@ -115,8 +127,11 @@ const initialHashSection = window.location.hash
 if (initialHashSection?.id) setActiveLink(initialHashSection.id);
 
 syncHeaderState();
-window.addEventListener("scroll", syncHeaderState, { passive: true });
-window.addEventListener("resize", syncScrollProgress);
+window.addEventListener("scroll", scheduleViewportSync, { passive: true });
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 980) closeMenu();
+  scheduleViewportSync();
+});
 
 if ("IntersectionObserver" in window) {
   const sectionObserver = new IntersectionObserver(

@@ -1,0 +1,17 @@
+{% set items = nav.breadcrumbs[page.url] %}
+{% if items %}
+<nav class="breadcrumbs container" aria-label="Migas de pan">
+  <ol>
+    <li><a href="/">Inicio</a></li>
+    {% for item in items %}
+    <li>
+      {% if item.url %}
+      <a href="{{ item.url }}">{{ item.label }}</a>
+      {% else %}
+      <span aria-current="page">{{ item.label }}</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}

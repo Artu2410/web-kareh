@@ -1,0 +1,181 @@
+{
+  "primary": [
+    {
+      "label": "Servicios",
+      "url": "/servicios/",
+      "children": [
+        {
+          "label": "Rehabilitación traumatológica",
+          "url": "/servicios/rehabilitacion-traumatologica/",
+          "description": "Rehabilitación de fracturas, esguinces, tendinopatías y dolor musculoesquelético con un plan según evaluación e indicación médica."
+        },
+        {
+          "label": "Rehabilitación postoperatoria",
+          "url": "/servicios/rehabilitacion-postoperatoria/",
+          "description": "Acompañamiento de la movilidad y la función después de una cirugía, respetando cada etapa y la indicación médica."
+        },
+        {
+          "label": "Kinesiología respiratoria",
+          "url": "/servicios/kinesiologia-respiratoria/",
+          "description": "Atención respiratoria para adultos y niños con indicación médica, en una página con información para cada etapa de vida."
+        },
+        {
+          "label": "Piso pélvico",
+          "url": "/servicios/piso-pelvico/",
+          "description": "Abordaje individual y confidencial de incontinencia, dolor pélvico y recuperación funcional."
+        },
+        {
+          "label": "Ultrasonido terapéutico",
+          "url": "/servicios/ultrasonido-terapeutico/",
+          "description": "Uso de ultrasonido y otros agentes físicos como complemento, según evaluación y objetivo terapéutico."
+        }
+      ]
+    },
+    {
+      "label": "Obras sociales",
+      "url": "/obras-sociales/"
+    },
+    {
+      "label": "Nosotros",
+      "url": "/nosotros/"
+    },
+    {
+      "label": "Contacto",
+      "url": "/contacto/"
+    }
+  ],
+  "contexts": {
+    "/": {
+      "segment": "particular"
+    },
+    "/blog/": {
+      "segment": "particular"
+    },
+    "/obras-sociales/": {
+      "segment": "particular",
+      "coverage": "particular"
+    },
+    "/servicios/kinesiologia-respiratoria/": {
+      "service": "respiratoria",
+      "segment": "particular"
+    },
+    "/servicios/piso-pelvico/": {
+      "service": "piso_pelvico",
+      "segment": "particular"
+    },
+    "/servicios/rehabilitacion-postoperatoria/": {
+      "service": "musculoesqueletica",
+      "segment": "particular"
+    },
+    "/servicios/rehabilitacion-traumatologica/": {
+      "service": "traumatologia",
+      "segment": "particular"
+    },
+    "/servicios/ultrasonido-terapeutico/": {
+      "service": "ultrasonido",
+      "segment": "particular"
+    }
+  },
+  "breadcrumbs": {
+    "/servicios/": [
+      { "label": "Servicios" }
+    ],
+    "/servicios/rehabilitacion-traumatologica/": [
+      { "label": "Servicios", "url": "/servicios/" },
+      { "label": "Rehabilitación traumatológica" }
+    ],
+    "/servicios/rehabilitacion-postoperatoria/": [
+      { "label": "Servicios", "url": "/servicios/" },
+      { "label": "Rehabilitación postoperatoria" }
+    ],
+    "/servicios/kinesiologia-respiratoria/": [
+      { "label": "Servicios", "url": "/servicios/" },
+      { "label": "Kinesiología respiratoria" }
+    ],
+    "/servicios/piso-pelvico/": [
+      { "label": "Servicios", "url": "/servicios/" },
+      { "label": "Piso pélvico" }
+    ],
+    "/servicios/tratamiento-incontinencia-urinaria/": [
+      { "label": "Servicios", "url": "/servicios/" },
+      { "label": "Tratamiento de incontinencia urinaria" }
+    ],
+    "/servicios/ultrasonido-terapeutico/": [
+      { "label": "Servicios", "url": "/servicios/" },
+      { "label": "Ultrasonido terapéutico" }
+    ],
+    "/blog/": [
+      { "label": "Blog" }
+    ],
+    "/blog/dolor-lumbar-causas-cuando-consultar/": [
+      { "label": "Blog", "url": "/blog/" },
+      { "label": "Dolor lumbar: causas y cuándo consultar" }
+    ],
+    "/blog/esguince-de-tobillo-recuperacion-kinesiologia/": [
+      { "label": "Blog", "url": "/blog/" },
+      { "label": "Esguince de tobillo y recuperación" }
+    ],
+    "/blog/incontinencia-urinaria-piso-pelvico-mitos-verdades/": [
+      { "label": "Blog", "url": "/blog/" },
+      { "label": "Incontinencia urinaria: mitos y verdades" }
+    ],
+    "/blog/kinesiologia-respiratoria-ninos/": [
+      { "label": "Blog", "url": "/blog/" },
+      { "label": "Kinesiología respiratoria en niños" }
+    ],
+    "/localidades/hurlingham/": [
+      { "label": "Pacientes de zonas cercanas", "url": "/#llegar" },
+      { "label": "Hurlingham" }
+    ],
+    "/localidades/jose-c-paz/": [
+      { "label": "Pacientes de zonas cercanas", "url": "/#llegar" },
+      { "label": "José C. Paz" }
+    ],
+    "/localidades/muniz/": [
+      { "label": "Pacientes de zonas cercanas", "url": "/#llegar" },
+      { "label": "Muñiz" }
+    ],
+    "/localidades/san-miguel/": [
+      { "label": "Pacientes de zonas cercanas", "url": "/#llegar" },
+      { "label": "San Miguel" }
+    ]
+  },
+  "footer": {
+    "localities": [
+      {
+        "label": "Hurlingham",
+        "url": "/localidades/hurlingham/"
+      },
+      {
+        "label": "José C. Paz",
+        "url": "/localidades/jose-c-paz/"
+      },
+      {
+        "label": "Muñiz",
+        "url": "/localidades/muniz/"
+      },
+      {
+        "label": "San Miguel",
+        "url": "/localidades/san-miguel/"
+      }
+    ],
+    "information": [
+      {
+        "label": "Blog",
+        "url": "/blog/"
+      },
+      {
+        "label": "Preguntas frecuentes",
+        "url": "/preguntas/"
+      },
+      {
+        "label": "Mapa del sitio",
+        "url": "/mapa-del-sitio/"
+      },
+      {
+        "label": "Privacidad",
+        "url": "/privacidad/"
+      }
+    ]
+  }
+}

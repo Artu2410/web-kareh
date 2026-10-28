@@ -21,6 +21,58 @@
   padding-left: 1.2rem;
 }
 
+.breadcrumbs {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--kareh-info);
+  font-size: 0.86rem;
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  margin-right: 0.45rem;
+  color: var(--kareh-text-muted);
+}
+
+.breadcrumbs a {
+  color: inherit;
+}
+
+.respiratory-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 1199px) {
+  body {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+  }
+
+  .whatsapp-float {
+    right: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    min-height: 3.25rem;
+    padding: 0.85rem 1.2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .whatsapp-float {
+    display: none;
+  }
+}
+
 .whatsapp-float {
   position: fixed;
   right: 1rem;
@@ -477,6 +529,19 @@
     opacity: 1;
     transform: none;
   }
+}
+
+@media (max-width: 1199px) {
+  .whatsapp-float {
+    bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+.whatsapp-float.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.75rem);
 }
 
 /* Accesibilidad */

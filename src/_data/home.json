@@ -1,0 +1,39 @@
+{
+  "coverage": [
+    "IOMA",
+    "Swiss Medical",
+    "Sancor",
+    "Medifé",
+    "Jerárquicos",
+    "Avalian",
+    "Prevención"
+  ],
+  "steps": [
+    {
+      "title": "Prepará la orden médica",
+      "description": "Tené a mano la indicación vigente y los datos de tu cobertura, si corresponde."
+    },
+    {
+      "title": "Escribinos por WhatsApp",
+      "description": "Contanos qué tratamiento necesitás y desde qué localidad nos contactás."
+    },
+    {
+      "title": "Confirmamos los siguientes pasos",
+      "description": "Revisamos disponibilidad, modalidad y requisitos antes de coordinar el turno."
+    }
+  ],
+  "faq": [
+    {
+      "question": "¿Cómo solicito un turno?",
+      "answer": "Escribinos por WhatsApp con tu consulta y la orden médica vigente. Te orientamos sobre disponibilidad y los pasos para comenzar."
+    },
+    {
+      "question": "¿Qué horarios tienen?",
+      "answer": "Atendemos lunes, miércoles y viernes de 14 a 19 hs; martes y jueves de 17:30 a 19 hs; y sábados de 8 a 12 hs."
+    },
+    {
+      "question": "¿Atienden con obras sociales y prepagas?",
+      "answer": "Trabajamos con distintas obras sociales y prepagas. Consultá el listado actualizado y confirmá tu cobertura antes de coordinar."
+    }
+  ]
+}

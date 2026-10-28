@@ -53,7 +53,29 @@
 
   const list = document.querySelector('#coverage-list');
   const form = document.querySelector('#coverage-form');
+  const syncLogosButton = document.querySelector('#sync-default-logos');
   let covers = [];
+  const defaultLogos = {
+    'ACTIVA SALUD': 'activa-salud.jpg',
+    'AMEBPBA': 'amebpba.jpg',
+    'AMFFA': 'amffa.png',
+    'ASOCIACIÓN ECLESIÁSTICA SAN PEDRO': 'asociacion-eclesiastica-san-pedro.png',
+    'AVALIAN SALUD Y BIENESTAR': 'avalian.png',
+    'CASA': 'casa.png',
+    'COMEI': 'comei.png',
+    'E. W. HOPE': 'e-w-hope.svg',
+    'FEDERADA SALUD': 'federada-salud.jpg',
+    'IOMA': 'ioma.png',
+    'JERARQUICOS': 'jerarquicos.png',
+    'LUIS PASTEUR': 'luis-pasteur.png',
+    'MEDIFE SA': 'medife.svg',
+    'OPDEA': 'opdea.jpg',
+    'OSDOP': 'osdop.png',
+    'OSFATUN': 'osfatun.png',
+    'OSPE': 'ospe.jpg',
+    'PODER JUDICIAL': 'poder-judicial.jpg',
+    'SWISS MEDICAL S.A.': 'swiss-medical.png',
+  };
   const escapeHtml = (value = '') => value.replace(/[&<>'"]/g, char => ({ '&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;' })[char]);
   const render = () => {
     const term = document.querySelector('#search').value.trim().toLocaleLowerCase();
@@ -64,12 +86,76 @@
     document.querySelector('#inactive-total').textContent = covers.filter(item => !item.active).length;
   };
   const load = async () => { const { data, error } = await client.from('obras_sociales').select('*').order('name'); if (error) { showMessage('No se pudo cargar el listado.'); return; } covers = data; render(); };
+  const syncDefaultLogos = async () => {
+    if (!window.confirm('Se subirán los logos locales faltantes al bucket público coverage-logos y se actualizarán las coberturas activas que no tengan logo. ¿Continuar?')) return;
+    syncLogosButton.disabled = true;
+    const originalLabel = syncLogosButton.textContent;
+    let updatedCount = 0;
+    const failures = [];
+    try {
+      const { data: { user }, error: authError } = await client.auth.getUser();
+      if (authError) throw authError;
+      if (!user) throw new Error('La sesión expiró. Volvé a iniciar sesión como administrador.');
+      const { data: profile, error: profileError } = await client.from('profiles').select('role').eq('id', user.id).maybeSingle();
+      if (profileError) throw profileError;
+      if (profile?.role !== 'admin') throw new Error('Solo un administrador puede sincronizar logos.');
+
+      const pending = covers.filter(item => item.active && !item.logo_url && defaultLogos[item.name]);
+      if (!pending.length) {
+        showMessage('No hay coberturas activas pendientes con un logo local predeterminado.');
+        return;
+      }
+
+      for (const [index, item] of pending.entries()) {
+        syncLogosButton.textContent = `Subiendo ${index + 1}/${pending.length}…`;
+        let objectPath = null;
+        try {
+          const fileName = defaultLogos[item.name];
+          const response = await fetch(`/assets/logos/${encodeURIComponent(fileName)}`);
+          if (!response.ok) throw new Error(`No se pudo leer el asset local (${response.status}).`);
+          const blob = await response.blob();
+          if (!blob.size || blob.size > 2097152) throw new Error('El logo está vacío o supera el límite de 2 MB.');
+          const extension = fileName.split('.').pop().toLowerCase();
+          const contentType = ({ jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', svg: 'image/svg+xml', webp: 'image/webp' })[extension];
+          if (!contentType) throw new Error('El formato del logo no está permitido.');
+          const slug = item.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+          objectPath = `logos/${crypto.randomUUID()}-${slug}.${extension}`;
+          const { error: uploadError } = await client.storage.from('coverage-logos').upload(objectPath, blob, { cacheControl: '31536000', contentType, upsert: false });
+          if (uploadError) throw uploadError;
+          const logoUrl = client.storage.from('coverage-logos').getPublicUrl(objectPath).data.publicUrl;
+          const { data: updated, error: updateError } = await client.from('obras_sociales').update({ logo_url: logoUrl }).eq('id', item.id).is('logo_url', null).select('id').maybeSingle();
+          if (updateError) throw updateError;
+          if (!updated) throw new Error('La cobertura cambió durante la operación; no se modificó.');
+          updatedCount += 1;
+        } catch (error) {
+          if (objectPath) {
+            const { error: cleanupError } = await client.storage.from('coverage-logos').remove([objectPath]);
+            if (cleanupError) console.error(`No se pudo limpiar el logo temporal de ${item.name}.`, cleanupError);
+          }
+          console.error(`No se pudo sincronizar el logo de ${item.name}.`, error);
+          failures.push(item.name);
+        }
+      }
+
+      await load();
+      showMessage(failures.length
+        ? `Sincronizados ${updatedCount} de ${pending.length}; fallaron ${failures.length}: ${failures.join(', ')}.`
+        : `Sincronización completa: ${updatedCount} logos guardados en Supabase Storage.`);
+    } catch (error) {
+      console.error('Falló la sincronización de logos.', error);
+      showMessage(error.message || 'No se pudo sincronizar los logos.');
+    } finally {
+      syncLogosButton.disabled = false;
+      syncLogosButton.textContent = originalLabel;
+    }
+  };
   const openForm = (item) => { form.reset(); document.querySelector('#coverage-id').value = item?.id || ''; document.querySelector('#form-title').textContent = item ? 'Editar obra social' : 'Nueva obra social'; ['name','logo_url','official_url','description'].forEach(key => document.querySelector(`#${key}`).value = item?.[key] || ''); document.querySelector('#active').value = String(item?.active ?? true); form.classList.remove('hidden'); document.querySelector('#name').focus(); };
   requireAdmin().then(user => { if (user) load(); });
   document.querySelector('#logout').addEventListener('click', signOut);
   document.querySelector('#search').addEventListener('input', render);
   document.querySelector('#new-coverage').addEventListener('click', () => openForm());
   document.querySelector('#cancel').addEventListener('click', () => form.classList.add('hidden'));
+  syncLogosButton.addEventListener('click', syncDefaultLogos);
   list.addEventListener('click', async event => { const id = event.target.dataset.edit || event.target.dataset.toggle; if (!id) return; const item = covers.find(coverage => coverage.id === id); if (event.target.dataset.edit) { openForm(item); return; } const { error } = await client.from('obras_sociales').update({ active: !item.active }).eq('id', id); if (error) showMessage('No se pudo actualizar el estado.'); else load(); });
   form.addEventListener('submit', async event => { event.preventDefault(); showMessage(''); const id = document.querySelector('#coverage-id').value; const data = { name: document.querySelector('#name').value.trim(), active: document.querySelector('#active').value === 'true', logo_url: document.querySelector('#logo_url').value.trim() || null, official_url: document.querySelector('#official_url').value.trim() || null, description: document.querySelector('#description').value.trim() || null }; const file = document.querySelector('#logo_file').files[0]; if (file) { if (!file.type.startsWith('image/') || file.size > 2097152) { showMessage('El logo debe ser una imagen de hasta 2 MB.'); return; } const safeName = file.name.toLowerCase().replace(/[^a-z0-9._-]/g, '-'); const path = `logos/${crypto.randomUUID()}-${safeName}`; const { error: uploadError } = await client.storage.from('coverage-logos').upload(path, file, { cacheControl: '3600', upsert: false }); if (uploadError) { showMessage('No se pudo cargar el logo. Confirmá la migración de Storage.'); return; } data.logo_url = client.storage.from('coverage-logos').getPublicUrl(path).data.publicUrl; } const request = id ? client.from('obras_sociales').update(data).eq('id', id) : client.from('obras_sociales').insert(data); const { error } = await request; if (error) { showMessage(error.code === '23505' ? 'Ya existe una obra social con ese nombre.' : 'No se pudo guardar. Revisá los datos.'); return; } form.classList.add('hidden'); load(); });
 })();
