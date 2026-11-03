@@ -1,0 +1,26 @@
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = window.gtag || gtag;
+
+  (function () {
+    var analyticsLoaded = false;
+    function loadAnalytics() {
+      if (analyticsLoaded) return;
+      analyticsLoaded = true;
+      window.removeEventListener('pointerdown', loadAnalytics);
+      window.removeEventListener('keydown', loadAnalytics);
+
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-FDLH4H45N5');
+
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-FDLH4H45N5';
+      document.head.appendChild(script);
+    }
+
+    window.addEventListener('pointerdown', loadAnalytics, { once: true, passive: true });
+    window.addEventListener('keydown', loadAnalytics, { once: true });
+  }());
+</script>

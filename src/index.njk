@@ -1,0 +1,214 @@
+---
+layout: layouts/base.njk
+bodyClass: page-home
+title: Kinesiología en Bella Vista | Turnos por WhatsApp | Kareh
+description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitación traumatológica, postoperatoria, respiratoria, piso pélvico y turnos por WhatsApp.
+---
+<main id="contenido" class="home-main">
+  <section class="hero section" id="inicio">
+    <div class="hero-backdrop" aria-hidden="true">
+      <span class="hero-orb orb-one"></span>
+      <span class="hero-orb orb-two"></span>
+    </div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Kareh · Kinesiología y Fisiatría</p>
+        <h1>Kinesiología y rehabilitación en Bella Vista</h1>
+        <p class="hero-text">Atención personalizada en rehabilitación traumatológica, postoperatoria, respiratoria y de piso pélvico, con indicación médica.</p>
+        <div class="hero-actions">
+          {% set ctaClass = "button button-primary" %}
+          {% set ctaLabel = "Pedir turno por WhatsApp" %}
+          {% include "partials/cta-whatsapp.njk" %}
+          <a class="button button-secondary" href="/obras-sociales/">Consultar cobertura</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-pill">
+            <strong>Ubicación</strong>
+            <a class="trust-pill-link" href="{{ site.address.mapUrl }}" target="_blank" rel="noopener noreferrer">{{ site.address.label }}</a>
+          </div>
+          <div class="trust-pill">
+            <strong>Atención</strong>
+            <span>Adultos y atención respiratoria pediátrica.</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-motion" data-tilt>
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="glass-card hero-panel">
+            <span class="panel-badge">Atención personalizada</span>
+            <h2>Un plan pensado para tu recuperación</h2>
+            <div class="panel-grid panel-grid--three">
+              <article><strong>Evaluación</strong><span>Con indicación médica y objetivos claros.</span></article>
+              <article><strong>Seguimiento</strong><span>El tratamiento se ajusta a tu evolución.</span></article>
+              <article><strong>Acompañamiento</strong><span>Información clara en cada etapa.</span></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="areas">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Tratamientos</p>
+        <h2>Servicios de kinesiología y rehabilitación</h2>
+        <p>Conocé las áreas de atención y encontrá información específica para cada tratamiento.</p>
+      </div>
+      <div class="cards-grid cards-grid--three">
+        {% for service in nav.primary[0].children %}
+        <article class="service-card">
+          <span class="card-kicker">Kinesiología y rehabilitación</span>
+          <h3><a href="{{ service.url }}">{{ service.label }}</a></h3>
+          <p>{{ service.description }}</p>
+          {% if service.url == '/servicios/kinesiologia-respiratoria/' %}
+          <nav class="respiratory-tabs" aria-label="Kinesiología respiratoria">
+            <a class="button button-secondary button--top-sm" href="{{ service.url }}#adultos">Adultos</a>
+            <a class="button button-secondary button--top-sm" href="{{ service.url }}#pediatrica">Pediátrica</a>
+          </nav>
+          {% else %}
+          <a class="button button-secondary button--top-sm" href="{{ service.url }}">Conocer el servicio</a>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-coverage-quick" id="cobertura">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Coberturas</p>
+        <h2>Consultá si atendemos con tu obra social</h2>
+        <p>La cobertura y la documentación pueden variar. Confirmalas antes de coordinar.</p>
+      </div>
+      <label class="coverage-search-label" for="home-coverage-search">¿Buscás tu obra social?</label>
+      <input id="home-coverage-search" class="coverage-search" type="search" placeholder="Buscar obra social..." autocomplete="off" aria-controls="home-coverage-list">
+      <div class="coverage-list" id="home-coverage-list" aria-live="polite">
+        {% for coverage in home.coverage %}
+        <span data-coverage-name="{{ coverage }}">{{ coverage }}</span>
+        {% endfor %}
+      </div>
+      <p id="home-coverage-empty" class="coverage-empty" role="status" hidden>No aparece en este listado breve. <a href="/obras-sociales/">Consultá el listado completo</a> y confirmá tu cobertura.</p>
+      <div class="hero-actions button--top-md">
+        <a class="button button-secondary" href="/obras-sociales/">Ver listado actualizado</a>
+        {% set ctaClass = "button button-primary" %}
+        {% set ctaLabel = "Consultar cobertura por WhatsApp" %}
+        {% set ctaCoverage = "particular" %}
+        {% include "partials/cta-whatsapp.njk" %}
+      </div>
+      <div class="faq-grid button--top-md">
+        {% for item in home.faq %}
+        <details class="info-card">
+          <summary>{{ item.question }}</summary>
+          <p>{{ item.answer }}</p>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-conversion" id="como-empezar">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Cómo empezar</p>
+        <h2>Coordinar tu atención es simple</h2>
+      </div>
+      <div class="cards-grid cards-grid--three">
+        {% for step in home.steps %}
+        <article class="info-card">
+          <span class="card-kicker">Paso {{ loop.index }}</span>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.description }}</p>
+        </article>
+        {% endfor %}
+      </div>
+      <div class="hero-actions button--top-md">
+        {% set ctaClass = "button button-primary" %}
+        {% set ctaLabel = "Pedir turno" %}
+        {% include "partials/cta-whatsapp.njk" %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="profesional">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Profesional</p>
+        <h2>Atención cercana y con seguimiento</h2>
+      </div>
+      <article class="profile-card profile-card--simple">
+        <div class="profile-image-shell">
+          <img class="profile-image" src="/assets/img/IMG-20260111-384.webp" srcset="/assets/img/IMG-20260111-384.webp 384w, /assets/img/IMG-20260111-512.webp 512w" sizes="(min-width: 720px) 20rem, calc(100vw - 2rem)" alt="{{ site.professional.name }}, kinesióloga" width="384" height="634" loading="lazy" decoding="async">
+        </div>
+        <div class="profile-content">
+          <span class="profile-role">Dirección técnica</span>
+          <h3>{{ site.professional.name }}</h3>
+          <p class="profile-copy"><strong>Licenciada en Kinesiología y Fisiatría · {{ site.professional.credentials }}</strong></p>
+          <p class="profile-copy">La atención se adapta a la indicación médica, la evaluación kinésica y los objetivos funcionales de cada persona.</p>
+          <a class="button button-secondary button--top-sm" href="/nosotros/">Conocer Kareh y el consultorio</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-soft" id="resenas" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Experiencias</p>
+        <h2 id="reviews-title">Lo que cuentan quienes se atendieron en Kareh</h2>
+        <p>Algunas reseñas compartidas públicamente por pacientes.</p>
+      </div>
+      <div class="reviews-carousel" data-review-carousel>
+        <div class="reviews-track" data-review-track role="region" aria-label="Reseñas de pacientes" tabindex="0">
+          {% for review in reviews %}
+          <article class="review-quote-card testimonial-card" data-review-slide>
+            <span class="reviews-source">Reseña de Google</span>
+            <p class="testimonial-quote">“{{ review.quote }}”</p>
+            <p class="testimonial-author">{{ review.author }}</p>
+          </article>
+          {% endfor %}
+        </div>
+        <div class="reviews-controls">
+          <a class="button button-secondary" href="https://share.google/pDM70FpToX7idSmx5" target="_blank" rel="noopener noreferrer">Ver más reseñas en Google</a>
+          <div class="reviews-navigation" aria-label="Controles del carrusel">
+            <button class="reviews-arrow" type="button" data-review-prev aria-label="Ver reseñas anteriores" disabled>‹</button>
+            <button class="reviews-arrow" type="button" data-review-next aria-label="Ver más reseñas">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="llegar">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Ubicación y zonas</p>
+        <h2>Cómo llegar a Kareh</h2>
+        <p>La atención presencial es únicamente en {{ site.address.locality }}. También recibimos pacientes de localidades cercanas que pueden acercarse al consultorio.</p>
+      </div>
+      <div class="cards-grid cards-grid--two">
+        <article class="info-card">
+          <span class="card-kicker">Consultorio</span>
+          <h3>{{ site.address.label }}</h3>
+          <a class="button button-secondary button--top-sm" href="{{ site.address.mapUrl }}" target="_blank" rel="noopener noreferrer">Abrir mapa</a>
+        </article>
+        <article class="info-card">
+          <span class="card-kicker">Horarios</span>
+          <h3>Atención con coordinación previa</h3>
+          <ul class="detail-list">
+            {% for schedule in site.hours %}
+            <li><strong>{{ schedule.days }}:</strong> {{ schedule.time }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+      </div>
+      <div class="area-tags button--top-md" aria-label="Localidades cercanas">
+        {% for locality in nav.footer.localities %}
+        <a class="area-tag area-tag--link" href="{{ locality.url }}">{{ locality.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>

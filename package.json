@@ -1,10 +1,11 @@
 {
   "name": "web-kareh",
   "version": "1.0.0",
-  "description": "Sitio web estático de Kareh, un centro de kinesiología y fisiatría ubicado en Bella Vista, Buenos Aires. El proyecto está pensado como una landing page orientada a captación de consultas por WhatsApp, con navegación interna, diseño responsive y base SEO local.",
-  "main": "script.js",
+  "description": "Sitio web estático de Kareh, un centro de kinesiología y fisiatría ubicado en Bella Vista, Buenos Aires.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js",
+    "test": "npm run build",
+    "sync:coverage": "node scripts/sync-coverage-fallback.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/Artu2410/web-kareh#readme",
   "devDependencies": {
-    "sharp": "^0.35.3"
+    "@11ty/eleventy": "^3.1.2",
+    "clean-css": "^5.3.3"
   }
 }
