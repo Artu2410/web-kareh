@@ -30,7 +30,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=20261103-reviews">
   {% for block in schema %}
   <script type="application/ld+json">{{ block | dump | safe }}</script>
   {% endfor %}
@@ -41,6 +41,6 @@
   {% include "header.njk" %}
   {{ content | safe }}
   {% include "footer.njk" %}
-  <script type="module" src="/script.js"></script>
+  <script type="module" src="/script.js?v=20261103-reviews"></script>
 </body>
 </html>

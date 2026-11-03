@@ -2,6 +2,7 @@ const isHomepage = document.body.classList.contains("page-home");
 const revealItems = [...document.querySelectorAll(".reveal")];
 const tiltItems = [...document.querySelectorAll("[data-tilt]")];
 const accordionTriggers = [...document.querySelectorAll("[data-accordion-trigger]")];
+const reviewCarousel = document.querySelector("[data-review-carousel]");
 const stickyTurnCta = document.querySelector(".whatsapp-float");
 const siteFooter = document.querySelector(".site-footer");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -47,6 +48,40 @@ if (accordionTriggers.length) {
       panel.hidden = isExpanded;
     });
   });
+}
+
+if (reviewCarousel) {
+  const track = reviewCarousel.querySelector("[data-review-track]");
+  const slides = [...reviewCarousel.querySelectorAll("[data-review-slide]")];
+  const previousButton = reviewCarousel.querySelector("[data-review-prev]");
+  const nextButton = reviewCarousel.querySelector("[data-review-next]");
+
+  if (track && slides.length && previousButton && nextButton) {
+    const updateReviewControls = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      const startOffset = Number.parseFloat(window.getComputedStyle(track).paddingLeft) || 0;
+      previousButton.disabled = track.scrollLeft <= startOffset + 1;
+      nextButton.disabled = track.scrollLeft >= maxScroll - 1;
+    };
+
+    const scrollReview = (direction) => {
+      const slide = slides[0];
+      const styles = window.getComputedStyle(track);
+      const gap = Number.parseFloat(styles.columnGap) || 0;
+      const distance = slide.getBoundingClientRect().width + gap;
+
+      track.scrollBy({
+        left: direction * distance,
+        behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+      });
+    };
+
+    previousButton.addEventListener("click", () => scrollReview(-1));
+    nextButton.addEventListener("click", () => scrollReview(1));
+    track.addEventListener("scroll", updateReviewControls, { passive: true });
+    window.addEventListener("resize", updateReviewControls);
+    updateReviewControls();
+  }
 }
 
 revealItemsInViewport();

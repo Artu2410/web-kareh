@@ -265,6 +265,170 @@
     max-width: calc(100vw - 2rem);
   }
 
+  .site-announcement {
+    position: relative;
+    z-index: 51;
+    background: linear-gradient(110deg, #115e59, #0f766e);
+    color: #ecfdf5;
+    font-size: 0.8rem;
+  }
+
+  .site-announcement-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 2.45rem;
+  }
+
+  .site-announcement-location {
+    color: rgba(236, 253, 245, 0.88);
+  }
+
+  .site-announcement-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .site-announcement-whatsapp strong {
+    font-weight: 800;
+  }
+
+  .site-announcement-whatsapp:hover,
+  .site-announcement-whatsapp:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  .site-header,
+  .site-header.is-scrolled,
+  .page-shell .site-header,
+  .page-shell .site-header.is-scrolled {
+    border-bottom-color: rgba(71, 85, 105, 0.1);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+  }
+
+  .site-nav a {
+    padding: 0.55rem 0.7rem;
+    border-radius: 0.75rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus-visible,
+  .site-nav a[aria-current="page"] {
+    background: rgba(15, 118, 110, 0.09);
+    color: var(--kareh-primary);
+  }
+
+  .site-nav .nav-cta,
+  .site-nav .nav-cta:hover,
+  .site-nav .nav-cta:focus-visible {
+    border-radius: 0.85rem;
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: #fff !important;
+    box-shadow: 0 10px 22px rgba(15, 118, 110, 0.18);
+  }
+
+  .nav-toggle {
+    border-color: rgba(71, 85, 105, 0.14);
+    border-radius: 0.8rem;
+    background: #fff;
+  }
+
+  .button {
+    border-radius: 0.85rem;
+  }
+
+  .button-primary {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    box-shadow: 0 12px 24px rgba(15, 118, 110, 0.2);
+  }
+
+  .button-secondary {
+    border-color: rgba(71, 85, 105, 0.16);
+    background: #fff;
+  }
+
+  .info-card,
+  .service-card,
+  .badge-card,
+  .location-card,
+  .transport-card,
+  .profile-card,
+  .faq-item,
+  .coverage-card {
+    border-color: rgba(71, 85, 105, 0.12);
+    border-radius: 1.25rem;
+    background-color: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.055);
+  }
+
+  .card-kicker,
+  .profile-role {
+    color: #0f766e;
+  }
+
+  .section-soft::before {
+    border-color: rgba(71, 85, 105, 0.07);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.24));
+  }
+
+  .glass-card {
+    border-color: rgba(255, 255, 255, 0.82);
+    border-radius: 1.5rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.88)),
+      linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(71, 85, 105, 0.03));
+  }
+
+  .panel-badge {
+    background: rgba(15, 118, 110, 0.1);
+    color: #0f766e;
+  }
+
+  .site-footer::before {
+    background:
+      radial-gradient(circle at left top, rgba(15, 118, 110, 0.12), transparent 38%),
+      radial-gradient(circle at right 20%, rgba(244, 166, 160, 0.12), transparent 22%);
+  }
+
+  .footer-intro,
+  .footer-card {
+    border-color: rgba(71, 85, 105, 0.11);
+    border-radius: 1.25rem;
+    background: rgba(255, 255, 255, 0.88);
+  }
+
+  @media (max-width: 520px) {
+    .site-announcement-inner {
+      justify-content: center;
+    }
+
+    .site-announcement-location {
+      display: none;
+    }
+
+    .site-announcement-whatsapp {
+      font-size: 0.78rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   .hero-actions,
   .location-actions {
     flex-direction: column;
@@ -276,6 +440,10 @@
 }
 
 @media (min-width: 720px) {
+  .reviews-track {
+    grid-auto-columns: calc((100% - 1rem) / 2);
+  }
+
   .hero-grid,
   .location-grid,
   .footer-grid {
@@ -329,6 +497,10 @@
 }
 
 @media (min-width: 980px) {
+  .reviews-track {
+    grid-auto-columns: calc((100% - 2rem) / 3);
+  }
+
   .site-header {
     padding-top: 0.7rem;
     padding-bottom: 0.8rem;

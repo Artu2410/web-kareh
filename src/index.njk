@@ -153,6 +153,34 @@ description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitació
     </div>
   </section>
 
+  <section class="section section-soft" id="resenas" aria-labelledby="reviews-title">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Experiencias</p>
+        <h2 id="reviews-title">Lo que cuentan quienes se atendieron en Kareh</h2>
+        <p>Algunas reseñas compartidas públicamente por pacientes.</p>
+      </div>
+      <div class="reviews-carousel" data-review-carousel>
+        <div class="reviews-track" data-review-track role="region" aria-label="Reseñas de pacientes" tabindex="0">
+          {% for review in reviews %}
+          <article class="review-quote-card testimonial-card" data-review-slide>
+            <span class="reviews-source">Reseña de Google</span>
+            <p class="testimonial-quote">“{{ review.quote }}”</p>
+            <p class="testimonial-author">{{ review.author }}</p>
+          </article>
+          {% endfor %}
+        </div>
+        <div class="reviews-controls">
+          <a class="button button-secondary" href="https://share.google/pDM70FpToX7idSmx5" target="_blank" rel="noopener noreferrer">Ver más reseñas en Google</a>
+          <div class="reviews-navigation" aria-label="Controles del carrusel">
+            <button class="reviews-arrow" type="button" data-review-prev aria-label="Ver reseñas anteriores" disabled>‹</button>
+            <button class="reviews-arrow" type="button" data-review-next aria-label="Ver más reseñas">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="section" id="llegar">
     <div class="container">
       <div class="section-heading">

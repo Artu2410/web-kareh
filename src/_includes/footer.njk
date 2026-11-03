@@ -36,12 +36,6 @@
       {% endfor %}
     </div>
     <div class="footer-card">
-      <h3>Pacientes de zonas cercanas</h3>
-      {% for item in nav.footer.localities %}
-      <a class="footer-link" href="{{ item.url }}">{{ item.label }}</a>
-      {% endfor %}
-    </div>
-    <div class="footer-card">
       <h3>Información</h3>
       {% for item in nav.footer.information %}
       <a class="footer-link" href="{{ item.url }}">{{ item.label }}</a>
