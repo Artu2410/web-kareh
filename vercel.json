@@ -1,0 +1,28 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "_site",
+  "redirects": [
+    {
+      "source": "/servicios/tratamiento-incontinencia-urinaria",
+      "destination": "https://kareh.com.ar/servicios/piso-pelvico/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios/tratamiento-incontinencia-urinaria/",
+      "destination": "https://kareh.com.ar/servicios/piso-pelvico/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www\\.kareh\\.com\\.ar"
+        }
+      ],
+      "destination": "https://kareh.com.ar/:path*",
+      "permanent": true
+    }
+  ]
+}

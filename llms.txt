@@ -15,10 +15,8 @@
 
 - [Rehabilitación traumatológica](https://kareh.com.ar/servicios/rehabilitacion-traumatologica/)
 - [Rehabilitación postoperatoria](https://kareh.com.ar/servicios/rehabilitacion-postoperatoria/)
-- [Dolor lumbar](https://kareh.com.ar/servicios/dolor-lumbar/)
-- [Tendinitis](https://kareh.com.ar/servicios/tendinitis/)
 - [Piso pélvico](https://kareh.com.ar/servicios/piso-pelvico/): atención exclusivamente particular; no cuenta con cobertura por obra social.
-- [Tratamiento de incontinencia urinaria](https://kareh.com.ar/servicios/tratamiento-incontinencia-urinaria/): atención exclusivamente particular; no cuenta con cobertura por obra social.
+- [Tratamiento de piso pélvico e información sobre incontinencia urinaria](https://kareh.com.ar/servicios/piso-pelvico/): atención exclusivamente particular; no cuenta con cobertura por obra social.
 - [Kinesiología respiratoria](https://kareh.com.ar/servicios/kinesiologia-respiratoria/): adultos y pediátrica; atención exclusivamente particular; no cuenta con cobertura por obra social.
 - [Ultrasonido terapéutico](https://kareh.com.ar/servicios/ultrasonido-terapeutico/)
 
