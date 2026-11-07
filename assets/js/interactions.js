@@ -116,6 +116,10 @@ if (!isHomepage && "IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
+if (!isHomepage && "IntersectionObserver" in window) {
+  document.body.classList.add("reveal-ready");
+}
+
 if (!prefersReducedMotion.matches && window.matchMedia("(pointer: fine)").matches) {
   tiltItems.forEach((item) => {
     let frameId = null;

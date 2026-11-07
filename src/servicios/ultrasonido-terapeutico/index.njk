@@ -2,8 +2,8 @@
 <html lang="es-AR">
 
 <head>
-  {% include "partials/analytics.njk" %}
   <meta charset="UTF-8">
+  {% include "partials/analytics.njk" %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ultrasonido terapéutico en Bella Vista como apoyo en tratamientos de kinesiología y rehabilitación, indicado según evaluación clínica en Kareh.">
   <meta name="robots" content="index,follow,max-image-preview:large">
@@ -37,6 +37,7 @@
       "serviceType": "Agente físico de apoyo en kinesiología",
       "provider": {
         "@type": "MedicalBusiness",
+        "@id": "https://kareh.com.ar/#medicalbusiness",
         "name": "Kareh - Centro de Kinesiología y Fisiatría",
         "url": "https://kareh.com.ar/",
         "telephone": "+5491132016039",
@@ -95,38 +96,6 @@
           "position": 3,
           "name": "Ultrasonido terapéutico",
           "item": "https://kareh.com.ar/servicios/ultrasonido-terapeutico/"
-        }
-      ]
-    }
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿El ultrasonido terapéutico se usa en todos los tratamientos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. En Kareh se indica según evaluación clínica, diagnóstico, objetivo terapéutico y criterio profesional."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Para qué se usa el ultrasonido en kinesiología?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Puede utilizarse como agente físico de apoyo dentro de un tratamiento de rehabilitación cuando el cuadro y el objetivo lo justifican."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Puedo pedir turno solo para ultrasonido?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La indicación se define dentro de una evaluación kinésica o una orden médica. No se plantea como reemplazo del tratamiento de rehabilitación."
-          }
         }
       ]
     }
@@ -197,8 +166,9 @@
             <h2>Consultá si corresponde para tu caso</h2>
             <p>Enviá tu orden médica y diagnóstico por WhatsApp para orientar si el ultrasonido puede ser parte del tratamiento.</p>
           </div>
+          <p class="coverage-notice" role="note"><strong>Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</strong></p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="ultrasonido" data-segment="particular">Consultar por WhatsApp</a>
+            <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="ultrasonido">Consultar por WhatsApp</a>
             <a class="button button-secondary" href="/servicios/rehabilitacion-postoperatoria/">Ver postoperatoria</a>
           </div>
         </div>

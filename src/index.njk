@@ -81,7 +81,7 @@ description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitació
       <div class="section-heading">
         <p class="eyebrow">Coberturas</p>
         <h2>Consultá si atendemos con tu obra social</h2>
-        <p>La cobertura y la documentación pueden variar. Confirmalas antes de coordinar.</p>
+        <p>Para kinesiología traumatológica y rehabilitación postoperatoria: Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa. La kinesiología respiratoria para adultos y niños, piso pélvico e incontinencia urinaria son de atención exclusivamente particular, sin cobertura por obra social.</p>
       </div>
       <label class="coverage-search-label" for="home-coverage-search">¿Buscás tu obra social?</label>
       <input id="home-coverage-search" class="coverage-search" type="search" placeholder="Buscar obra social..." autocomplete="off" aria-controls="home-coverage-list">
@@ -95,7 +95,6 @@ description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitació
         <a class="button button-secondary" href="/obras-sociales/">Ver listado actualizado</a>
         {% set ctaClass = "button button-primary" %}
         {% set ctaLabel = "Consultar cobertura por WhatsApp" %}
-        {% set ctaCoverage = "particular" %}
         {% include "partials/cta-whatsapp.njk" %}
       </div>
       <div class="faq-grid button--top-md">
@@ -172,7 +171,7 @@ description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitació
         </div>
         <div class="reviews-controls">
           <a class="button button-secondary" href="https://share.google/pDM70FpToX7idSmx5" target="_blank" rel="noopener noreferrer">Ver más reseñas en Google</a>
-          <div class="reviews-navigation" aria-label="Controles del carrusel">
+          <div class="reviews-navigation" role="group" aria-label="Controles del carrusel">
             <button class="reviews-arrow" type="button" data-review-prev aria-label="Ver reseñas anteriores" disabled>‹</button>
             <button class="reviews-arrow" type="button" data-review-next aria-label="Ver más reseñas">›</button>
           </div>
@@ -204,11 +203,11 @@ description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitació
           </ul>
         </article>
       </div>
-      <div class="area-tags button--top-md" aria-label="Localidades cercanas">
+      <nav class="area-tags button--top-md" aria-label="Localidades cercanas">
         {% for locality in nav.footer.localities %}
         <a class="area-tag area-tag--link" href="{{ locality.url }}">{{ locality.label }}</a>
         {% endfor %}
-      </div>
+      </nav>
     </div>
   </section>
 </main>
