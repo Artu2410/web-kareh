@@ -2,8 +2,8 @@
 <html lang="es-AR">
 
 <head>
-  <meta charset="UTF-8">
   {% include "partials/analytics.njk" %}
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Hub de rehabilitación musculoesquelética en Bella Vista: traumatológica, postoperatoria, dolor lumbar, tendinitis y ultrasonido.">
@@ -46,7 +46,6 @@
       "serviceType": "Kinesiología musculoesquelética",
       "provider": {
         "@type": "MedicalBusiness",
-        "@id": "https://kareh.com.ar/#medicalbusiness",
          "name": "Kareh - Centro de Kinesiología y Fisiatría",
         "url": "https://kareh.com.ar/"
       },
@@ -105,6 +104,38 @@
       ]
     }
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué modalidades de atención tienen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trabajamos con distintas modalidades de atención. Antes de comenzar revisamos la orden médica y la documentación necesaria para organizar cada caso de forma adecuada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué lesiones suelen tratarse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se tratan fracturas, esguinces, luxaciones, tendinitis, desgarros, artrosis, dolor lumbar, dolor cervical y recuperación luego de cirugías traumatológicas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Atienden pacientes de San Miguel y Muñiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Kareh está en Bella Vista y recibe pacientes de San Miguel, Muñiz, José C. Paz, Los Polvorines y zonas cercanas."
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body class="page-shell">
@@ -123,10 +154,6 @@
             atención personalizada para pacientes y derivados médicos de Bella Vista, San Miguel, Muñiz,
             José C. Paz y Los Polvorines.
           </p>
-        </div>
-
-        <div class="soft-bg reveal" role="note">
-          <p><strong>Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</strong></p>
         </div>
 
         <div class="about-grid about-grid--spaced">
@@ -210,7 +237,7 @@
         </div>
 
         <div class="hero-actions button--top-md reveal">
-          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="musculoesqueletica">Coordinar por WhatsApp</a>
+          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="musculoesqueletica" data-segment="particular">Coordinar por WhatsApp</a>
           <a class="button button-secondary" href="/preguntas/">Ver requisitos de atención</a>
         </div>
       </div>

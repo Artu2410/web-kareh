@@ -193,7 +193,7 @@
   }
 }
 
-.reveal-ready .reveal {
+.reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.7s ease, transform 0.7s ease;
@@ -201,7 +201,7 @@
   will-change: transform, opacity;
 }
 
-.reveal-ready .reveal.is-visible {
+.reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -496,17 +496,6 @@
   }
 }
 
-@media (max-width: 719px) {
-  .profile-card--simple {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .profile-card--simple .profile-image-shell {
-    width: min(18rem, 100%);
-    height: auto;
-  }
-}
-
 @media (min-width: 980px) {
   .reviews-track {
     grid-auto-columns: calc((100% - 2rem) / 3);
@@ -708,7 +697,7 @@
     transition-duration: 0.01ms !important;
   }
 
-  .reveal-ready .reveal {
+  .reveal {
     opacity: 1;
     transform: none;
   }

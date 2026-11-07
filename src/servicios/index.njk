@@ -2,8 +2,8 @@
 <html lang="es-AR">
 
 <head>
-  <meta charset="UTF-8">
   {% include "partials/analytics.njk" %}
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Kinesiología en Bella Vista y San Miguel: rehabilitación traumatológica y musculoesquelética, postoperatoria, respiratoria y de piso pélvico.">
@@ -122,6 +122,46 @@
       ]
     }
   </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué tratamientos ofrece Kareh?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kareh ofrece rehabilitación traumatológica y postoperatoria, kinesiología respiratoria para adultos y pediátrica, rehabilitación de piso pélvico —que integra el abordaje de incontinencia urinaria— y ultrasonido terapéutico como apoyo según evaluación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Atienden niños?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La atención pediátrica se realiza únicamente en tratamientos respiratorios."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué aparatología utilizan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Según la evaluación clínica, Kareh utiliza magnetoterapia, ultrasonido y electroanalgesia como apoyo al tratamiento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué modalidades de atención tienen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trabajamos con distintas modalidades de atención. Antes de comenzar revisamos la orden médica y la documentación necesaria para organizar cada caso de forma adecuada."
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body class="page-shell">
@@ -141,12 +181,6 @@
             incontinencia urinaria— y ultrasonido terapéutico.
           </p>
         </div>
-
-        <div class="soft-bg reveal" role="note">
-          <p><strong>ATENCIÓN EXCLUSIVAMENTE PARTICULAR. SIN COBERTURA POR OBRA SOCIAL:</strong> kinesiología respiratoria para adultos y niños, piso pélvico e incontinencia urinaria. Para kinesiología traumatológica, incluidas las tendinopatías, y rehabilitación postoperatoria: Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</p>
-        </div>
-
-        <h2>Tratamientos disponibles</h2>
 
         <div class="cards-grid cards-grid--three">
           {% for service in nav.primary[0].children %}
@@ -201,7 +235,7 @@
           </div>
 
           <div class="hero-actions button--top-md">
-            <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno">Consultar por WhatsApp</a>
+            <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-segment="particular">Consultar por WhatsApp</a>
             <a class="button button-secondary" href="/obras-sociales/">Ver obras sociales</a>
           </div>
         </div>
