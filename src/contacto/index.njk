@@ -1,44 +1,11 @@
-<!DOCTYPE html>
-<html lang="es-AR">
-
-<head>
-  <meta charset="UTF-8">
-  {% include "partials/analytics.njk" %}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Turnos de kinesiología en Bella Vista por WhatsApp. Kareh atiende rehabilitación traumatológica, respiratoria, piso pélvico y ultrasonido para San Miguel y zonas cercanas.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="author" content="Lic. Katia Aluminé Romero">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_AR">
-  <meta property="og:site_name" content="Kareh">
-  <meta property="og:title" content="Turnos de Kinesiología en Bella Vista | Kareh">
-  <meta property="og:description"
-    content="Coordiná tu turno por WhatsApp o llamada. Kareh está en Av. Senador Morón 782, Bella Vista.">
-  <meta property="og:url" content="https://kareh.com.ar/contacto/">
-  <meta property="og:image" content="https://kareh.com.ar/assets/img/logo-icon.png">
-  <meta property="og:image:alt" content="Kareh - Contacto y ubicación">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Turnos de Kinesiología en Bella Vista | Kareh">
-  <meta name="twitter:description"
-    content="Horarios, ubicación y requisitos para coordinar turnos por WhatsApp en Kareh, centro de kinesiología ubicado en Bella Vista.">
-  <meta name="twitter:image" content="https://kareh.com.ar/assets/img/logo-icon.png">
-  <meta name="twitter:image:alt" content="Kareh - Contacto y ubicación">
-  <title>Turnos de Kinesiología en Bella Vista | Kareh</title>
-  <link rel="canonical" href="https://kareh.com.ar/contacto/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
-      rel="stylesheet">
-  </noscript>
-  <link rel="icon" href="/assets/img/logo-icon-96.png" type="image/png">
-  <link rel="stylesheet" href="../styles.css?v=20261103-visual-refresh">
-  <script type="application/ld+json">
+---json
+{
+  "layout": "layouts/base.njk",
+  "title": "Turnos de Kinesiología en Bella Vista | Kareh",
+  "description": "Turnos de kinesiología en Bella Vista por WhatsApp. Kareh atiende rehabilitación traumatológica, respiratoria, piso pélvico y ultrasonido para San Miguel y zonas cercanas.",
+  "ogDescription": "Coordiná tu turno por WhatsApp o llamada. Kareh está en Av. Senador Morón 782, Bella Vista.",
+  "ogImageAlt": "Kareh - Contacto y ubicación",
+  "schema": [
     {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
@@ -79,9 +46,7 @@
           "name": "Malvinas Argentinas"
         }
       ]
-    }
-  </script>
-  <script type="application/ld+json">
+    },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -100,160 +65,147 @@
         }
       ]
     }
-  </script>
-</head>
+  ],
+  "scrollProgress": true
+}
+---
+<main id="contenido">
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Contacto</p>
+        <h1>Turnos de kinesiología en Bella Vista por WhatsApp</h1>
+        <p>
+          Para solicitar un turno podés escribirnos por WhatsApp o llamarnos. Te ayudaremos a coordinar la atención
+          según tu tratamiento, disponibilidad y cobertura médica. Antes de comenzar necesitás una orden médica
+          vigente con diagnóstico, fecha, firma y sello del profesional.
+        </p>
+      </div>
 
-<body class="page-shell">
-  <div class="scroll-progress" aria-hidden="true"></div>
+      <h2>Información para coordinar tu atención</h2>
 
-  {% include "header.njk" %}
+      <div class="cards-grid cards-grid--three">
+        <article class="info-card reveal">
+          <span class="card-kicker">Turnos</span>
+          <h3>Solicitar un turno</h3>
+          <p>Escribinos por WhatsApp para contarnos tu caso, enviar la documentación y coordinar la atención.</p>
+          <a class="button button-primary button--top-md" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank" rel="noopener noreferrer" data-conversion="turno">Escribir por WhatsApp</a>
+          <a class="button button-secondary button--top-sm" href="tel:+5491132016039">Llamar al centro</a>
+        </article>
 
-  <main id="contenido">
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Contacto</p>
-          <h1>Turnos de kinesiología en Bella Vista por WhatsApp</h1>
+        <article class="info-card reveal">
+          <span class="card-kicker">Requisitos</span>
+          <h3>Qué debe tener la orden médica</h3>
+          <ul class="detail-list detail-list--top-tight">
+            <li>Diagnóstico</li>
+            <li>Fecha</li>
+            <li>Firma del profesional</li>
+            <li>Sello</li>
+          </ul>
+        </article>
+
+        <article class="info-card reveal">
+          <span class="card-kicker">Horarios</span>
+          <ul class="detail-list detail-list--top-tight">
+            <li>Lunes: 14:00 a 19:00</li>
+            <li>Martes: 17:30 a 19:00</li>
+            <li>Miércoles: 14:00 a 19:00</li>
+            <li>Jueves: 17:30 a 19:00</li>
+            <li>Viernes: 14:00 a 19:00</li>
+            <li>Sábados: 08:00 a 12:00</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="soft-bg reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Tratamientos frecuentes</p>
+          <h2>Consultas que podemos orientar por WhatsApp</h2>
           <p>
-            Para solicitar un turno podés escribirnos por WhatsApp o llamarnos. Te ayudaremos a coordinar la atención
-            según tu tratamiento, disponibilidad y cobertura médica. Antes de comenzar necesitás una orden médica
-            vigente con diagnóstico, fecha, firma y sello del profesional.
+            Si tenés una orden médica o querés consultar por una modalidad de atención, podés escribirnos con el
+            diagnóstico para revisar cómo organizar el tratamiento.
           </p>
         </div>
-
-        <h2>Información para coordinar tu atención</h2>
 
         <div class="cards-grid cards-grid--three">
-          <article class="info-card reveal">
-            <span class="card-kicker">Turnos</span>
-            <h3>Solicitar un turno</h3>
-            <p>Escribinos por WhatsApp para contarnos tu caso, enviar la documentación y coordinar la atención.</p>
-            <a class="button button-primary button--top-md" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20turnos%20en%20Kareh." target="_blank" rel="noopener noreferrer" data-conversion="turno">Escribir por WhatsApp</a>
-            <a class="button button-secondary button--top-sm" href="tel:+5491132016039">Llamar al centro</a>
+          <article class="info-card">
+            <span class="card-kicker">Traumatología</span>
+            <h3>Rehabilitación traumatológica y postoperatoria</h3>
+            <p>Lesiones, cirugías, fracturas, esguinces, tendinitis, dolor lumbar y dolor cervical.</p>
+            <a class="button button-secondary button--top-sm" href="/servicios/rehabilitacion-traumatologica/">Ver tratamiento</a>
           </article>
 
-          <article class="info-card reveal">
-            <span class="card-kicker">Requisitos</span>
-            <h3>Qué debe tener la orden médica</h3>
-            <ul class="detail-list detail-list--top-tight">
-              <li>Diagnóstico</li>
-              <li>Fecha</li>
-              <li>Firma del profesional</li>
-              <li>Sello</li>
-            </ul>
+          <article class="info-card">
+            <span class="card-kicker">Respiratoria</span>
+            <h3>Kinesiología respiratoria adultos y pediátrica</h3>
+            <p>Bronquiolitis, asma, neumonía, EPOC y recuperación respiratoria con indicación médica.</p>
+            <a class="button button-secondary button--top-sm" href="../servicios/kinesiologia-respiratoria/">Ver respiratoria</a>
           </article>
 
-          <article class="info-card reveal">
-            <span class="card-kicker">Horarios</span>
-            <ul class="detail-list detail-list--top-tight">
-              <li>Lunes: 14:00 a 19:00</li>
-              <li>Martes: 17:30 a 19:00</li>
-              <li>Miércoles: 14:00 a 19:00</li>
-              <li>Jueves: 17:30 a 19:00</li>
-              <li>Viernes: 14:00 a 19:00</li>
-              <li>Sábados: 08:00 a 12:00</li>
-            </ul>
+          <article class="info-card">
+            <span class="card-kicker">Piso pélvico</span>
+            <h3>Incontinencia urinaria y piso pélvico</h3>
+            <p>Atención confidencial para incontinencia, prolapsos, dolor pélvico y recuperación postquirúrgica.</p>
+            <a class="button button-secondary button--top-sm" href="../servicios/piso-pelvico/">Ver piso pélvico</a>
           </article>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="soft-bg reveal">
-          <div class="section-heading">
-            <p class="eyebrow">Tratamientos frecuentes</p>
-            <h2>Consultas que podemos orientar por WhatsApp</h2>
-            <p>
-              Si tenés una orden médica o querés consultar por una modalidad de atención, podés escribirnos con el
-              diagnóstico para revisar cómo organizar el tratamiento.
-            </p>
-          </div>
+  <section class="section" id="llegar">
+    <div class="container location-grid">
+      <div class="location-card reveal">
+        <p class="eyebrow">Ubicación</p>
+        <h2>Bella Vista como base de atención</h2>
+        <p class="location-copy">
+          Kareh atiende en <strong>Av. Senador Morón 782, Bella Vista, Buenos Aires</strong>, con acceso para
+          pacientes de San Miguel, Muñiz, José C. Paz, Los Polvorines, Malvinas Argentinas y otras zonas cercanas.
+        </p>
 
-          <div class="cards-grid cards-grid--three">
-            <article class="info-card">
-              <span class="card-kicker">Traumatología</span>
-              <h3>Rehabilitación traumatológica y postoperatoria</h3>
-              <p>Lesiones, cirugías, fracturas, esguinces, tendinitis, dolor lumbar y dolor cervical.</p>
-              <a class="button button-secondary button--top-sm" href="/servicios/rehabilitacion-traumatologica/">Ver tratamiento</a>
-            </article>
+        <div class="address-block">
+          <strong>Dirección</strong>
+          <a class="address-link"
+            href="https://www.google.com/maps/search/?api=1&query=Senador+Mor%C3%B3n+782,+Bella+Vista,+Buenos+Aires"
+            target="_blank" rel="noopener noreferrer">
+            Av. Senador Morón 782, Bella Vista, Buenos Aires
+          </a>
+        </div>
 
-            <article class="info-card">
-              <span class="card-kicker">Respiratoria</span>
-              <h3>Kinesiología respiratoria adultos y pediátrica</h3>
-              <p>Bronquiolitis, asma, neumonía, EPOC y recuperación respiratoria con indicación médica.</p>
-              <a class="button button-secondary button--top-sm" href="../servicios/kinesiologia-respiratoria/">Ver respiratoria</a>
-            </article>
+        <ul class="detail-list">
+          <li>A 5 cuadras de la estación Bella Vista del tren San Martín</li>
+          <li>Colectivos de referencia: líneas 53 y 176</li>
+          <li>A 1 cuadra del supermercado Disco, hacia Ruta 8</li>
+          <li>Turnos coordinados previamente por WhatsApp</li>
+        </ul>
 
-            <article class="info-card">
-              <span class="card-kicker">Piso pélvico</span>
-              <h3>Incontinencia urinaria y piso pélvico</h3>
-              <p>Atención confidencial para incontinencia, prolapsos, dolor pélvico y recuperación postquirúrgica.</p>
-              <a class="button button-secondary button--top-sm" href="../servicios/piso-pelvico/">Ver piso pélvico</a>
-            </article>
-          </div>
+        <div class="location-actions button--top-md">
+          <a class="button button-primary"
+            href="https://www.google.com/maps/search/?api=1&query=Senador+Mor%C3%B3n+782,+Bella+Vista,+Buenos+Aires"
+            target="_blank" rel="noopener noreferrer">
+            Abrir en Google Maps
+          </a>
+          <a class="button button-secondary" href="tel:+5491132016039">Llamar</a>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="llegar">
-      <div class="container location-grid">
-        <div class="location-card reveal">
+      <div class="transport-card reveal">
+        <h3>Mapa y requisitos previos</h3>
+        <p class="transport-copy">
+          Si tenés obra social, conviene enviar también los datos de cobertura para revisar si se necesita
+          autorización antes del primer turno. Para información administrativa completa, consultá la página de
+          coberturas.
+        </p>
+        <div class="map-frame" role="group" aria-label="Ubicación de Kareh en Bella Vista">
           <p class="eyebrow">Ubicación</p>
-          <h2>Bella Vista como base de atención</h2>
-          <p class="location-copy">
-            Kareh atiende en <strong>Av. Senador Morón 782, Bella Vista, Buenos Aires</strong>, con acceso para
-            pacientes de San Miguel, Muñiz, José C. Paz, Los Polvorines, Malvinas Argentinas y otras zonas cercanas.
-          </p>
-
-          <div class="address-block">
-            <strong>Dirección</strong>
-            <a class="address-link"
-              href="https://www.google.com/maps/search/?api=1&query=Senador+Mor%C3%B3n+782,+Bella+Vista,+Buenos+Aires"
-              target="_blank" rel="noopener noreferrer">
-              Av. Senador Morón 782, Bella Vista, Buenos Aires
-            </a>
-          </div>
-
-          <ul class="detail-list">
-            <li>A 5 cuadras de la estación Bella Vista del tren San Martín</li>
-            <li>Colectivos de referencia: líneas 53 y 176</li>
-            <li>A 1 cuadra del supermercado Disco, hacia Ruta 8</li>
-            <li>Turnos coordinados previamente por WhatsApp</li>
-          </ul>
-
-          <div class="location-actions button--top-md">
-            <a class="button button-primary"
-              href="https://www.google.com/maps/search/?api=1&query=Senador+Mor%C3%B3n+782,+Bella+Vista,+Buenos+Aires"
-              target="_blank" rel="noopener noreferrer">
-              Abrir en Google Maps
-            </a>
-            <a class="button button-secondary" href="tel:+5491132016039">Llamar</a>
-          </div>
-        </div>
-
-        <div class="transport-card reveal">
-          <h3>Mapa y requisitos previos</h3>
-          <p class="transport-copy">
-            Si tenés obra social, conviene enviar también los datos de cobertura para revisar si se necesita
-            autorización antes del primer turno. Para información administrativa completa, consultá la página de
-            coberturas.
-          </p>
-          <div class="map-frame" role="group" aria-label="Ubicación de Kareh en Bella Vista">
-            <p class="eyebrow">Ubicación</p>
-            <h3>Av. Senador Morón 782, Bella Vista</h3>
-            <a class="button button-secondary button--top-sm" href="https://www.google.com/maps/search/?api=1&query=Senador+Mor%C3%B3n+782,+Bella+Vista,+Buenos+Aires" target="_blank" rel="noopener noreferrer">Abrir ubicación en Google Maps</a>
-          </div>
+          <h3>Av. Senador Morón 782, Bella Vista</h3>
+          <a class="button button-secondary button--top-sm" href="https://www.google.com/maps/search/?api=1&query=Senador+Mor%C3%B3n+782,+Bella+Vista,+Buenos+Aires" target="_blank" rel="noopener noreferrer">Abrir ubicación en Google Maps</a>
         </div>
       </div>
-    </section>
-  </main>
-
-  {% include "footer.njk" %}
-
-
-
-  <script type="module" src="/script.js?v=20261027-services-menu"></script>
-</body>
-
-</html>
+    </div>
+  </section>
+</main>

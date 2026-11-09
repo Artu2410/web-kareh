@@ -9,7 +9,7 @@ module.exports = {
   schema: [
     {
       "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
+      "@type": ["MedicalBusiness", "Physiotherapy"],
       "@id": businessId,
       name: `${site.name} - Centro de Kinesiología y Fisiatría`,
       url: `${site.url}/`,
@@ -38,6 +38,8 @@ module.exports = {
       ].map((name) => ({ "@type": "City", name })),
       serviceType: nav.primary[0].children.map((service) => service.label),
       sameAs: Object.values(site.social),
+      ...(site.legal.businessName ? { legalName: site.legal.businessName } : {}),
+      ...(site.legal.cuit ? { taxID: site.legal.cuit } : {}),
     },
     {
       "@context": "https://schema.org",
@@ -45,7 +47,12 @@ module.exports = {
       "@id": professionalId,
       name: site.professional.name,
       jobTitle: "Licenciada en Kinesiología y Fisiatría",
-      hasCredential: site.professional.credentials,
+      url: `${site.url}/nosotros/`,
+      hasCredential: site.professional.credentialList.map((credential) => ({
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Matrícula profesional",
+        name: credential,
+      })),
       worksFor: { "@id": businessId },
     },
     {

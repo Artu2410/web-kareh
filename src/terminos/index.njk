@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Aviso legal y condiciones de uso | Kareh
+description: Aviso legal de Kareh, Centro de Kinesiología y Fisiatría en Bella Vista. Responsable profesional, alcance de la información de salud y condiciones para solicitar turnos.
+bodyClass: page-shell page-shell--compact
+---
+<main id="contenido" class="section section-soft">
+  <div class="container article-layout">
+    <div class="section-heading">
+      <p class="eyebrow">Información legal</p>
+      <h1>Aviso legal y condiciones de uso</h1>
+      <p>Última actualización: noviembre de 2026</p>
+    </div>
+    <article class="article-body">
+      <h2>1. Responsable del sitio</h2>
+      <p>Este sitio pertenece a {{ site.name }}, Centro de Kinesiología y Fisiatría ubicado en {{ site.address.label }}.{% if site.legal.businessName %} Razón social: {{ site.legal.businessName }}.{% endif %}{% if site.legal.cuit %} CUIT: {{ site.legal.cuit }}.{% endif %}{% if site.legal.habilitacion %} Habilitación: {{ site.legal.habilitacion }}.{% endif %}</p>
+      <p>Responsable profesional: {{ site.professional.name }}, Licenciada en Kinesiología y Fisiatría ({{ site.professional.credentials }}).</p>
+
+      <h2>2. Carácter informativo del contenido</h2>
+      <p>Los textos de este sitio, incluidos los artículos del blog y las preguntas frecuentes, tienen fines educativos e informativos. No constituyen un diagnóstico ni una indicación de tratamiento, y no reemplazan la evaluación profesional ni la consulta médica.</p>
+      <p>Ante una urgencia o síntomas graves, consultá de inmediato a un servicio de emergencias o a tu médico.</p>
+
+      <h2>3. Solicitud de turnos</h2>
+      <p>Los turnos se solicitan por WhatsApp ({{ site.whatsappDisplay }}). Una consulta enviada desde el sitio no implica un turno asignado: el turno queda confirmado únicamente cuando el centro lo confirma por ese mismo medio.</p>
+      <p>Algunos tratamientos requieren orden médica. La cobertura por obra social depende de cada convenio y de las condiciones de cada prestación; la información publicada en el sitio es orientativa y se confirma al momento de solicitar el turno.</p>
+
+      <h2>4. Uso del sitio</h2>
+      <p>El contenido, las imágenes y la marca {{ site.name }} no pueden reproducirse con fines comerciales sin autorización. Los enlaces a sitios de terceros, como los de obras sociales, se incluyen como referencia y su contenido es responsabilidad de cada sitio.</p>
+
+      <h2>5. Datos personales</h2>
+      <p>El tratamiento de los datos que compartís al contactarnos se explica en la <a href="/privacidad/">Política de privacidad</a>.</p>
+
+      <h2>6. Contacto</h2>
+      <p>Para consultas sobre este aviso, escribinos por <a href="{{ site.whatsappDefaultText | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
+    </article>
+  </div>
+</main>

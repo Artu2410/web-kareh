@@ -31,7 +31,13 @@
   ],
   "professional": {
     "name": "Lic. Katia Aluminé Romero",
-    "credentials": "M.P. 10.318 · M.N. 18.900"
+    "credentials": "M.P. 10.318 · M.N. 18.900",
+    "credentialList": ["M.P. 10.318", "M.N. 18.900"]
+  },
+  "legal": {
+    "businessName": "",
+    "cuit": "",
+    "habilitacion": ""
   },
   "social": {
     "instagram": "https://www.instagram.com/centro.kareh/",

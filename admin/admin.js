@@ -1,3 +1,22 @@
+// Reduce los logos a WebP de 160 px como máximo (se muestran a 44 px) para que la página de obras sociales cargue liviana.
+const optimizeLogo = async (file) => {
+  const original = { blob: file, name: file.name, type: file.type };
+  if (file.type === 'image/svg+xml' || typeof createImageBitmap !== 'function') return original;
+  try {
+    const bitmap = await createImageBitmap(file);
+    const scale = Math.min(1, 160 / Math.max(bitmap.width, bitmap.height));
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.max(1, Math.round(bitmap.width * scale));
+    canvas.height = Math.max(1, Math.round(bitmap.height * scale));
+    canvas.getContext('2d').drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/webp', 0.85));
+    if (!blob || blob.type !== 'image/webp' || blob.size >= file.size) return original;
+    return { blob, name: file.name.replace(/\.[^.]+$/, '') + '.webp', type: 'image/webp' };
+  } catch (error) {
+    return original;
+  }
+};
+
 (() => {
   const config = window.KAREH_SUPABASE_CONFIG || {};
   const configured = config.url && config.anonKey;
@@ -157,5 +176,5 @@
   document.querySelector('#cancel').addEventListener('click', () => form.classList.add('hidden'));
   syncLogosButton.addEventListener('click', syncDefaultLogos);
   list.addEventListener('click', async event => { const id = event.target.dataset.edit || event.target.dataset.toggle; if (!id) return; const item = covers.find(coverage => coverage.id === id); if (event.target.dataset.edit) { openForm(item); return; } const { error } = await client.from('obras_sociales').update({ active: !item.active }).eq('id', id); if (error) showMessage('No se pudo actualizar el estado.'); else load(); });
-  form.addEventListener('submit', async event => { event.preventDefault(); showMessage(''); const id = document.querySelector('#coverage-id').value; const data = { name: document.querySelector('#name').value.trim(), active: document.querySelector('#active').value === 'true', logo_url: document.querySelector('#logo_url').value.trim() || null, official_url: document.querySelector('#official_url').value.trim() || null, description: document.querySelector('#description').value.trim() || null }; const file = document.querySelector('#logo_file').files[0]; if (file) { if (!file.type.startsWith('image/') || file.size > 2097152) { showMessage('El logo debe ser una imagen de hasta 2 MB.'); return; } const safeName = file.name.toLowerCase().replace(/[^a-z0-9._-]/g, '-'); const path = `logos/${crypto.randomUUID()}-${safeName}`; const { error: uploadError } = await client.storage.from('coverage-logos').upload(path, file, { cacheControl: '3600', upsert: false }); if (uploadError) { showMessage('No se pudo cargar el logo. Confirmá la migración de Storage.'); return; } data.logo_url = client.storage.from('coverage-logos').getPublicUrl(path).data.publicUrl; } const request = id ? client.from('obras_sociales').update(data).eq('id', id) : client.from('obras_sociales').insert(data); const { error } = await request; if (error) { showMessage(error.code === '23505' ? 'Ya existe una obra social con ese nombre.' : 'No se pudo guardar. Revisá los datos.'); return; } form.classList.add('hidden'); load(); });
+  form.addEventListener('submit', async event => { event.preventDefault(); showMessage(''); const id = document.querySelector('#coverage-id').value; const data = { name: document.querySelector('#name').value.trim(), active: document.querySelector('#active').value === 'true', logo_url: document.querySelector('#logo_url').value.trim() || null, official_url: document.querySelector('#official_url').value.trim() || null, description: document.querySelector('#description').value.trim() || null }; const file = document.querySelector('#logo_file').files[0]; if (file) { if (!file.type.startsWith('image/') || file.size > 2097152) { showMessage('El logo debe ser una imagen de hasta 2 MB.'); return; } const upload = await optimizeLogo(file); const safeName = upload.name.toLowerCase().replace(/[^a-z0-9._-]/g, '-'); const path = `logos/${crypto.randomUUID()}-${safeName}`; const { error: uploadError } = await client.storage.from('coverage-logos').upload(path, upload.blob, { cacheControl: '31536000', contentType: upload.type, upsert: false }); if (uploadError) { showMessage('No se pudo cargar el logo. Confirmá la migración de Storage.'); return; } data.logo_url = client.storage.from('coverage-logos').getPublicUrl(path).data.publicUrl; } const request = id ? client.from('obras_sociales').update(data).eq('id', id) : client.from('obras_sociales').insert(data); const { error } = await request; if (error) { showMessage(error.code === '23505' ? 'Ya existe una obra social con ese nombre.' : 'No se pudo guardar. Revisá los datos.'); return; } form.classList.add('hidden'); load(); });
 })();

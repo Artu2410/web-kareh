@@ -1,44 +1,11 @@
-<!DOCTYPE html>
-<html lang="es-AR">
-
-<head>
-  <meta charset="UTF-8">
-  {% include "partials/analytics.njk" %}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Kinesiología en Bella Vista y San Miguel: rehabilitación traumatológica y musculoesquelética, postoperatoria, respiratoria y de piso pélvico.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="author" content="Lic. Katia Aluminé Romero">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_AR">
-  <meta property="og:site_name" content="Kareh">
-  <meta property="og:title" content="Tratamientos de Kinesiología en Bella Vista | Kareh">
-  <meta property="og:description"
-    content="Rehabilitación traumatológica, postoperatoria, respiratoria, piso pélvico —incluida la incontinencia urinaria— y ultrasonido terapéutico en Bella Vista.">
-   <meta property="og:url" content="https://kareh.com.ar/servicios/">
-  <meta property="og:image" content="https://kareh.com.ar/assets/img/logo-icon.png">
-  <meta property="og:image:alt" content="Kareh - Tratamientos de kinesiología y rehabilitación">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tratamientos de Kinesiología en Bella Vista | Kareh">
-  <meta name="twitter:description"
-    content="Servicios de kinesiología y rehabilitación en Bella Vista para pacientes con indicación médica y consultas por tratamiento.">
-  <meta name="twitter:image" content="https://kareh.com.ar/assets/img/logo-icon.png">
-  <meta name="twitter:image:alt" content="Kareh - Tratamientos de kinesiología y rehabilitación">
-  <title>Tratamientos de Kinesiología en Bella Vista | Kareh</title>
-  <link rel="canonical" href="https://kareh.com.ar/servicios/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
-      rel="stylesheet">
-  </noscript>
-  <link rel="icon" href="/assets/img/logo-icon-96.png" type="image/png">
-  <link rel="stylesheet" href="../styles.css?v=20261103-visual-refresh">
-  <script type="application/ld+json">
+---json
+{
+  "layout": "layouts/base.njk",
+  "title": "Tratamientos de Kinesiología en Bella Vista | Kareh",
+  "description": "Kinesiología en Bella Vista y San Miguel: rehabilitación traumatológica y musculoesquelética, postoperatoria, respiratoria y de piso pélvico.",
+  "ogDescription": "Rehabilitación traumatológica, postoperatoria, respiratoria, piso pélvico —incluida la incontinencia urinaria— y ultrasonido terapéutico en Bella Vista.",
+  "ogImageAlt": "Kareh - Tratamientos de kinesiología y rehabilitación",
+  "schema": [
     {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
@@ -100,9 +67,7 @@
         "https://www.facebook.com/profile.php?id=61580911341091",
         "https://share.google/pDM70FpToX7idSmx5"
       ]
-    }
-  </script>
-  <script type="application/ld+json">
+    },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -121,116 +86,103 @@
         }
       ]
     }
-  </script>
-</head>
+  ],
+  "scrollProgress": true
+}
+---
+<main id="contenido">
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Tratamientos</p>
+        <h1>Tratamientos de kinesiología y rehabilitación en Bella Vista</h1>
+        <p>
+          En Kareh trabajamos tratamientos de kinesiología y rehabilitación para lesiones traumatológicas,
+          recuperación postoperatoria, patologías respiratorias (adultos y niños), piso pélvico —incluida la
+          incontinencia urinaria— y ultrasonido terapéutico.
+        </p>
+      </div>
 
-<body class="page-shell">
-  <div class="scroll-progress" aria-hidden="true"></div>
+      <div class="soft-bg reveal" role="note">
+        <p><strong>ATENCIÓN EXCLUSIVAMENTE PARTICULAR. SIN COBERTURA POR OBRA SOCIAL:</strong> kinesiología respiratoria para adultos y niños, piso pélvico e incontinencia urinaria. Para kinesiología traumatológica, incluidas las tendinopatías, y rehabilitación postoperatoria: Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</p>
+      </div>
 
-  {% include "header.njk" %}
+      <h2>Tratamientos disponibles</h2>
 
-  <main id="contenido">
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Tratamientos</p>
-          <h1>Tratamientos de kinesiología y rehabilitación en Bella Vista</h1>
+      <div class="cards-grid cards-grid--three">
+        {% for service in nav.primary[0].children %}
+        <article class="service-card reveal">
+          <span class="card-kicker">Kinesiología y rehabilitación</span>
+          <h3><a href="{{ service.url }}">{{ service.label }}</a></h3>
+          <p>{{ service.description }}</p>
+          {% if service.url == '/servicios/kinesiologia-respiratoria/' %}
+          <nav class="respiratory-tabs" aria-label="Kinesiología respiratoria">
+            <a class="button button-secondary button--top-sm" href="{{ service.url }}#adultos">Adultos</a>
+            <a class="button button-secondary button--top-sm" href="{{ service.url }}#pediatrica">Pediátrica</a>
+          </nav>
+          {% else %}
+          <a class="button button-secondary button--top-md" href="{{ service.url }}">Conocer el servicio</a>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="soft-bg reveal">
+        <div class="section-heading">
+          <p class="eyebrow">Cómo trabajamos</p>
+          <h2>Cómo organizamos la atención</h2>
           <p>
-            En Kareh trabajamos tratamientos de kinesiología y rehabilitación para lesiones traumatológicas,
-            recuperación postoperatoria, patologías respiratorias (adultos y niños), piso pélvico —incluida la
-            incontinencia urinaria— y ultrasonido terapéutico.
+            Para solicitar un turno podés escribirnos por WhatsApp. Antes de comenzar es necesario contar con orden
+            médica vigente, con diagnóstico, fecha, firma y sello del profesional.
           </p>
         </div>
 
-        <div class="soft-bg reveal" role="note">
-          <p><strong>ATENCIÓN EXCLUSIVAMENTE PARTICULAR. SIN COBERTURA POR OBRA SOCIAL:</strong> kinesiología respiratoria para adultos y niños, piso pélvico e incontinencia urinaria. Para kinesiología traumatológica, incluidas las tendinopatías, y rehabilitación postoperatoria: Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</p>
-        </div>
-
-        <h2>Tratamientos disponibles</h2>
-
-        <div class="cards-grid cards-grid--three">
-          {% for service in nav.primary[0].children %}
-          <article class="service-card reveal">
-            <span class="card-kicker">Kinesiología y rehabilitación</span>
-            <h3><a href="{{ service.url }}">{{ service.label }}</a></h3>
-            <p>{{ service.description }}</p>
-            {% if service.url == '/servicios/kinesiologia-respiratoria/' %}
-            <nav class="respiratory-tabs" aria-label="Kinesiología respiratoria">
-              <a class="button button-secondary button--top-sm" href="{{ service.url }}#adultos">Adultos</a>
-              <a class="button button-secondary button--top-sm" href="{{ service.url }}#pediatrica">Pediátrica</a>
-            </nav>
-            {% else %}
-            <a class="button button-secondary button--top-md" href="{{ service.url }}">Conocer el servicio</a>
-            {% endif %}
+        <div class="cards-grid">
+          <article class="info-card">
+            <span class="card-kicker">Primer paso</span>
+            <h3>Enviar la orden médica</h3>
+            <p>Con la indicación completa podemos orientar la modalidad de atención y los requisitos de cobertura si corresponde.</p>
           </article>
-          {% endfor %}
+
+          <article class="info-card">
+            <span class="card-kicker">Cobertura</span>
+            <h3>Modalidades de atención</h3>
+            <p>Si corresponde, revisamos la cobertura y la documentación necesaria para organizar el tratamiento.</p>
+          </article>
+
+          <article class="info-card">
+            <span class="card-kicker">Seguimiento</span>
+            <h3>Atención personalizada</h3>
+            <p>Cada tratamiento se organiza de forma individual, con explicaciones claras y ajustes según la evolución clínica.</p>
+          </article>
+        </div>
+
+        <div class="hero-actions button--top-md">
+          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno">Consultar por WhatsApp</a>
+          <a class="button button-secondary" href="/obras-sociales/">Ver obras sociales</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="soft-bg reveal">
-          <div class="section-heading">
-            <p class="eyebrow">Cómo trabajamos</p>
-            <h2>Cómo organizamos la atención</h2>
-            <p>
-              Para solicitar un turno podés escribirnos por WhatsApp. Antes de comenzar es necesario contar con orden
-              médica vigente, con diagnóstico, fecha, firma y sello del profesional.
-            </p>
-          </div>
-
-          <div class="cards-grid">
-            <article class="info-card">
-              <span class="card-kicker">Primer paso</span>
-              <h3>Enviar la orden médica</h3>
-              <p>Con la indicación completa podemos orientar la modalidad de atención y los requisitos de cobertura si corresponde.</p>
-            </article>
-
-            <article class="info-card">
-              <span class="card-kicker">Cobertura</span>
-              <h3>Modalidades de atención</h3>
-              <p>Si corresponde, revisamos la cobertura y la documentación necesaria para organizar el tratamiento.</p>
-            </article>
-
-            <article class="info-card">
-              <span class="card-kicker">Seguimiento</span>
-              <h3>Atención personalizada</h3>
-              <p>Cada tratamiento se organiza de forma individual, con explicaciones claras y ajustes según la evolución clínica.</p>
-            </article>
-          </div>
-
-          <div class="hero-actions button--top-md">
-            <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno">Consultar por WhatsApp</a>
-            <a class="button button-secondary" href="/obras-sociales/">Ver obras sociales</a>
-          </div>
-        </div>
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Zonas de atención</p>
+        <h2>Atención para pacientes de localidades cercanas</h2>
+        <p>Además de Bella Vista, recibimos consultas de pacientes de San Miguel, Muñiz, José C. Paz y Hurlingham.</p>
       </div>
-    </section>
 
-    <section class="section section-soft">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Zonas de atención</p>
-          <h2>Atención para pacientes de localidades cercanas</h2>
-          <p>Además de Bella Vista, recibimos consultas de pacientes de San Miguel, Muñiz, José C. Paz y Hurlingham.</p>
-        </div>
-
-        <div class="area-tags">
-          <a class="area-tag area-tag--link" href="../localidades/san-miguel/">San Miguel</a>
-          <a class="area-tag area-tag--link" href="../localidades/muniz/">Muñiz</a>
-          <a class="area-tag area-tag--link" href="../localidades/jose-c-paz/">José C. Paz</a>
-          <a class="area-tag area-tag--link" href="../localidades/hurlingham/">Hurlingham</a>
-        </div>
+      <div class="area-tags">
+        <a class="area-tag area-tag--link" href="../localidades/san-miguel/">San Miguel</a>
+        <a class="area-tag area-tag--link" href="../localidades/muniz/">Muñiz</a>
+        <a class="area-tag area-tag--link" href="../localidades/jose-c-paz/">José C. Paz</a>
+        <a class="area-tag area-tag--link" href="../localidades/hurlingham/">Hurlingham</a>
       </div>
-    </section>
-  </main>
-
-  {% include "footer.njk" %}
-
-
-
-  <script type="module" src="/script.js?v=20261027-services-menu"></script>
-</body>
-
-</html>
+    </div>
+  </section>
+</main>

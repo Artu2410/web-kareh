@@ -1,44 +1,12 @@
-<!DOCTYPE html>
-<html lang="es-AR">
-
-<head>
-  <meta charset="UTF-8">
-  {% include "partials/analytics.njk" %}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Consultá cobertura y requisitos en Kareh. La disponibilidad depende del tratamiento; respiratoria, piso pélvico e incontinencia urinaria son prestaciones particulares.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="author" content="Lic. Katia Aluminé Romero">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_AR">
-  <meta property="og:site_name" content="Kareh">
-  <meta property="og:title" content="Obras Sociales y Convenios | Kareh Bella Vista">
-  <meta property="og:description"
-    content="La disponibilidad de cobertura depende del tratamiento y requiere confirmación. Respiratoria, piso pélvico e incontinencia urinaria son prestaciones particulares.">
-  <meta property="og:url" content="https://kareh.com.ar/obras-sociales/">
-  <meta property="og:image" content="https://kareh.com.ar/assets/img/logo-icon.png">
-  <meta property="og:image:alt" content="Kareh - Obras sociales y convenios">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Obras Sociales y Convenios | Kareh Bella Vista">
-  <meta name="twitter:description"
-    content="La disponibilidad de cobertura depende del tratamiento y requiere confirmación. Respiratoria, piso pélvico e incontinencia urinaria son prestaciones particulares.">
-  <meta name="twitter:image" content="https://kareh.com.ar/assets/img/logo-icon.png">
-  <meta name="twitter:image:alt" content="Kareh - Obras sociales y convenios">
-  <title>Obras Sociales y Convenios | Kinesiología en Bella Vista | Kareh</title>
-  <link rel="canonical" href="https://kareh.com.ar/obras-sociales/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
-    rel="stylesheet" media="print" onload="this.media='all'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap"
-      rel="stylesheet">
-  </noscript>
-  <link rel="icon" href="/assets/img/logo-icon-96.png" type="image/png">
-  <link rel="stylesheet" href="../styles.css?v=20261103-visual-refresh">
-  <script type="application/ld+json">
+---json
+{
+  "layout": "layouts/base.njk",
+  "title": "Obras Sociales y Convenios | Kinesiología en Bella Vista | Kareh",
+  "description": "Consultá cobertura y requisitos en Kareh. La disponibilidad depende del tratamiento; respiratoria, piso pélvico e incontinencia urinaria son prestaciones particulares.",
+  "ogTitle": "Obras Sociales y Convenios | Kareh Bella Vista",
+  "ogDescription": "La disponibilidad de cobertura depende del tratamiento y requiere confirmación. Respiratoria, piso pélvico e incontinencia urinaria son prestaciones particulares.",
+  "ogImageAlt": "Kareh - Obras sociales y convenios",
+  "schema": [
     {
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
@@ -53,9 +21,7 @@
         "addressRegion": "Buenos Aires",
         "addressCountry": "AR"
       }
-    }
-  </script>
-  <script type="application/ld+json">
+    },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -74,208 +40,198 @@
         }
       ]
     }
-  </script>
-</head>
-
-<body class="page-shell page-shell--compact">
-  <div class="scroll-progress" aria-hidden="true"></div>
-
-  {% include "header.njk" %}
-
-  <main id="contenido">
-    <!-- HERO -->
-    <section class="section" id="hero">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Coberturas</p>
-          <h1>Obras Sociales y Convenios</h1>
-          <p>Para kinesiología traumatológica y rehabilitación postoperatoria: Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa. Kinesiología respiratoria para adultos y niños, piso pélvico e incontinencia urinaria son prestaciones exclusivamente particulares y no cuentan con cobertura por obra social.</p>
-        </div>
-
-        <div class="hero-actions button--top-md reveal">
-          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-coverage="consulta">Consultar por WhatsApp</a>
-        </div>
+  ],
+  "bodyClass": "page-shell page-shell--compact",
+  "scrollProgress": true,
+  "extraScripts": [
+    "<script defer src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+    "<script defer src=\"/assets/js/supabase-config.js\"></script>",
+    "<script defer src=\"/assets/js/obras-sociales.js?v=20261109-logos-44\"></script>"
+  ]
+}
+---
+<main id="contenido">
+  <!-- HERO -->
+  <section class="section" id="hero">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Coberturas</p>
+        <h1>Obras Sociales y Convenios</h1>
+        <p>Para kinesiología traumatológica y rehabilitación postoperatoria: Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa. Kinesiología respiratoria para adultos y niños, piso pélvico e incontinencia urinaria son prestaciones exclusivamente particulares y no cuentan con cobertura por obra social.</p>
       </div>
-    </section>
 
-    <!-- Listado administrado desde Supabase -->
-    <section class="section" id="destacadas">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Coberturas</p>
-          <h2>Obras sociales y prepagas activas</h2>
-        </div>
-
-        <label class="coverage-search-label" for="coverage-search">¿Buscás tu obra social?</label>
-        <input id="coverage-search" class="coverage-search" type="search" placeholder="Buscar obra social..." autocomplete="off">
-        <!--
-          Respaldo estático: se actualiza con `npm run sync:coverage`.
-          Permite que el listado sea indexable y siga visible si Supabase no responde.
-        -->
-        <div id="coverage-grid" class="coverage-grid" aria-live="polite">
-          <!-- coverage-fallback:start -->
-          <article class="coverage-card" data-coverage-name="ACTIVA SALUD"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/48857ca6-8e63-4d47-8769-13a5d7d28ac4-activa-salud.jpg" alt="Logo de ACTIVA SALUD" loading="lazy"><h3>ACTIVA SALUD</h3></article>
-          <article class="coverage-card" data-coverage-name="AMEBPBA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/cfdb668a-55e5-4948-a1cf-f14f56c7c20a-amebpba.jpg" alt="Logo de AMEBPBA" loading="lazy"><h3>AMEBPBA</h3></article>
-          <article class="coverage-card" data-coverage-name="AMFFA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/a6c4744a-920b-47da-be3b-6d8944f846f2-amffa.png" alt="Logo de AMFFA" loading="lazy"><h3>AMFFA</h3></article>
-          <article class="coverage-card" data-coverage-name="AMSTERDAM SALUD"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/8ea3f162-a7b7-4864-8ad5-272e01b67337-amsterdam-salud.jpg" alt="Logo de AMSTERDAM SALUD" loading="lazy"><h3>AMSTERDAM SALUD</h3></article>
-          <article class="coverage-card" data-coverage-name="APSOT"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/be69b8c1-e557-470e-b13f-a993fd6e00a0-apsot.svg" alt="Logo de APSOT" loading="lazy"><h3>APSOT</h3></article>
-          <article class="coverage-card" data-coverage-name="ASOCIACIÓN ECLESIÁSTICA SAN PEDRO"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/becaf50f-9676-4ccf-8867-4b2b82f239b2-asociacion-eclesiastica-san-pedro.png" alt="Logo de ASOCIACIÓN ECLESIÁSTICA SAN PEDRO" loading="lazy"><h3>ASOCIACIÓN ECLESIÁSTICA SAN PEDRO</h3></article>
-          <article class="coverage-card" data-coverage-name="AVALIAN SALUD Y BIENESTAR"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/2a3f9a66-c126-4fed-bb37-d03d7f0df249-avalian-salud-y-bienestar.png" alt="Logo de AVALIAN SALUD Y BIENESTAR" loading="lazy"><h3>AVALIAN SALUD Y BIENESTAR</h3></article>
-          <article class="coverage-card" data-coverage-name="CASA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/88651b27-f09f-4f48-9697-1bfbfafeddc7-casa.png" alt="Logo de CASA" loading="lazy"><h3>CASA</h3></article>
-          <article class="coverage-card" data-coverage-name="COLEGIO DE ESCRIBANOS"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/e412e7fc-2af3-44cb-b888-965f002219a9-colegio-de-escribanos.svg" alt="Logo de COLEGIO DE ESCRIBANOS" loading="lazy"><h3>COLEGIO DE ESCRIBANOS</h3></article>
-          <article class="coverage-card" data-coverage-name="COLONIA SUIZA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/756d1d7c-2f75-4ceb-a0c1-66598bbade79-colonia-suiza.jpg" alt="Logo de COLONIA SUIZA" loading="lazy"><h3>COLONIA SUIZA</h3></article>
-          <article class="coverage-card" data-coverage-name="COMEI"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/b876e7f6-e2df-432d-87d1-a30df3ea32c2-comei.png" alt="Logo de COMEI" loading="lazy"><h3>COMEI</h3></article>
-          <article class="coverage-card" data-coverage-name="DASMI"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/5b8ce05d-8599-4229-a210-f86d97db549c-dasmi.png" alt="Logo de DASMI" loading="lazy"><h3>DASMI</h3></article>
-          <article class="coverage-card" data-coverage-name="DASUTEN"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/757eb233-55ae-49b1-bdec-1c685977d251-dasuten.webp" alt="Logo de DASUTEN" loading="lazy"><h3>DASUTEN</h3></article>
-          <article class="coverage-card" data-coverage-name="E. W. HOPE"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/39b8e2e4-d7f5-4499-a943-4a2c1f3382d0-e-w-hope.svg" alt="Logo de E. W. HOPE" loading="lazy"><h3>E. W. HOPE</h3></article>
-          <article class="coverage-card" data-coverage-name="FEDERADA SALUD"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/be377777-3148-41f7-8481-532a8a883afc-federada-salud.jpg" alt="Logo de FEDERADA SALUD" loading="lazy"><h3>FEDERADA SALUD</h3></article>
-          <article class="coverage-card" data-coverage-name="FUTBOLISTAS"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/d1c36acf-8021-4a3c-ba3f-538027763cc9-futbolistas.svg" alt="Logo de FUTBOLISTAS" loading="lazy"><h3>FUTBOLISTAS</h3></article>
-          <article class="coverage-card" data-coverage-name="GLOBAL EMPRESARIA SA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/c048c9b5-a234-49af-8cb9-c9fffbcaa7d7-global-empresaria-sa.webp" alt="Logo de GLOBAL EMPRESARIA SA" loading="lazy"><h3>GLOBAL EMPRESARIA SA</h3></article>
-          <article class="coverage-card" data-coverage-name="IOMA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/e2f719af-4573-406e-86f1-bf841a94a3f5-ioma.png" alt="Logo de IOMA" loading="lazy"><h3>IOMA</h3></article>
-          <article class="coverage-card" data-coverage-name="JERARQUICOS"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/4999ceed-cd01-491c-9d52-c9f5c1f80a64-jerarquicos.png" alt="Logo de JERARQUICOS" loading="lazy"><h3>JERARQUICOS</h3></article>
-          <article class="coverage-card" data-coverage-name="LUIS PASTEUR"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/05163220-665c-4dc5-944b-18700b888750-luis-pasteur.png" alt="Logo de LUIS PASTEUR" loading="lazy"><h3>LUIS PASTEUR</h3></article>
-          <article class="coverage-card" data-coverage-name="MEDIFE SA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/8a2879f3-ab37-4ef6-82c4-1db49a5cf73d-medife-sa.svg" alt="Logo de MEDIFE SA" loading="lazy"><h3>MEDIFE SA</h3></article>
-          <article class="coverage-card" data-coverage-name="OPDEA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/36000a55-0733-482a-8407-b48991a51412-opdea.jpg" alt="Logo de OPDEA" loading="lazy"><h3>OPDEA</h3></article>
-          <article class="coverage-card" data-coverage-name="OSAP"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/f6be88f9-8ac8-4ef4-b6d9-fa21bf82eb83-osap.webp" alt="Logo de OSAP" loading="lazy"><h3>OSAP</h3></article>
-          <article class="coverage-card" data-coverage-name="OSCAP"><img src="https://instagram.faep10-1.fna.fbcdn.net/v/t51.2885-19/125383110_2779079529044488_8409114957166950158_n.jpg?stp=dst-jpg_s150x150_tt6&amp;_nc_cat=110&amp;_nc_map=urlgen_bucketless&amp;ccb=7-5&amp;_nc_sid=f7ccc5&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&amp;_nc_ohc=z3VdDKQdyv0Q7kNvwFxQvf5&amp;_nc_oc=AdoWo6VLObdz2q_cbXvpkyL5CGaqRFPzB2jLalWvUYInRqsnWoHn-pqKNzmd6slKOq9R0GFwOYbfWAYDG9Qx3yxC&amp;_nc_zt=24&amp;_nc_ht=instagram.faep10-1.fna&amp;_nc_ss=7b6a8&amp;oh=00_AQMQ0dO20Mc_-FH3j-9IKF2GInNG3q-H8X69T0Rc69Xz6A&amp;oe=6ACC67EC" alt="Logo de OSCAP" loading="lazy"><h3>OSCAP</h3></article>
-          <article class="coverage-card" data-coverage-name="OSDOP"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/49313a70-2887-4952-9f28-bdd096a8c13f-osdop.png" alt="Logo de OSDOP" loading="lazy"><h3>OSDOP</h3></article>
-          <article class="coverage-card" data-coverage-name="OSFATUN"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/382b7081-533f-4749-82d7-b244e577b3d7-osfatun.png" alt="Logo de OSFATUN" loading="lazy"><h3>OSFATUN</h3></article>
-          <article class="coverage-card" data-coverage-name="OSPE"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/aa043116-cde3-4510-9eda-0ccdd41239f7-ospe.jpg" alt="Logo de OSPE" loading="lazy"><h3>OSPE</h3></article>
-          <article class="coverage-card" data-coverage-name="OSPEDYC"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/cddbe718-4e46-43f9-998d-6c146c8ef09e-ospedyc.png" alt="Logo de OSPEDYC" loading="lazy"><h3>OSPEDYC</h3></article>
-          <article class="coverage-card" data-coverage-name="OSPEP Personal de Panaderías"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/67b1a6dd-7259-4bb0-8af5-1e01e5da9e04-ospep-personal-de-panaderias.jpg" alt="Logo de OSPEP Personal de Panaderías" loading="lazy"><h3>OSPEP Personal de Panaderías</h3></article>
-          <article class="coverage-card" data-coverage-name="OSPEPBA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/822e26f9-d6e6-4415-83d7-9dd64bb41482-ospepba.webp" alt="Logo de OSPEPBA" loading="lazy"><h3>OSPEPBA</h3></article>
-          <article class="coverage-card" data-coverage-name="OSPTV"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/cdc3363f-872c-459f-94de-e1486427d911-osptv.png" alt="Logo de OSPTV" loading="lazy"><h3>OSPTV</h3></article>
-          <article class="coverage-card" data-coverage-name="OSSEG"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/4bcfb537-8ec5-44dc-878a-47e08c8d7674-osseg.png" alt="Logo de OSSEG" loading="lazy"><h3>OSSEG</h3></article>
-          <article class="coverage-card" data-coverage-name="PODER JUDICIAL"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/fda3cf13-6e4b-46f4-a345-409a685c9c72-poder-judicial.jpg" alt="Logo de PODER JUDICIAL" loading="lazy"><h3>PODER JUDICIAL</h3></article>
-          <article class="coverage-card" data-coverage-name="PREVENCION SALUD S.A"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/ba8744c8-9073-448a-b9c0-7d6b946df852-prevencion-salud-s-a.png" alt="Logo de PREVENCION SALUD S.A" loading="lazy"><h3>PREVENCION SALUD S.A</h3></article>
-          <article class="coverage-card" data-coverage-name="RAS"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/b86c9665-ef47-409f-84c1-549ee0a97a1d-ras.webp" alt="Logo de RAS" loading="lazy"><h3>RAS</h3></article>
-          <article class="coverage-card" data-coverage-name="SANCOR"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/972fa2d7-2838-4c20-beaf-19acf1d14c9c-sancor.jpg" alt="Logo de SANCOR" loading="lazy"><h3>SANCOR</h3></article>
-          <article class="coverage-card" data-coverage-name="SWISS MEDICAL S.A."><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/778813ca-3449-4ddc-a7b3-c4e1c623bc4a-swiss-medical-s-a.png" alt="Logo de SWISS MEDICAL S.A." loading="lazy"><h3>SWISS MEDICAL S.A.</h3></article>
-          <!-- coverage-fallback:end -->
-        </div>
-        <p id="coverage-empty" class="coverage-empty" hidden>No encontramos esa obra social en nuestro listado actual. Consultanos por WhatsApp para verificar tu cobertura.</p>
+      <div class="hero-actions button--top-md reveal">
+        <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-coverage="consulta">Consultar por WhatsApp</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- BLOQUE CONSULTAR -->
-    <section class="section section-soft" id="consultar">
-      <div class="container">
-        <div class="soft-bg reveal" style="padding: 2.5rem 2rem; text-align: center;">
-          <div class="section-heading" style="margin: 0 auto 1.5rem;">
-            <p class="eyebrow">¿Querés confirmar si atendemos tu cobertura?</p>
-            <h2>Escribinos por WhatsApp y te orientamos</h2>
-            <p>Si tu obra social o prepaga no aparece en la lista, consultanos igual. Te orientamos sobre disponibilidad y requisitos.</p>
-          </div>
-
-          <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-coverage-whatsapp data-conversion="turno" data-coverage="consulta">Consultar cobertura</a>
-        </div>
+  <!-- Listado administrado desde Supabase -->
+  <section class="section" id="destacadas">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Coberturas</p>
+        <h2>Obras sociales y prepagas activas</h2>
       </div>
-    </section>
 
-    <!-- PASO A PASO Y MODALIDADES -->
-    <section class="section section-soft" id="pasos">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Modalidades y Requisitos</p>
-          <h2>Cómo coordinar tu atención en Kareh</h2>
-          <p>
-            Atendemos pacientes con obras sociales, prepagas y en modalidad particular.
-            Seguí estos simples pasos para iniciar tu tratamiento de kinesiología y rehabilitación:
-          </p>
-        </div>
-
-        <div class="cards-grid cards-grid--three">
-          <article class="info-card reveal">
-            <span class="card-kicker">Paso 1</span>
-            <h3>Orden médica vigente</h3>
-            <p>Es indispensable contar con la orden médica que indique diagnóstico, fecha, firma y sello del profesional derivante.</p>
-          </article>
-
-          <article class="info-card reveal">
-            <span class="card-kicker">Paso 2</span>
-            <h3>Informar tu cobertura</h3>
-            <p>Envianos foto de la orden y tu credencial. Verificamos si tu plan requiere autorización previa, copago o bono de atención.</p>
-          </article>
-
-          <article class="info-card reveal">
-            <span class="card-kicker">Paso 3</span>
-            <h3>Coordinar turno por WhatsApp</h3>
-            <p>Te responderemos para confirmar disponibilidad y coordinar los días y horarios que mejor se adapten a tu tratamiento.</p>
-          </article>
-        </div>
-
-        <div class="cards-grid button--top-md">
-          <article class="info-card reveal">
-            <span class="card-kicker">Coberturas puntuales</span>
-            <h3>Afiliados de IOMA</h3>
-            <p>Si contás con cobertura de IOMA, escribinos por WhatsApp antes de tu primera consulta para orientarte con la documentación y requisitos específicos de tu trámite.</p>
-          </article>
-
-          <article class="info-card reveal">
-            <span class="card-kicker">Sin obra social</span>
-            <h3>Atención particular</h3>
-            <p>Si no contás con obra social o tu cobertura no se encuentra en el listado, podés atenderte de forma particular presentando igualmente tu orden médica.</p>
-          </article>
-        </div>
+      <label class="coverage-search-label" for="coverage-search">¿Buscás tu obra social?</label>
+      <input id="coverage-search" class="coverage-search" type="search" placeholder="Buscar obra social..." autocomplete="off">
+      <!--
+        Respaldo estático: se actualiza con `npm run sync:coverage`.
+        Permite que el listado sea indexable y siga visible si Supabase no responde.
+      -->
+      <div id="coverage-grid" class="coverage-grid" aria-live="polite">
+        <!-- coverage-fallback:start -->
+        <article class="coverage-card" data-coverage-name="ACTIVA SALUD"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/48857ca6-8e63-4d47-8769-13a5d7d28ac4-activa-salud.jpg" alt="Logo de ACTIVA SALUD" width="44" height="44" loading="lazy" decoding="async"><h3>ACTIVA SALUD</h3></article>
+        <article class="coverage-card" data-coverage-name="AMEBPBA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/cfdb668a-55e5-4948-a1cf-f14f56c7c20a-amebpba.jpg" alt="Logo de AMEBPBA" width="44" height="44" loading="lazy" decoding="async"><h3>AMEBPBA</h3></article>
+        <article class="coverage-card" data-coverage-name="AMFFA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/a6c4744a-920b-47da-be3b-6d8944f846f2-amffa.png" alt="Logo de AMFFA" width="44" height="44" loading="lazy" decoding="async"><h3>AMFFA</h3></article>
+        <article class="coverage-card" data-coverage-name="AMSTERDAM SALUD"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/8ea3f162-a7b7-4864-8ad5-272e01b67337-amsterdam-salud.jpg" alt="Logo de AMSTERDAM SALUD" width="44" height="44" loading="lazy" decoding="async"><h3>AMSTERDAM SALUD</h3></article>
+        <article class="coverage-card" data-coverage-name="APSOT"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/be69b8c1-e557-470e-b13f-a993fd6e00a0-apsot.svg" alt="Logo de APSOT" width="44" height="44" loading="lazy" decoding="async"><h3>APSOT</h3></article>
+        <article class="coverage-card" data-coverage-name="ASOCIACIÓN ECLESIÁSTICA SAN PEDRO"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/becaf50f-9676-4ccf-8867-4b2b82f239b2-asociacion-eclesiastica-san-pedro.png" alt="Logo de ASOCIACIÓN ECLESIÁSTICA SAN PEDRO" width="44" height="44" loading="lazy" decoding="async"><h3>ASOCIACIÓN ECLESIÁSTICA SAN PEDRO</h3></article>
+        <article class="coverage-card" data-coverage-name="AVALIAN SALUD Y BIENESTAR"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/2a3f9a66-c126-4fed-bb37-d03d7f0df249-avalian-salud-y-bienestar.png" alt="Logo de AVALIAN SALUD Y BIENESTAR" width="44" height="44" loading="lazy" decoding="async"><h3>AVALIAN SALUD Y BIENESTAR</h3></article>
+        <article class="coverage-card" data-coverage-name="CASA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/88651b27-f09f-4f48-9697-1bfbfafeddc7-casa.png" alt="Logo de CASA" width="44" height="44" loading="lazy" decoding="async"><h3>CASA</h3></article>
+        <article class="coverage-card" data-coverage-name="COLEGIO DE ESCRIBANOS"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/e412e7fc-2af3-44cb-b888-965f002219a9-colegio-de-escribanos.svg" alt="Logo de COLEGIO DE ESCRIBANOS" width="44" height="44" loading="lazy" decoding="async"><h3>COLEGIO DE ESCRIBANOS</h3></article>
+        <article class="coverage-card" data-coverage-name="COLONIA SUIZA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/756d1d7c-2f75-4ceb-a0c1-66598bbade79-colonia-suiza.jpg" alt="Logo de COLONIA SUIZA" width="44" height="44" loading="lazy" decoding="async"><h3>COLONIA SUIZA</h3></article>
+        <article class="coverage-card" data-coverage-name="COMEI"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/b876e7f6-e2df-432d-87d1-a30df3ea32c2-comei.png" alt="Logo de COMEI" width="44" height="44" loading="lazy" decoding="async"><h3>COMEI</h3></article>
+        <article class="coverage-card" data-coverage-name="DASMI"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/5b8ce05d-8599-4229-a210-f86d97db549c-dasmi.png" alt="Logo de DASMI" width="44" height="44" loading="lazy" decoding="async"><h3>DASMI</h3></article>
+        <article class="coverage-card" data-coverage-name="DASUTEN"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/757eb233-55ae-49b1-bdec-1c685977d251-dasuten.webp" alt="Logo de DASUTEN" width="44" height="44" loading="lazy" decoding="async"><h3>DASUTEN</h3></article>
+        <article class="coverage-card" data-coverage-name="E. W. HOPE"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/39b8e2e4-d7f5-4499-a943-4a2c1f3382d0-e-w-hope.svg" alt="Logo de E. W. HOPE" width="44" height="44" loading="lazy" decoding="async"><h3>E. W. HOPE</h3></article>
+        <article class="coverage-card" data-coverage-name="FEDERADA SALUD"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/be377777-3148-41f7-8481-532a8a883afc-federada-salud.jpg" alt="Logo de FEDERADA SALUD" width="44" height="44" loading="lazy" decoding="async"><h3>FEDERADA SALUD</h3></article>
+        <article class="coverage-card" data-coverage-name="FUTBOLISTAS"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/d1c36acf-8021-4a3c-ba3f-538027763cc9-futbolistas.svg" alt="Logo de FUTBOLISTAS" width="44" height="44" loading="lazy" decoding="async"><h3>FUTBOLISTAS</h3></article>
+        <article class="coverage-card" data-coverage-name="GLOBAL EMPRESARIA SA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/c048c9b5-a234-49af-8cb9-c9fffbcaa7d7-global-empresaria-sa.webp" alt="Logo de GLOBAL EMPRESARIA SA" width="44" height="44" loading="lazy" decoding="async"><h3>GLOBAL EMPRESARIA SA</h3></article>
+        <article class="coverage-card" data-coverage-name="IOMA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/e2f719af-4573-406e-86f1-bf841a94a3f5-ioma.png" alt="Logo de IOMA" width="44" height="44" loading="lazy" decoding="async"><h3>IOMA</h3></article>
+        <article class="coverage-card" data-coverage-name="JERARQUICOS"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/4999ceed-cd01-491c-9d52-c9f5c1f80a64-jerarquicos.png" alt="Logo de JERARQUICOS" width="44" height="44" loading="lazy" decoding="async"><h3>JERARQUICOS</h3></article>
+        <article class="coverage-card" data-coverage-name="LUIS PASTEUR"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/05163220-665c-4dc5-944b-18700b888750-luis-pasteur.png" alt="Logo de LUIS PASTEUR" width="44" height="44" loading="lazy" decoding="async"><h3>LUIS PASTEUR</h3></article>
+        <article class="coverage-card" data-coverage-name="MEDIFE SA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/8a2879f3-ab37-4ef6-82c4-1db49a5cf73d-medife-sa.svg" alt="Logo de MEDIFE SA" width="44" height="44" loading="lazy" decoding="async"><h3>MEDIFE SA</h3></article>
+        <article class="coverage-card" data-coverage-name="OPDEA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/36000a55-0733-482a-8407-b48991a51412-opdea.jpg" alt="Logo de OPDEA" width="44" height="44" loading="lazy" decoding="async"><h3>OPDEA</h3></article>
+        <article class="coverage-card" data-coverage-name="OSAP"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/f6be88f9-8ac8-4ef4-b6d9-fa21bf82eb83-osap.webp" alt="Logo de OSAP" width="44" height="44" loading="lazy" decoding="async"><h3>OSAP</h3></article>
+        <article class="coverage-card" data-coverage-name="OSCAP"><img src="https://instagram.faep10-1.fna.fbcdn.net/v/t51.2885-19/125383110_2779079529044488_8409114957166950158_n.jpg?stp=dst-jpg_s150x150_tt6&amp;_nc_cat=110&amp;_nc_map=urlgen_bucketless&amp;ccb=7-5&amp;_nc_sid=f7ccc5&amp;efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&amp;_nc_ohc=z3VdDKQdyv0Q7kNvwFxQvf5&amp;_nc_oc=AdoWo6VLObdz2q_cbXvpkyL5CGaqRFPzB2jLalWvUYInRqsnWoHn-pqKNzmd6slKOq9R0GFwOYbfWAYDG9Qx3yxC&amp;_nc_zt=24&amp;_nc_ht=instagram.faep10-1.fna&amp;_nc_ss=7b6a8&amp;oh=00_AQMQ0dO20Mc_-FH3j-9IKF2GInNG3q-H8X69T0Rc69Xz6A&amp;oe=6ACC67EC" alt="Logo de OSCAP" width="44" height="44" loading="lazy" decoding="async"><h3>OSCAP</h3></article>
+        <article class="coverage-card" data-coverage-name="OSDOP"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/49313a70-2887-4952-9f28-bdd096a8c13f-osdop.png" alt="Logo de OSDOP" width="44" height="44" loading="lazy" decoding="async"><h3>OSDOP</h3></article>
+        <article class="coverage-card" data-coverage-name="OSFATUN"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/382b7081-533f-4749-82d7-b244e577b3d7-osfatun.png" alt="Logo de OSFATUN" width="44" height="44" loading="lazy" decoding="async"><h3>OSFATUN</h3></article>
+        <article class="coverage-card" data-coverage-name="OSPE"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/aa043116-cde3-4510-9eda-0ccdd41239f7-ospe.jpg" alt="Logo de OSPE" width="44" height="44" loading="lazy" decoding="async"><h3>OSPE</h3></article>
+        <article class="coverage-card" data-coverage-name="OSPEDYC"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/cddbe718-4e46-43f9-998d-6c146c8ef09e-ospedyc.png" alt="Logo de OSPEDYC" width="44" height="44" loading="lazy" decoding="async"><h3>OSPEDYC</h3></article>
+        <article class="coverage-card" data-coverage-name="OSPEP Personal de Panaderías"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/67b1a6dd-7259-4bb0-8af5-1e01e5da9e04-ospep-personal-de-panaderias.jpg" alt="Logo de OSPEP Personal de Panaderías" width="44" height="44" loading="lazy" decoding="async"><h3>OSPEP Personal de Panaderías</h3></article>
+        <article class="coverage-card" data-coverage-name="OSPEPBA"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/822e26f9-d6e6-4415-83d7-9dd64bb41482-ospepba.webp" alt="Logo de OSPEPBA" width="44" height="44" loading="lazy" decoding="async"><h3>OSPEPBA</h3></article>
+        <article class="coverage-card" data-coverage-name="OSPTV"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/cdc3363f-872c-459f-94de-e1486427d911-osptv.png" alt="Logo de OSPTV" width="44" height="44" loading="lazy" decoding="async"><h3>OSPTV</h3></article>
+        <article class="coverage-card" data-coverage-name="OSSEG"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/4bcfb537-8ec5-44dc-878a-47e08c8d7674-osseg.png" alt="Logo de OSSEG" width="44" height="44" loading="lazy" decoding="async"><h3>OSSEG</h3></article>
+        <article class="coverage-card" data-coverage-name="PODER JUDICIAL"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/fda3cf13-6e4b-46f4-a345-409a685c9c72-poder-judicial.jpg" alt="Logo de PODER JUDICIAL" width="44" height="44" loading="lazy" decoding="async"><h3>PODER JUDICIAL</h3></article>
+        <article class="coverage-card" data-coverage-name="PREVENCION SALUD S.A"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/ba8744c8-9073-448a-b9c0-7d6b946df852-prevencion-salud-s-a.png" alt="Logo de PREVENCION SALUD S.A" width="44" height="44" loading="lazy" decoding="async"><h3>PREVENCION SALUD S.A</h3></article>
+        <article class="coverage-card" data-coverage-name="RAS"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/b86c9665-ef47-409f-84c1-549ee0a97a1d-ras.webp" alt="Logo de RAS" width="44" height="44" loading="lazy" decoding="async"><h3>RAS</h3></article>
+        <article class="coverage-card" data-coverage-name="SANCOR"><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/migrated/972fa2d7-2838-4c20-beaf-19acf1d14c9c-sancor.jpg" alt="Logo de SANCOR" width="44" height="44" loading="lazy" decoding="async"><h3>SANCOR</h3></article>
+        <article class="coverage-card" data-coverage-name="SWISS MEDICAL S.A."><img src="https://wksubkrasrkhmcjrjgbw.supabase.co/storage/v1/object/public/coverage-logos/logos/778813ca-3449-4ddc-a7b3-c4e1c623bc4a-swiss-medical-s-a.png" alt="Logo de SWISS MEDICAL S.A." width="44" height="44" loading="lazy" decoding="async"><h3>SWISS MEDICAL S.A.</h3></article>
+        <!-- coverage-fallback:end -->
       </div>
-    </section>
+      <p id="coverage-empty" class="coverage-empty" hidden>No encontramos esa obra social en nuestro listado actual. Consultanos por WhatsApp para verificar tu cobertura.</p>
+    </div>
+  </section>
 
-    <!-- Aclaración legal -->
-    <section class="section section-soft" id="aviso">
-      <div class="container">
-        <div class="soft-bg reveal" style="padding: 1.5rem; text-align: center;">
-          <p style="margin: 0; color: var(--kareh-info); font-size: 0.9rem;">
-            La disponibilidad de atención puede variar según cobertura, autorización y tipo de prestación. Consultanos para confirmarlo.
-          </p>
+  <!-- BLOQUE CONSULTAR -->
+  <section class="section section-soft" id="consultar">
+    <div class="container">
+      <div class="soft-bg reveal" style="padding: 2.5rem 2rem; text-align: center;">
+        <div class="section-heading" style="margin: 0 auto 1.5rem;">
+          <p class="eyebrow">¿Querés confirmar si atendemos tu cobertura?</p>
+          <h2>Escribinos por WhatsApp y te orientamos</h2>
+          <p>Si tu obra social o prepaga no aparece en la lista, consultanos igual. Te orientamos sobre disponibilidad y requisitos.</p>
         </div>
+
+        <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-coverage-whatsapp data-conversion="turno" data-coverage="consulta">Consultar cobertura</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">Preguntas frecuentes</p>
-          <h2>Información sobre coberturas</h2>
-        </div>
-
-        <div class="cards-grid faq-grid">
-          <article class="info-card faq-card reveal">
-            <h3>¿Necesito orden médica?</h3>
-            <p>Sí, necesitás orden médica vigente con diagnóstico, fecha, firma y sello para comenzar el tratamiento.</p>
-          </article>
-
-          <article class="info-card faq-card reveal">
-            <h3>¿Cómo confirmo si aceptan mi cobertura?</h3>
-            <p>Escribinos por WhatsApp con tu obra social y número de afiliado. Te confirmamos disponibilidad y requisitos.</p>
-          </article>
-
-          <article class="info-card faq-card reveal">
-            <h3>¿Atienden pacientes particulares?</h3>
-            <p>Sí, atendemos pacientes particulares sin obra social. Consultanos por modalidad y valores.</p>
-          </article>
-
-          <article class="info-card faq-card reveal">
-            <h3>¿Cómo solicito un turno?</h3>
-            <p>Escribinos por WhatsApp con tu orden médica. Te confirmamos disponibilidad y coordinamos el turno.</p>
-          </article>
-        </div>
-
-        <div class="hero-actions button--top-md reveal">
-          <a class="button button-secondary" href="/preguntas/">Ver todas las preguntas frecuentes</a>
-        </div>
+  <!-- PASO A PASO Y MODALIDADES -->
+  <section class="section section-soft" id="pasos">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Modalidades y Requisitos</p>
+        <h2>Cómo coordinar tu atención en Kareh</h2>
+        <p>
+          Atendemos pacientes con obras sociales, prepagas y en modalidad particular.
+          Seguí estos simples pasos para iniciar tu tratamiento de kinesiología y rehabilitación:
+        </p>
       </div>
-    </section>
-  </main>
 
-  {% include "footer.njk" %}
+      <div class="cards-grid cards-grid--three">
+        <article class="info-card reveal">
+          <span class="card-kicker">Paso 1</span>
+          <h3>Orden médica vigente</h3>
+          <p>Es indispensable contar con la orden médica que indique diagnóstico, fecha, firma y sello del profesional derivante.</p>
+        </article>
 
+        <article class="info-card reveal">
+          <span class="card-kicker">Paso 2</span>
+          <h3>Informar tu cobertura</h3>
+          <p>Envianos foto de la orden y tu credencial. Verificamos si tu plan requiere autorización previa, copago o bono de atención.</p>
+        </article>
 
+        <article class="info-card reveal">
+          <span class="card-kicker">Paso 3</span>
+          <h3>Coordinar turno por WhatsApp</h3>
+          <p>Te responderemos para confirmar disponibilidad y coordinar los días y horarios que mejor se adapten a tu tratamiento.</p>
+        </article>
+      </div>
 
-  <script type="module" src="/script.js?v=20261027-services-menu"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script defer src="/assets/js/supabase-config.js"></script>
-  <script defer src="/assets/js/obras-sociales.js?v=20261006-logos-locales"></script>
-</body>
+      <div class="cards-grid button--top-md">
+        <article class="info-card reveal">
+          <span class="card-kicker">Coberturas puntuales</span>
+          <h3>Afiliados de IOMA</h3>
+          <p>Si contás con cobertura de IOMA, escribinos por WhatsApp antes de tu primera consulta para orientarte con la documentación y requisitos específicos de tu trámite.</p>
+        </article>
 
-</html>
+        <article class="info-card reveal">
+          <span class="card-kicker">Sin obra social</span>
+          <h3>Atención particular</h3>
+          <p>Si no contás con obra social o tu cobertura no se encuentra en el listado, podés atenderte de forma particular presentando igualmente tu orden médica.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aclaración legal -->
+  <section class="section section-soft" id="aviso">
+    <div class="container">
+      <div class="soft-bg reveal" style="padding: 1.5rem; text-align: center;">
+        <p style="margin: 0; color: var(--kareh-info); font-size: 0.9rem;">
+          La disponibilidad de atención puede variar según cobertura, autorización y tipo de prestación. Consultanos para confirmarlo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Información sobre coberturas</h2>
+      </div>
+
+      <div class="cards-grid faq-grid">
+        <article class="info-card faq-card reveal">
+          <h3>¿Necesito orden médica?</h3>
+          <p>Sí, necesitás orden médica vigente con diagnóstico, fecha, firma y sello para comenzar el tratamiento.</p>
+        </article>
+
+        <article class="info-card faq-card reveal">
+          <h3>¿Cómo confirmo si aceptan mi cobertura?</h3>
+          <p>Escribinos por WhatsApp con tu obra social y número de afiliado. Te confirmamos disponibilidad y requisitos.</p>
+        </article>
+
+        <article class="info-card faq-card reveal">
+          <h3>¿Atienden pacientes particulares?</h3>
+          <p>Sí, atendemos pacientes particulares sin obra social. Consultanos por modalidad y valores.</p>
+        </article>
+
+        <article class="info-card faq-card reveal">
+          <h3>¿Cómo solicito un turno?</h3>
+          <p>Escribinos por WhatsApp con tu orden médica. Te confirmamos disponibilidad y coordinamos el turno.</p>
+        </article>
+      </div>
+
+      <div class="hero-actions button--top-md reveal">
+        <a class="button button-secondary" href="/preguntas/">Ver todas las preguntas frecuentes</a>
+      </div>
+    </div>
+  </section>
+</main>

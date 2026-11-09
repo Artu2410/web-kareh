@@ -1,0 +1,9 @@
+{%- set article = schema[0] if schema and schema[0]["@type"] == "Article" else {} -%}
+<aside class="author-box" aria-label="Autoría y revisión profesional">
+  <p class="author-box-title">Escrito y revisado por <a href="/nosotros/">{{ site.professional.name }}</a></p>
+  <p class="author-box-meta">Licenciada en Kinesiología y Fisiatría · {{ site.professional.credentials }}</p>
+  {%- if article.dateModified or article.datePublished %}
+  <p class="author-box-meta">Publicado: <time datetime="{{ article.datePublished }}">{{ article.datePublished | esDate }}</time>{% if article.dateModified and article.dateModified != article.datePublished %} · Última revisión: <time datetime="{{ article.dateModified }}">{{ article.dateModified | esDate }}</time>{% endif %}</p>
+  {%- endif %}
+  <p class="author-box-note">Contenido informativo: no reemplaza la evaluación profesional ni la consulta médica.</p>
+</aside>

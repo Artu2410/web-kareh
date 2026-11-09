@@ -1,0 +1,32 @@
+---
+permalink: /llms-full.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }} — Centro de Kinesiología y Fisiatría (texto completo)
+
+> Centro de kinesiología y fisiatría en {{ site.address.locality }}, {{ site.address.region }}, Argentina. Profesional a cargo: {{ site.professional.name }} ({{ site.professional.credentials }}). Los turnos se solicitan por WhatsApp ({{ site.whatsappDisplay }}) y quedan sujetos a confirmación del centro.
+
+## Datos del centro
+
+- Dirección: {{ site.address.label }}
+- WhatsApp: {{ site.whatsappDisplay }}
+{%- for schedule in site.hours %}
+- Horario: {{ schedule.days }}, {{ schedule.time }}
+{%- endfor %}
+- Instagram: {{ site.social.instagram }}
+- Facebook: {{ site.social.facebook }}
+- Sitio: {{ site.url }}/
+
+La información publicada es educativa y no sustituye una evaluación profesional, una consulta médica ni una atención de urgencia.
+{% for item in collections.publicPages %}
+---
+
+# {{ item.data.title }}
+
+URL: {{ site.url }}{{ item.url }}
+{%- if item.data.description %}
+Resumen: {{ item.data.description }}
+{%- endif %}
+
+{{ item.content | mainText | safe }}
+{% endfor %}

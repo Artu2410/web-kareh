@@ -162,6 +162,10 @@
       {
         "label": "Privacidad",
         "url": "/privacidad/"
+      },
+      {
+        "label": "Aviso legal",
+        "url": "/terminos/"
       }
     ]
   }
