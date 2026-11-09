@@ -1,0 +1,13 @@
+{%- if serviceSummary %}
+<div class="service-summary reveal" role="note" aria-label="Resumen del tratamiento">
+  <p class="service-summary-label">En pocas palabras</p>
+  <p class="service-summary-text">{{ serviceSummary }}</p>
+  {%- if serviceFacts %}
+  <ul class="service-facts">
+    {%- for fact in serviceFacts %}
+    <li>{{ fact }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+</div>
+{%- endif %}

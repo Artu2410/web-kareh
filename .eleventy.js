@@ -6,6 +6,17 @@ module.exports = function (eleventyConfig) {
     return match ? `${Number(match[3])} de ${monthsEs[Number(match[2]) - 1]} de ${match[1]}` : value;
   });
 
+
+  eleventyConfig.addFilter("faqSchema", (items = []) => ({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  }));
+
   const { execFileSync } = require("node:child_process");
   const gitDates = new Map();
   eleventyConfig.addFilter("lastModified", (inputPath) => {

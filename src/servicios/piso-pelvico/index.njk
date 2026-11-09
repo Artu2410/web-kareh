@@ -70,7 +70,36 @@
       ]
     }
   ],
-  "scrollProgress": true
+  "scrollProgress": true,
+  "serviceSummary": "La rehabilitación de piso pélvico es un tratamiento kinésico para la incontinencia urinaria (de esfuerzo, de urgencia o mixta), la debilidad de la musculatura pélvica, los prolapsos leves y la recuperación posparto. En Kareh la evaluación es individual y confidencial, y la atención es exclusivamente particular, sin cobertura por obra social.",
+  "serviceFacts": [
+    "Atención confidencial",
+    "Evaluación individual",
+    "Solo particular"
+  ],
+  "serviceFaqTitle": "Dudas habituales sobre piso pélvico e incontinencia",
+  "serviceFaq": [
+    {
+      "q": "¿Es normal tener pérdidas de orina?",
+      "a": "La pérdida de orina es frecuente, pero eso no significa que haya que normalizarla ni convivir con ella sin consultar. Una evaluación ayuda a entender el motivo y definir si corresponde un plan kinésico."
+    },
+    {
+      "q": "¿Qué tipos de incontinencia urinaria se tratan?",
+      "a": "Se puede consultar por incontinencia de esfuerzo (escapes al toser, reír, saltar o hacer actividad física), de urgencia (necesidad súbita e intensa de orinar) o mixta, que combina ambas. El abordaje se adapta a cada persona."
+    },
+    {
+      "q": "¿Cómo es la primera consulta de piso pélvico?",
+      "a": "Se conversa sobre el motivo de consulta, los antecedentes y los objetivos. Cualquier valoración física se explica antes y se realiza con consentimiento y privacidad. Después se acuerda una propuesta de trabajo kinésico."
+    },
+    {
+      "q": "¿Sirve para la recuperación después del parto?",
+      "a": "Sí. La rehabilitación de piso pélvico puede acompañar la recuperación posparto; los objetivos se adaptan a la evaluación, los antecedentes y el momento de recuperación de cada persona."
+    },
+    {
+      "q": "¿El tratamiento de piso pélvico tiene cobertura por obra social?",
+      "a": "No. Es una atención exclusivamente particular, sin cobertura por obra social. Los valores y la disponibilidad se consultan por WhatsApp de forma confidencial."
+    }
+  ]
 }
 ---
 <main id="contenido">
@@ -84,6 +113,8 @@
           debilidad muscular, prolapsos leves y recuperación posparto, con objetivos acordados según cada caso.
         </p>
       </div>
+
+      {% include "partials/service-summary.njk" %}
 
       <div class="soft-bg reveal" role="note">
         <p><strong>ATENCIÓN EXCLUSIVAMENTE PARTICULAR. SIN COBERTURA POR OBRA SOCIAL.</strong></p>
@@ -212,4 +243,6 @@
       </div>
     </div>
   </section>
+
+  {% include "partials/service-faq.njk" %}
 </main>

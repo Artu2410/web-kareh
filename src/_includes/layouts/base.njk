@@ -36,6 +36,9 @@
   {% for block in schema %}
   <script type="application/ld+json">{{ block | dump | safe }}</script>
   {% endfor %}
+  {% if serviceFaq %}
+  <script type="application/ld+json">{{ serviceFaq | faqSchema | dump | safe }}</script>
+  {% endif %}
 </head>
 <body class="{{ bodyClass | default('page-shell') }}">
   {% if bodyClass == 'page-home' or scrollProgress %}<div class="scroll-progress" aria-hidden="true"></div>{% endif %}

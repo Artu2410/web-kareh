@@ -75,7 +75,36 @@
       ]
     }
   ],
-  "scrollProgress": true
+  "scrollProgress": true,
+  "serviceSummary": "El ultrasonido terapéutico es un agente físico que se usa como apoyo dentro de un tratamiento de kinesiología, junto con ejercicios y otras técnicas, en lesiones musculoesqueléticas y en la recuperación postoperatoria. No es un tratamiento aislado: en Kareh se indica según la evaluación clínica, el diagnóstico y la etapa de la lesión.",
+  "serviceFacts": [
+    "Complemento del tratamiento",
+    "Aplicación supervisada",
+    "Cobertura: consultar"
+  ],
+  "serviceFaqTitle": "Dudas habituales sobre ultrasonido terapéutico",
+  "serviceFaq": [
+    {
+      "q": "¿Para qué se usa el ultrasonido terapéutico?",
+      "a": "Se usa como complemento en cuadros musculoesqueléticos y postoperatorios. Puede ayudar a reducir la inflamación local, mejorar la irrigación de la zona y acompañar la reparación de tejidos blandos, dentro de un plan de rehabilitación."
+    },
+    {
+      "q": "¿Se puede hacer solo ultrasonido, sin otro tratamiento?",
+      "a": "No se plantea como una solución aislada. Forma parte de un plan que incluye ejercicios terapéuticos, movilización, educación del movimiento y seguimiento de la evolución."
+    },
+    {
+      "q": "¿Quién decide si el ultrasonido corresponde en mi caso?",
+      "a": "Lo define el licenciado en kinesiología según el diagnóstico, la etapa de la lesión, los objetivos del tratamiento y la respuesta del paciente, después de descartar contraindicaciones. Los parámetros se ajustan a cada persona."
+    },
+    {
+      "q": "¿Necesito orden médica?",
+      "a": "Sí. La orden médica tiene que incluir el diagnóstico, una fecha vigente y la firma y sello del profesional médico. Podés enviarla por WhatsApp para que te orientemos antes de coordinar."
+    },
+    {
+      "q": "¿El ultrasonido terapéutico tiene cobertura por obra social?",
+      "a": "Consultar previamente la cobertura con Kareh: la aceptación depende de la obra social, el tratamiento y la confirmación administrativa. Te orientamos por WhatsApp antes de coordinar el turno."
+    }
+  ]
 }
 ---
 <main id="contenido">
@@ -89,6 +118,8 @@
           rehabilitación. Su uso se define según evaluación clínica, diagnóstico y objetivo terapéutico.
         </p>
       </div>
+
+      {% include "partials/service-summary.njk" %}
 
       <div class="about-grid about-grid--spaced">
         <div class="about-copy reveal">
@@ -145,4 +176,6 @@
       </div>
     </div>
   </section>
+
+  {% include "partials/service-faq.njk" %}
 </main>

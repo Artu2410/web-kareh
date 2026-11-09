@@ -70,7 +70,36 @@
       ]
     }
   ],
-  "scrollProgress": true
+  "scrollProgress": true,
+  "serviceSummary": "La kinesiología respiratoria es un tratamiento con indicación médica que ayuda a manejar secreciones, mejorar la ventilación y recuperar la capacidad funcional en cuadros como asma, EPOC, neumonía o bronquiolitis. En Kareh atendemos adultos y niños, con atención exclusivamente particular, sin cobertura por obra social.",
+  "serviceFacts": [
+    "Adultos y niños",
+    "Con indicación médica",
+    "Solo particular"
+  ],
+  "serviceFaqTitle": "Dudas habituales sobre kinesiología respiratoria",
+  "serviceFaq": [
+    {
+      "q": "¿Necesito indicación médica para la kinesiología respiratoria?",
+      "a": "Sí. La kinesiología respiratoria se realiza con indicación del médico, pediatra o neumonólogo tratante. Al coordinar por WhatsApp revisamos la orden médica, la edad del paciente y la disponibilidad de horarios."
+    },
+    {
+      "q": "¿Atienden bebés y niños?",
+      "a": "Sí, únicamente en kinesiología respiratoria pediátrica: por ejemplo bronquiolitis, broncoespasmos, neumonías o manejo de secreciones, siempre con indicación médica. No realizamos kinesiología pediátrica traumatológica ni general."
+    },
+    {
+      "q": "¿La kinesiología respiratoria tiene cobertura por obra social?",
+      "a": "No. Es una atención exclusivamente particular, sin cobertura por obra social, tanto para adultos como para niños. Los valores y la disponibilidad se consultan por WhatsApp."
+    },
+    {
+      "q": "¿Cuándo hay que consultar de urgencia en lugar de pedir un turno?",
+      "a": "Si hay dificultad respiratoria, decaimiento marcado, fiebre persistente o rechazo del alimento, hay que consultar de inmediato a un médico o a una guardia. La kinesiología respiratoria no reemplaza la evaluación médica ni la atención de urgencia."
+    },
+    {
+      "q": "¿Qué tengo que llevar a la consulta?",
+      "a": "La orden médica vigente, el diagnóstico, la medicación indicada si la hubiera y los estudios o informes relacionados. También ayuda contar desde cuándo empezaron los síntomas y qué pautas indicó el médico."
+    }
+  ]
 }
 ---
 <main id="contenido">
@@ -84,6 +113,8 @@
           Tratamos cuadros agudos y crónicos como bronquiolitis, asma, neumonía, EPOC y recuperación funcional respiratoria.
         </p>
       </div>
+
+      {% include "partials/service-summary.njk" %}
 
       <nav class="respiratory-tabs" aria-label="Secciones de kinesiología respiratoria">
         <a class="button button-secondary" href="#adultos">Adultos</a>
@@ -168,4 +199,6 @@
       </div>
     </div>
   </section>
+
+  {% include "partials/service-faq.njk" %}
 </main>

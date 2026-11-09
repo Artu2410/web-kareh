@@ -70,7 +70,36 @@
       ]
     }
   ],
-  "scrollProgress": true
+  "scrollProgress": true,
+  "serviceSummary": "La rehabilitación postoperatoria acompaña la recuperación después de una cirugía traumatológica para recuperar movilidad, fuerza y autonomía de forma progresiva. Se inicia con la indicación del médico tratante y el plan se adapta a cada etapa de la recuperación, sin forzar el proceso, en sesiones de unos 50 minutos con aparatología y ejercicios.",
+  "serviceFacts": [
+    "Plan por etapas",
+    "Con indicación médica",
+    "Cobertura: consultar"
+  ],
+  "serviceFaqTitle": "Dudas habituales sobre rehabilitación postoperatoria",
+  "serviceFaq": [
+    {
+      "q": "¿Cuándo puedo empezar kinesiología después de una operación?",
+      "a": "El momento de inicio lo indica el cirujano o médico tratante según la cirugía y tu evolución. Con la orden médica coordinamos el comienzo y adaptamos el plan a la etapa en la que estás."
+    },
+    {
+      "q": "¿Qué tengo que llevar a la primera sesión después de la cirugía?",
+      "a": "La orden médica vigente (con diagnóstico, fecha y firma y sello del médico), los estudios o informes relacionados con la cirugía y las indicaciones que hayas recibido. Conviene ir con ropa cómoda."
+    },
+    {
+      "q": "¿Cuántas sesiones de rehabilitación postoperatoria se indican?",
+      "a": "Los tratamientos suelen indicarse por 10 sesiones. Si hace falta continuar, la nueva indicación corresponde al médico derivante."
+    },
+    {
+      "q": "¿Cuánto dura cada sesión?",
+      "a": "La sesión dura aproximadamente 50 minutos: 25 minutos de fisioterapia con aparatología y 25 minutos de kinesioterapia con ejercicios. El abordaje se ajusta a la indicación médica y a la evaluación inicial."
+    },
+    {
+      "q": "¿La rehabilitación postoperatoria tiene cobertura por obra social?",
+      "a": "Consultar previamente la cobertura con Kareh: la aceptación depende de la obra social, el tratamiento y la confirmación administrativa. Te orientamos por WhatsApp antes de coordinar el turno."
+    }
+  ]
 }
 ---
 <main id="contenido">
@@ -85,6 +114,8 @@
           José C. Paz y Los Polvorines.
         </p>
       </div>
+
+      {% include "partials/service-summary.njk" %}
 
       <div class="soft-bg reveal" role="note">
         <p><strong>Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</strong></p>
@@ -176,4 +207,6 @@
       </div>
     </div>
   </section>
+
+  {% include "partials/service-faq.njk" %}
 </main>
