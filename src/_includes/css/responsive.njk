@@ -788,9 +788,13 @@ body{overflow-wrap:break-word}
 @media (max-width:420px){.hero-panel .panel-grid--three article{grid-template-columns:minmax(0,1fr);row-gap:.15rem}}
 /* Tarjetas Ubicación / Atención del inicio: usan todo el ancho cuando son 2 */
 @media (min-width:720px){.hero-trust{grid-template-columns:repeat(auto-fit,minmax(min(100%,12rem),1fr))}}
-/* Pie: presentación de Kareh a lo ancho y las 4 tarjetas debajo (antes "Información" quedaba sola abajo) */
+/* Pie: 4 tarjetas (Kareh + profesional y redes, Contacto, Servicios, Información) */
 .nowrap{white-space:nowrap}
 .footer-grid>div{align-content:start}
 .footer-link{max-width:100%}
-@media (min-width:720px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-grid>.footer-intro{grid-column:1/-1;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:1.5rem}.footer-intro .footer-brand{margin-bottom:0}.footer-intro .footer-copy{margin:0;max-width:62ch}}
-@media (min-width:1200px){.footer-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.footer-copy{margin:0}
+.footer-professional{display:grid;gap:.1rem;padding-top:.75rem;border-top:1px solid rgba(95,124,138,.14)}
+.footer-professional strong{color:var(--kareh-text)}
+.footer-socials--inline{display:flex;flex-wrap:wrap;gap:.4rem 1rem}
+@media (min-width:720px){.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1200px){.footer-grid{grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr))}}

@@ -11,6 +11,14 @@
         <span class="brand-copy"><small>Kinesiología y Fisiatría</small></span>
       </a>
       <p class="footer-copy">La atención presencial se brinda únicamente en Bella Vista. Recibimos pacientes de San Miguel, Muñiz, José C. Paz y zonas aledañas en nuestro consultorio.</p>
+      <div class="footer-professional">
+        <p class="footer-meta"><strong>{{ site.professional.name }}</strong></p>
+        <p class="footer-meta">{{ site.professional.credentials }}</p>
+      </div>
+      <div class="footer-socials footer-socials--inline">
+        <a class="social-link" href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kareh"><span>Instagram</span></a>
+        <a class="social-link" href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kareh"><span>Facebook</span></a>
+      </div>
     </div>
     <div class="footer-card">
       <h3>Contacto</h3>
@@ -19,15 +27,6 @@
       <p class="footer-meta">{{ schedule.days }} {{ schedule.time }}</p>
       {% endfor %}
       <a class="footer-link" href="{{ site.whatsappDefaultText | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">WhatsApp: <span class="nowrap">{{ site.whatsappDisplay }}</span></a>
-    </div>
-    <div class="footer-card">
-      <h3>Profesional y redes</h3>
-      <p class="footer-meta">{{ site.professional.name }}</p>
-      <p class="footer-meta">{{ site.professional.credentials }}</p>
-      <div class="footer-socials">
-        <a class="social-link" href="{{ site.social.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Kareh"><span>Instagram</span></a>
-        <a class="social-link" href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Kareh"><span>Facebook</span></a>
-      </div>
     </div>
     <div class="footer-card">
       <h3>Servicios</h3>
