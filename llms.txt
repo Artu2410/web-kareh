@@ -15,9 +15,14 @@
 
 - [Rehabilitación traumatológica](https://kareh.com.ar/servicios/rehabilitacion-traumatologica/)
 - [Rehabilitación postoperatoria](https://kareh.com.ar/servicios/rehabilitacion-postoperatoria/)
-- [Piso pélvico e incontinencia urinaria](https://kareh.com.ar/servicios/piso-pelvico/): atención exclusivamente particular; no cuenta con cobertura por obra social.
-- [Kinesiología respiratoria](https://kareh.com.ar/servicios/kinesiologia-respiratoria/): adultos y pediátrica; atención exclusivamente particular; no cuenta con cobertura por obra social.
+- [Piso pélvico e incontinencia urinaria](https://kareh.com.ar/servicios/piso-pelvico/): atención exclusivamente particular.
+- [Kinesiología respiratoria](https://kareh.com.ar/servicios/kinesiologia-respiratoria/): adultos y pediátrica; atención exclusivamente particular.
 - [Ultrasonido terapéutico](https://kareh.com.ar/servicios/ultrasonido-terapeutico/)
+
+## Modalidad de atención
+
+- Atención exclusivamente particular: piso pélvico e incontinencia urinaria, y kinesiología respiratoria para adultos y niños.
+- Convenios con obras sociales y prepagas: únicamente kinesiología traumatológica y rehabilitación postoperatoria (consultar previamente la cobertura con Kareh).
 
 ## Contenido de salud
 
