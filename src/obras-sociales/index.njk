@@ -44,9 +44,9 @@
   "bodyClass": "page-shell page-shell--compact",
   "scrollProgress": true,
   "extraScripts": [
-    "<script defer src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2\"></script>",
+    "<script defer src=\"https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.0\"></script>",
     "<script defer src=\"/assets/js/supabase-config.js\"></script>",
-    "<script defer src=\"/assets/js/obras-sociales.js?v=20261109-logos-44\"></script>"
+    "<script defer src=\"/assets/js/obras-sociales.js?v=20261117-eventos\"></script>"
   ]
 }
 ---
@@ -61,7 +61,7 @@
       </div>
 
       <div class="hero-actions button--top-md reveal">
-        <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-coverage="consulta">Consultar por WhatsApp</a>
+        <a class="button button-primary" href="{{ 'Hola, quisiera consultar si atienden mi obra social.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-coverage="consulta">Consultar por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -135,7 +135,7 @@
           <p>Si tu obra social o prepaga no aparece en la lista, consultanos igual. Te orientamos sobre disponibilidad y requisitos.</p>
         </div>
 
-        <a class="button button-primary" href="https://wa.me/5491132016039" target="_blank" rel="noopener noreferrer" data-coverage-whatsapp data-conversion="turno" data-coverage="consulta">Consultar cobertura</a>
+        <a class="button button-primary" href="{{ 'Hola, quisiera consultar si atienden mi obra social.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-coverage-whatsapp data-conversion="turno" data-coverage="consulta">Consultar cobertura</a>
       </div>
     </div>
   </section>

@@ -29,46 +29,34 @@ const addWhatsAppContext = () => {
   if (!heading) return;
 
   const context = isServicePage ? "service_detail" : "locality";
-  const message = isServicePage
-    ? `Hola, quisiera consultar por ${heading}.`
-    : `Hola, quisiera consultar por atención desde ${heading.replace(/^Kinesiología para pacientes de\s+/i, "")}.`;
 
+  // Los mensajes precargados se definen en las plantillas (filtro waLink); acá solo se agrega contexto para Analytics.
   document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
     if (!link.dataset.service) link.dataset.service = heading;
     if (!link.dataset.conversionContext) link.dataset.conversionContext = context;
-
-    const url = new URL(link.href);
-    if (!url.searchParams.has("text")) {
-      url.searchParams.set("text", message);
-      link.href = url.toString();
-    }
   });
 };
 
 addWhatsAppContext();
 
+const getCtaType = (link) => {
+  if (link.dataset.coverage) return "cobertura";
+  if (link.dataset.conversion === "turno" || /turno|coordinar|consultar/i.test(getLinkLabel(link))) return "turno";
+  return "general";
+};
+
 document.querySelectorAll("a[href]").forEach((link) => {
   const href = link.getAttribute("href") || "";
 
   if (href.includes("wa.me")) {
+    // Un solo evento por clic; el tipo de consulta va como parámetro (cta_type) en lugar de eventos duplicados.
     link.addEventListener("click", () => {
-      const isAppointmentRequest =
-        link.dataset.conversion === "turno" ||
-        /turno|coordinar|consultar|whatsapp/i.test(getLinkLabel(link));
-
       sendGaEvent("click_whatsapp", {
         link_url: link.href,
         link_text: getLinkLabel(link),
+        cta_type: getCtaType(link),
         ...getConversionParams(link),
       });
-
-      if (isAppointmentRequest) {
-        sendGaEvent("click_turno", {
-          link_url: link.href,
-          link_text: getLinkLabel(link),
-          ...getConversionParams(link),
-        });
-      }
     });
   }
 

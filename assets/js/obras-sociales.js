@@ -17,5 +17,5 @@
   input.addEventListener('input', () => { if (covers) draw(); else filterFallback(); });
   addImageFallbacks();
   client.from('obras_sociales_public').select('*').order('name').then(({data,error}) => { if (error) { console.error('No se pudo actualizar el listado de coberturas; se conserva el respaldo est?tico.', error); return; } if (!Array.isArray(data)) { console.error('La respuesta de coberturas no tiene el formato esperado; se conserva el respaldo est?tico.'); return; } covers = data; draw(); });
-  document.querySelectorAll('[data-coverage-whatsapp]').forEach(link => link.addEventListener('click', () => { if (typeof window.gtag === 'function') window.gtag('event', 'click_whatsapp_cobertura', {page_path: location.pathname}); }));
+
 })();

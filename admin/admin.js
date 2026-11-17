@@ -32,7 +32,8 @@ const optimizeLogo = async (file) => {
   const requireAdmin = async () => {
     const { data: { user } } = await client.auth.getUser();
     if (!user) { location.assign(isLogin ? './' : './login/'); return null; }
-    const { data } = await client.from('profiles').select('role, username').eq('id', user.id).maybeSingle();
+    const { data, error } = await client.from('profiles').select('role, username').eq('id', user.id).maybeSingle();
+    if (error) { console.error('Error al verificar el perfil.', error); showMessage(`No se pudo verificar el usuario: ${error.message}`); return null; }
     if (!data || data.role !== 'admin') { await signOut(); return null; }
     return user;
   };
@@ -104,7 +105,9 @@ const optimizeLogo = async (file) => {
     document.querySelector('#active-total').textContent = covers.filter(item => item.active).length;
     document.querySelector('#inactive-total').textContent = covers.filter(item => !item.active).length;
   };
-  const load = async () => { const { data, error } = await client.from('obras_sociales').select('*').order('name'); if (error) { showMessage('No se pudo cargar el listado.'); return; } covers = data; render(); };
+  const load = async () => { const { data, error } = await client.from('obras_sociales').select('*').order('name'); if (error) { console.error('Error al cargar coberturas.', error); showMessage(`No se pudo cargar el listado: ${error.message}`); return; } covers = data; render(); };
+  // Con RLS, un UPDATE sin permiso no devuelve error: simplemente no modifica filas. Por eso se pide la fila actualizada y se verifica.
+  const noRowsMessage = 'No se guardó el cambio: la sesión no tiene permisos de administrador o expiró. Cerrá sesión y volvé a ingresar.';
   const syncDefaultLogos = async () => {
     if (!window.confirm('Se subirán los logos locales faltantes al bucket público coverage-logos y se actualizarán las coberturas activas que no tengan logo. ¿Continuar?')) return;
     syncLogosButton.disabled = true;
@@ -175,6 +178,21 @@ const optimizeLogo = async (file) => {
   document.querySelector('#new-coverage').addEventListener('click', () => openForm());
   document.querySelector('#cancel').addEventListener('click', () => form.classList.add('hidden'));
   syncLogosButton.addEventListener('click', syncDefaultLogos);
-  list.addEventListener('click', async event => { const id = event.target.dataset.edit || event.target.dataset.toggle; if (!id) return; const item = covers.find(coverage => coverage.id === id); if (event.target.dataset.edit) { openForm(item); return; } const { error } = await client.from('obras_sociales').update({ active: !item.active }).eq('id', id); if (error) showMessage('No se pudo actualizar el estado.'); else load(); });
-  form.addEventListener('submit', async event => { event.preventDefault(); showMessage(''); const id = document.querySelector('#coverage-id').value; const data = { name: document.querySelector('#name').value.trim(), active: document.querySelector('#active').value === 'true', logo_url: document.querySelector('#logo_url').value.trim() || null, official_url: document.querySelector('#official_url').value.trim() || null, description: document.querySelector('#description').value.trim() || null }; const file = document.querySelector('#logo_file').files[0]; if (file) { if (!file.type.startsWith('image/') || file.size > 2097152) { showMessage('El logo debe ser una imagen de hasta 2 MB.'); return; } const upload = await optimizeLogo(file); const safeName = upload.name.toLowerCase().replace(/[^a-z0-9._-]/g, '-'); const path = `logos/${crypto.randomUUID()}-${safeName}`; const { error: uploadError } = await client.storage.from('coverage-logos').upload(path, upload.blob, { cacheControl: '31536000', contentType: upload.type, upsert: false }); if (uploadError) { showMessage('No se pudo cargar el logo. Confirmá la migración de Storage.'); return; } data.logo_url = client.storage.from('coverage-logos').getPublicUrl(path).data.publicUrl; } const request = id ? client.from('obras_sociales').update(data).eq('id', id) : client.from('obras_sociales').insert(data); const { error } = await request; if (error) { showMessage(error.code === '23505' ? 'Ya existe una obra social con ese nombre.' : 'No se pudo guardar. Revisá los datos.'); return; } form.classList.add('hidden'); load(); });
+  list.addEventListener('click', async event => {
+    const button = event.target.closest('button');
+    const id = button?.dataset.edit || button?.dataset.toggle;
+    if (!id) return;
+    const item = covers.find(coverage => coverage.id === id);
+    if (!item) return;
+    if (button.dataset.edit) { openForm(item); return; }
+    showMessage('');
+    button.disabled = true;
+    button.textContent = 'Guardando…';
+    const { data, error } = await client.from('obras_sociales').update({ active: !item.active }).eq('id', id).select('id, active');
+    if (error) { console.error('Error al cambiar el estado.', error); showMessage(`No se pudo actualizar el estado: ${error.message}`); }
+    else if (!data || !data.length) showMessage(noRowsMessage);
+    else showMessage(`${item.name}: ${data[0].active ? 'activada' : 'desactivada'}. La página pública se actualiza al recargarla.`);
+    await load();
+  });
+  form.addEventListener('submit', async event => { event.preventDefault(); showMessage(''); const id = document.querySelector('#coverage-id').value; const data = { name: document.querySelector('#name').value.trim(), active: document.querySelector('#active').value === 'true', logo_url: document.querySelector('#logo_url').value.trim() || null, official_url: document.querySelector('#official_url').value.trim() || null, description: document.querySelector('#description').value.trim() || null }; const file = document.querySelector('#logo_file').files[0]; if (file) { if (!file.type.startsWith('image/') || file.size > 2097152) { showMessage('El logo debe ser una imagen de hasta 2 MB.'); return; } const upload = await optimizeLogo(file); const safeName = upload.name.toLowerCase().replace(/[^a-z0-9._-]/g, '-'); const path = `logos/${crypto.randomUUID()}-${safeName}`; const { error: uploadError } = await client.storage.from('coverage-logos').upload(path, upload.blob, { cacheControl: '31536000', contentType: upload.type, upsert: false }); if (uploadError) { showMessage('No se pudo cargar el logo. Confirmá la migración de Storage.'); return; } data.logo_url = client.storage.from('coverage-logos').getPublicUrl(path).data.publicUrl; } const request = id ? client.from('obras_sociales').update(data).eq('id', id).select('id') : client.from('obras_sociales').insert(data).select('id'); const { data: saved, error } = await request; if (error) { console.error('Error al guardar la cobertura.', error); showMessage(error.code === '23505' ? 'Ya existe una obra social con ese nombre.' : `No se pudo guardar: ${error.message}`); return; } if (!saved || !saved.length) { showMessage(noRowsMessage); return; } form.classList.add('hidden'); showMessage('Cambios guardados.'); load(); });
 })();

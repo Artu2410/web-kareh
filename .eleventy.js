@@ -73,12 +73,18 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => (a.data.sitemapOrder ?? 50) - (b.data.sitemapOrder ?? 50) || a.url.localeCompare(b.url))
   );
 
+  // Años transcurridos desde el inicio de la actividad (site.experienceStartYear); site.js lo recalcula en el navegador cada año.
+  eleventyConfig.addFilter("yearsSince", (startYear) => Math.max(1, new Date().getFullYear() - Number(startYear)));
+
   eleventyConfig.addFilter("waLink", (text, phone) => {
     if (!phone) {
       throw new Error("El filtro waLink requiere el número de WhatsApp del sitio.");
     }
 
-    return `https://wa.me/${phone}?text=${encodeURIComponent(text || "")}`;
+    const source = require("./src/_data/site.json").whatsappSourceText;
+    const message = String(text || "").trim();
+    const full = source && !message.includes(source) ? `${message} ${source}`.trim() : message;
+    return `https://wa.me/${phone}?text=${encodeURIComponent(full)}`;
   });
 
   [
