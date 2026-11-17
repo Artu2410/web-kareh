@@ -18,7 +18,7 @@
       </article>
       {%- endfor %}
     </div>
-    <p class="service-faq-more reveal">¿Tenés otra duda? Mirá todas las <a href="/preguntas/">preguntas frecuentes</a> o escribinos por <a href="{{ site.whatsappDefaultText | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">WhatsApp</a>.</p>
+    <p class="service-faq-more reveal">¿Tenés otra duda? Mirá todas las <a href="/preguntas/">preguntas frecuentes</a> o escribinos por <a href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">WhatsApp</a>.</p>
   </div>
 </section>
 {%- endif %}

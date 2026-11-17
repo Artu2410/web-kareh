@@ -66,7 +66,7 @@
         <p>Horarios de atención: {% for item in site.hours %}{{ item.days }}, {{ item.time }}{% if not loop.last %} · {% endif %}{% endfor %}.</p>
       </div>
       <div class="hero-actions reveal">
-        <a class="button button-primary" href="{{ 'Hola, quisiera consultar por disponibilidad de turnos en Kareh. Soy de José C. Paz.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">Consultar por WhatsApp</a>
+        <a class="button button-primary" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">Consultar por WhatsApp</a>
         <a class="button button-secondary" href="../../servicios/">Ver tratamientos</a>
         <a class="button button-secondary" href="../../obras-sociales/">Ver obras sociales</a>
       </div>

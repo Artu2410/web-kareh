@@ -163,7 +163,7 @@
         </div>
 
         <div class="hero-actions button--top-md">
-          <a class="button button-primary" href="{{ 'Hola, quisiera consultar por disponibilidad de turnos en Kareh.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">Consultar por WhatsApp</a>
+          <a class="button button-primary" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">Consultar por WhatsApp</a>
           <a class="button button-secondary" href="/obras-sociales/">Ver obras sociales</a>
         </div>
       </div>

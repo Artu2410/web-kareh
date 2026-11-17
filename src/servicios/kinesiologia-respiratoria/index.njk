@@ -1,5 +1,6 @@
 ---json
 {
+  "waTopic": "respiratoria",
   "layout": "layouts/base.njk",
   "title": "Kinesiología Respiratoria para Adultos en Bella Vista | Kareh",
   "description": "Kinesiología respiratoria para adultos en Bella Vista. Atención kinésica para asma, EPOC, neumonía y recuperación respiratoria con indicación médica.",
@@ -194,7 +195,7 @@
 
       <div class="hero-actions button--top-md reveal">
         <p><strong>ATENCIÓN EXCLUSIVAMENTE PARTICULAR.</strong></p>
-        <a class="button button-primary" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20un%20turno%20particular%20de%20kinesiolog%C3%ADa%20respiratoria%20para%20adultos%20en%20Bella%20Vista.%20%C2%BFPodr%C3%ADan%20informarme%20sobre%20disponibilidad%2C%20valores%20y%20modalidad%20de%20atenci%C3%B3n%3F%20Vengo%20desde%20la%20web." target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="respiratoria" data-segment="particular" data-coverage="particular">Coordinar turno particular por WhatsApp</a>
+        <a class="button button-primary" href="{{ site.whatsappMessages.respiratoria | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="respiratoria" data-segment="particular" data-coverage="particular">Coordinar turno particular por WhatsApp</a>
         <a class="button button-secondary" href="/preguntas/">Ver preguntas frecuentes</a>
       </div>
     </div>

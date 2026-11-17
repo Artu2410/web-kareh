@@ -26,7 +26,7 @@
       {% for schedule in site.hours %}
       <p class="footer-meta">{{ schedule.days }} {{ schedule.time }}</p>
       {% endfor %}
-      <a class="footer-link" href="{{ site.whatsappDefaultText | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">WhatsApp: <span class="nowrap">{{ site.whatsappDisplay }}</span></a>
+      <a class="footer-link" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">WhatsApp: <span class="nowrap">{{ site.whatsappDisplay }}</span></a>
     </div>
     <div class="footer-card">
       <h3>Servicios</h3>

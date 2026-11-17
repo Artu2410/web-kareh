@@ -81,10 +81,8 @@ module.exports = function (eleventyConfig) {
       throw new Error("El filtro waLink requiere el número de WhatsApp del sitio.");
     }
 
-    const source = require("./src/_data/site.json").whatsappSourceText;
-    const message = String(text || "").trim();
-    const full = source && !message.includes(source) ? `${message} ${source}`.trim() : message;
-    return `https://wa.me/${phone}?text=${encodeURIComponent(full)}`;
+    // Los textos viven en site.json (whatsappMessages); cada página elige el suyo con "waTopic".
+    return `https://wa.me/${phone}?text=${encodeURIComponent(String(text || "").trim())}`;
   });
 
   [

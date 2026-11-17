@@ -1,5 +1,6 @@
 ---json
 {
+  "waTopic": "traumatologia",
   "layout": "layouts/base.njk",
   "title": "Rehabilitación Traumatológica en Bella Vista | Kareh",
   "description": "Rehabilitación traumatológica en Bella Vista para fracturas, esguinces, desgarros, tendinitis y recuperación funcional. Atención para San Miguel, Muñiz y alrededores. Turnos por WhatsApp.",
@@ -169,7 +170,7 @@
       </div>
 
       <div class="hero-actions button--top-md reveal">
-        <a class="button button-primary" href="https://wa.me/5491132016039?text=Hola%2C%20quisiera%20consultar%20por%20rehabilitaci%C3%B3n%20traumatol%C3%B3gica%20en%20Kareh.%20Vengo%20desde%20la%20web." target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="traumatologia">Consultar por WhatsApp</a>
+        <a class="button button-primary" href="{{ site.whatsappMessages.traumatologia | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="traumatologia">Consultar por WhatsApp</a>
         <a class="button button-secondary" href="/servicios/rehabilitacion-postoperatoria/">Ver postoperatoria</a>
         <a class="button button-secondary" href="/servicios/">Todos los tratamientos</a>
       </div>

@@ -31,7 +31,7 @@ canonicalPath: /
     <p>La página que buscas no existe o fue movida. Podés volver al inicio o consultar por WhatsApp para que te ayudemos.</p>
     <div class="error-page-actions">
       <a class="button button-primary" href="/#top">Volver al inicio</a>
-      <a class="button button-secondary" href="{{ 'Hola, quisiera consultar por una página de Kareh.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+      <a class="button button-secondary" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
     </div>
     <div class="error-page-links"><a href="/nosotros/">Nosotros</a><a href="/servicios/">Servicios</a><a href="/blog/">Blog</a><a href="/obras-sociales/">Obras Sociales</a><a href="/preguntas/">Preguntas frecuentes</a><a href="/contacto/">Contacto</a><a href="/privacidad/">Privacidad</a></div>
   </div>

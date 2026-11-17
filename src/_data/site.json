@@ -3,8 +3,14 @@
   "name": "Kareh",
   "whatsapp": "5491132016039",
   "whatsappDisplay": "+54 9 11 3201-6039",
-  "whatsappDefaultText": "Hola, quisiera consultar por disponibilidad de turnos en Kareh.",
-  "whatsappSourceText": "Vengo desde la web.",
+  "whatsappMessages": {
+    "general": "Hola, quisiera consultar por kinesiología vengo de la web.",
+    "obraSocial": "Hola, quisiera consultar si atienden mi obra social vengo de la web.",
+    "sueloPelvico": "Hola, quisiera consultar por kinesiología de suelo pélvico vengo de la web.",
+    "respiratoria": "Hola, quisiera consultar por kinesiología respiratoria vengo de la web.",
+    "traumatologia": "Hola, quisiera consultar por kinesiología traumatológica vengo de la web.",
+    "postoperatoria": "Hola, quisiera consultar por kinesiología postoperatoria vengo de la web."
+  },
   "experienceStartYear": 2023,
   "address": {
     "label": "Av. Senador Morón 782, Bella Vista, Buenos Aires",
@@ -18,23 +24,35 @@
     {
       "days": "Lunes, miércoles y viernes",
       "time": "14 a 19 hs",
-      "dayOfWeek": ["Monday", "Wednesday", "Friday"]
+      "dayOfWeek": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ]
     },
     {
       "days": "Martes y jueves",
       "time": "17:30 a 19 hs",
-      "dayOfWeek": ["Tuesday", "Thursday"]
+      "dayOfWeek": [
+        "Tuesday",
+        "Thursday"
+      ]
     },
     {
       "days": "Sábados",
       "time": "8 a 12 hs",
-      "dayOfWeek": ["Saturday"]
+      "dayOfWeek": [
+        "Saturday"
+      ]
     }
   ],
   "professional": {
     "name": "Lic. Katia Aluminé Romero",
     "credentials": "M.P. 10.318 · M.N. 18.900",
-    "credentialList": ["M.P. 10.318", "M.N. 18.900"]
+    "credentialList": [
+      "M.P. 10.318",
+      "M.N. 18.900"
+    ]
   },
   "legal": {
     "businessName": "",

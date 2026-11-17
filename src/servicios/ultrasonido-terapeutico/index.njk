@@ -170,7 +170,7 @@
         </div>
         <p class="coverage-notice" role="note"><strong>Consultar previamente la cobertura con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</strong></p>
         <div class="hero-actions">
-          <a class="button button-primary" href="{{ 'Hola, quisiera consultar por ultrasonido terapéutico en Kareh.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="ultrasonido">Consultar por WhatsApp</a>
+          <a class="button button-primary" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="ultrasonido">Consultar por WhatsApp</a>
           <a class="button button-secondary" href="/servicios/rehabilitacion-postoperatoria/">Ver postoperatoria</a>
         </div>
       </div>

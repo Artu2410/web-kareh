@@ -1,5 +1,6 @@
 ---json
 {
+  "waTopic": "obraSocial",
   "layout": "layouts/base.njk",
   "title": "Obras Sociales y Convenios | Kinesiología en Bella Vista | Kareh",
   "description": "Obras sociales y prepagas con convenio en Kareh, Bella Vista, para kinesiología traumatológica y rehabilitación postoperatoria. Consultá tu cobertura antes de coordinar el turno.",
@@ -61,7 +62,7 @@
       </div>
 
       <div class="hero-actions button--top-md reveal">
-        <a class="button button-primary" href="{{ 'Hola, quisiera consultar si atienden mi obra social.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-coverage="consulta">Consultar por WhatsApp</a>
+        <a class="button button-primary" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-coverage="consulta">Consultar por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -135,7 +136,7 @@
           <p>Si tu obra social o prepaga no aparece en la lista, consultanos igual. Te orientamos sobre disponibilidad y requisitos.</p>
         </div>
 
-        <a class="button button-primary" href="{{ 'Hola, quisiera consultar si atienden mi obra social.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-coverage-whatsapp data-conversion="turno" data-coverage="consulta">Consultar cobertura</a>
+        <a class="button button-primary" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-coverage-whatsapp data-conversion="turno" data-coverage="consulta">Consultar cobertura</a>
       </div>
     </div>
   </section>

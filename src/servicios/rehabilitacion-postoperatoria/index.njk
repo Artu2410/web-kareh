@@ -1,5 +1,6 @@
 ---json
 {
+  "waTopic": "postoperatoria",
   "layout": "layouts/base.njk",
   "title": "Rehabilitación Musculoesquelética en Bella Vista | Kareh",
   "description": "Hub de rehabilitación musculoesquelética en Bella Vista: traumatológica, postoperatoria, dolor lumbar, tendinitis y ultrasonido.",
@@ -202,7 +203,7 @@
       </div>
 
       <div class="hero-actions button--top-md reveal">
-        <a class="button button-primary" href="{{ 'Hola, quisiera consultar por rehabilitación postoperatoria en Kareh.' | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="musculoesqueletica">Coordinar por WhatsApp</a>
+        <a class="button button-primary" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno" data-service="musculoesqueletica">Coordinar por WhatsApp</a>
         <a class="button button-secondary" href="/preguntas/">Ver requisitos de atención</a>
       </div>
     </div>
