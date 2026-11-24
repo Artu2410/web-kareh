@@ -1,0 +1,82 @@
+---json
+{
+  "layout": "layouts/base.njk",
+  "title": "Kinesiología para pacientes de Los Polvorines | Kareh",
+  "description": "Kinesiología para pacientes de Los Polvorines y Malvinas Argentinas en Kareh, Bella Vista. Traumatología, postoperatorio, respiratoria y piso pélvico. Turnos por WhatsApp.",
+  "ogDescription": "Atención kinésica en Bella Vista para pacientes de Los Polvorines. Consultas y turnos por WhatsApp.",
+  "schema": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Kinesiología para pacientes de Los Polvorines",
+      "serviceType": "Kinesiología y rehabilitación",
+      "provider": {
+        "@type": "MedicalBusiness",
+        "@id": "https://kareh.com.ar/#medicalbusiness",
+        "name": "Kareh - Centro de Kinesiología y Fisiatría",
+        "url": "https://kareh.com.ar/",
+        "telephone": "+5491132016039",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Senador Morón 782",
+          "addressLocality": "Bella Vista",
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "AR"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Los Polvorines"
+      },
+      "description": "Kinesiología y rehabilitación en Bella Vista para pacientes de Los Polvorines. Tratamientos de traumatología, respiratoria y piso pélvico."
+    }
+  ],
+  "bodyClass": "page-shell page-shell--compact"
+}
+---
+<main id="contenido">
+  <section class="section section-soft">
+    <div class="container locality-layout">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Los Polvorines</p>
+        <h1>Kinesiología para pacientes de Los Polvorines</h1>
+        <p>Kareh está en Av. Senador Morón 782, Bella Vista, y recibe pacientes de Los Polvorines y de otras localidades del partido de Malvinas Argentinas. Acá encontrás qué tratamientos realizamos, cómo funciona la cobertura y cómo pedir turno.</p>
+      </div>
+      <div class="soft-bg reveal" role="note">
+        <p><strong>Atención exclusivamente particular:</strong> kinesiología respiratoria para adultos y niños, piso pélvico e incontinencia urinaria.</p>
+        <p><strong>Kinesiología traumatológica (incluidas las tendinopatías) y rehabilitación postoperatoria:</strong> atención particular o con obras sociales y prepagas. Consultá previamente tu cobertura: la aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</p>
+      </div>
+      <div class="locality-body reveal">
+        <h2>Tratamientos disponibles</h2>
+        <ul>
+          <li><a href="../../servicios/rehabilitacion-traumatologica/">Kinesiología traumatológica</a>: dolor lumbar y cervical, tendinopatías, esguinces, fracturas y lesiones deportivas.</li>
+          <li><a href="../../servicios/rehabilitacion-postoperatoria/">Rehabilitación postoperatoria</a>, según la indicación del cirujano o médico tratante.</li>
+          <li><a href="../../servicios/kinesiologia-respiratoria/">Kinesiología respiratoria</a> para adultos y niños.</li>
+          <li><a href="../../servicios/piso-pelvico/">Piso pélvico e incontinencia urinaria</a>.</li>
+        </ul>
+        <p><strong>Sobre pediatría:</strong> la atención de niños es exclusivamente respiratoria (no realizamos kinesiología pediátrica traumatológica ni general). La consulta kinésica no reemplaza al pediatra ni a una guardia.</p>
+        <h2>Quién atiende</h2>
+        <p>Atiende la {{ site.professional.name }} ({{ site.professional.credentials }}). Kareh cuenta con <span data-years-since="{{ site.experienceStartYear }}">{{ site.experienceStartYear | yearsSince }}</span> años de experiencia en kinesiología y rehabilitación. Cada tratamiento comienza con una evaluación y se ajusta según tu evolución.</p>
+        <h2>Si venís desde Los Polvorines</h2>
+        <p>Un tratamiento kinésico suele requerir varias sesiones por semana durante algunas semanas. Antes de empezar, conviene pensar qué días y horarios te resultan más cómodos para el traslado, así el plan es sostenible hasta el alta.</p>
+        <ul>
+          <li>Consultá la disponibilidad antes de viajar: los turnos se confirman siempre por WhatsApp.</li>
+          <li>Si de lunes a viernes se te complica, también atendemos los sábados por la mañana.</li>
+          <li>Si vas a usar obra social o prepaga (solo traumatología y postoperatorio), consultá la cobertura antes de la primera sesión para evitar un viaje sin poder atenderte.</li>
+        </ul>
+        <h2>Cómo pedir turno</h2>
+        <ul>
+          <li>Tené a mano la orden médica con diagnóstico, fecha, firma y sello del profesional.</li>
+          <li>Escribinos por WhatsApp indicando el tratamiento y, si corresponde, tu obra social.</li>
+          <li>Te confirmamos la disponibilidad y el turno por WhatsApp.</li>
+        </ul>
+        <p>Horarios de atención: {% for item in site.hours %}{{ item.days }}, {{ item.time }}{% if not loop.last %} · {% endif %}{% endfor %}.</p>
+      </div>
+      <div class="hero-actions reveal">
+        <a class="button button-primary" href="{{ site.whatsappMessages[waTopic or 'general'] | waLink(site.whatsapp) }}" target="_blank" rel="noopener noreferrer" data-conversion="turno">Consultar por WhatsApp</a>
+        <a class="button button-secondary" href="../../servicios/">Ver tratamientos</a>
+        <a class="button button-secondary" href="../../obras-sociales/">Ver obras sociales</a>
+      </div>
+    </div>
+  </section>
+</main>

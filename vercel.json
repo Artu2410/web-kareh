@@ -14,6 +14,16 @@
       "permanent": true
     },
     {
+      "source": "/cobertura-y-convenios",
+      "destination": "https://kareh.com.ar/obras-sociales/",
+      "statusCode": 301
+    },
+    {
+      "source": "/cobertura-y-convenios/",
+      "destination": "https://kareh.com.ar/obras-sociales/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
