@@ -1,34 +1,72 @@
 [
   {
+    "author": "Marianela Lucero",
+    "rating": 5,
+    "quote": "¡Excelente profesional! Muy cálida y dedicada. Me ayudó a resolver un problema que venía teniendo y estoy muy agradecida. ¡La recomiendo totalmente!"
+  },
+  {
+    "author": "Gabriela Alarcon",
+    "rating": 5,
+    "quote": "Excelente atención, control de ejercicios flexibilidad en cambios de horarios, ambiente agradable."
+  },
+  {
     "author": "Julio Rios",
+    "rating": 5,
     "quote": "Excelente atención, excelente profesionales. Lugar muy lindo y cómodo. Todo más que perfecto..."
   },
   {
     "author": "Veronica",
+    "rating": 5,
     "quote": "Encontramos este lugar por recomendación. Mi hijo tuvo parálisis facial y está haciendo rehabilitación en forma particular. Muy buena la atención, la ubicación y el valor de las sesiones."
   },
   {
     "author": "Ricardo Perez",
+    "rating": 5,
     "quote": "Muy buena atención y predisposición para explicarte cada consulta."
   },
   {
     "author": "Marina Lavalle",
+    "rating": 5,
     "quote": "Me siento muy cómoda. Muy profesional y con buen seguimiento de cada paciente."
   },
   {
     "author": "Jimena Lucero",
+    "rating": 5,
     "quote": "Muy buena atención!! La kinesiología respiratoria es muy recomendable, no encontraba por ningún lado y este lugar me salvó."
   },
   {
-    "author": "Maria Eugenia Varrone",
-    "quote": "Excelente atención y muy buenos profesionales. Me siento acompañada durante el tratamiento, con un trato amable y personalizado. El lugar es cómodo, puntual y genera mucha confianza. Muy recomendable."
-  },
-  {
     "author": "Sandra Marcela Barros",
+    "rating": 5,
     "quote": "Muy buena atención y seguimiento. Desde el primer día se ocupan de manera personalizada del tratamiento. Lugar para recomendar."
   },
   {
+    "author": "Maria Eugenia Varrone",
+    "rating": 5,
+    "quote": "Excelente atención y muy buenos profesionales. Me siento acompañada durante el tratamiento, con un trato amable y personalizado. El lugar es cómodo, puntual y genera mucha confianza. Muy recomendable."
+  },
+  {
+    "author": "Gisela Belizan",
+    "rating": 5,
+    "quote": "Muy buena atención, la chica están muy pendiente de los pacientes y nunca te dejan sola. Los super recomiendo."
+  },
+  {
     "author": "Soledad Cuadrado",
+    "rating": 5,
     "quote": "Excelentes profesionales, super comprensivos; atención personalizada de acuerdo a la afección y estado físico del paciente. Muy recomendable."
+  },
+  {
+    "author": "Maximiliano Vadillo",
+    "rating": 5,
+    "quote": "Centro Kareh cuenta con kinesiologos idóneos y profesionales muy buenas instalaciones."
+  },
+  {
+    "author": "Daniel Venturino",
+    "rating": 5,
+    "quote": "Atención personalizada y calidad.... para recomendar!!!"
+  },
+  {
+    "author": "Herminda Casciato",
+    "rating": 5,
+    "quote": "Katia es una excelente Kinesióloga! Es un lugar muy recomendable!"
   }
 ]

@@ -81,7 +81,7 @@ description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitació
       <div class="section-heading">
         <p class="eyebrow">Coberturas</p>
         <h2>Consultá si atendemos con tu obra social</h2>
-        <p>Los convenios con obras sociales y prepagas aplican únicamente a kinesiología traumatológica y rehabilitación postoperatoria, que también se pueden atender de forma particular. Si vas a usar tu cobertura, consultala previamente con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa.</p>
+        <p>Los convenios con obras sociales y prepagas aplican únicamente a kinesiología traumatológica y rehabilitación postoperatoria, que también se pueden atender de forma particular. Si vas a usar tu cobertura, consultala previamente con Kareh. La aceptación depende de la obra social, el tratamiento y la confirmación administrativa. Kinesiología respiratoria y piso pélvico son solo particulares: no tenemos convenio con obras sociales ni prepagas para estos tratamientos.</p>
       </div>
       <label class="coverage-search-label" for="home-coverage-search">¿Buscás tu obra social?</label>
       <input id="home-coverage-search" class="coverage-search" type="search" placeholder="Buscar obra social..." autocomplete="off" aria-controls="home-coverage-list">
@@ -158,12 +158,17 @@ description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitació
         <p class="eyebrow">Experiencias</p>
         <h2 id="reviews-title">Lo que cuentan quienes se atendieron en Kareh</h2>
         <p>Algunas reseñas compartidas públicamente por pacientes.</p>
+        <a class="reviews-rating" href="{{ site.googleReviews.url }}" target="_blank" rel="noopener noreferrer">
+          <span class="review-stars-text" aria-hidden="true">★★★★★</span>
+          <strong>{{ site.googleReviews.rating }} en Google · {{ site.googleReviews.count }} opiniones</strong>
+        </a>
       </div>
       <div class="reviews-carousel" data-review-carousel>
         <div class="reviews-track" data-review-track role="region" aria-label="Reseñas de pacientes" tabindex="0">
           {% for review in reviews %}
           <article class="review-quote-card testimonial-card" data-review-slide>
             <span class="reviews-source">Reseña de Google</span>
+            <span class="review-stars-text" role="img" aria-label="{{ review.rating or 5 }} de 5 estrellas">{% for i in range(0, review.rating or 5) %}★{% endfor %}</span>
             <p class="testimonial-quote">“{{ review.quote }}”</p>
             <p class="testimonial-author">{{ review.author }}</p>
           </article>
@@ -172,6 +177,7 @@ description: Centro de Kinesiología y Fisiatría en Bella Vista. Rehabilitació
         <div class="reviews-controls">
           <a class="button button-secondary" href="https://share.google/pDM70FpToX7idSmx5" target="_blank" rel="noopener noreferrer">Ver más reseñas en Google</a>
           <div class="reviews-navigation" role="group" aria-label="Controles del carrusel">
+            <button class="reviews-arrow reviews-toggle" type="button" data-review-toggle aria-pressed="false" aria-label="Pausar el carrusel de reseñas" hidden>❚❚</button>
             <button class="reviews-arrow" type="button" data-review-prev aria-label="Ver reseñas anteriores" disabled>‹</button>
             <button class="reviews-arrow" type="button" data-review-next aria-label="Ver más reseñas">›</button>
           </div>

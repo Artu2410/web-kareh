@@ -81,6 +81,67 @@ if (reviewCarousel) {
     track.addEventListener("scroll", updateReviewControls, { passive: true });
     window.addEventListener("resize", updateReviewControls);
     updateReviewControls();
+
+    // Avance automático: se pausa al pasar el mouse, al enfocar, al tocar,
+    // fuera de pantalla o con la pestaña oculta. Desactivado con movimiento reducido.
+    const toggleButton = reviewCarousel.querySelector("[data-review-toggle]");
+    const AUTOPLAY_MS = 5000;
+    let autoplayTimer = null;
+    let userPaused = prefersReducedMotion.matches;
+    let hovering = false;
+    let focused = false;
+    let inView = false;
+
+    const advance = () => {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= maxScroll - 1) {
+        track.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        scrollReview(1);
+      }
+    };
+
+    const syncAutoplay = () => {
+      const shouldRun = !userPaused && !hovering && !focused && inView && !document.hidden && slides.length > 1;
+      if (shouldRun && !autoplayTimer) {
+        autoplayTimer = window.setInterval(advance, AUTOPLAY_MS);
+      } else if (!shouldRun && autoplayTimer) {
+        window.clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+      if (toggleButton) {
+        toggleButton.setAttribute("aria-pressed", String(userPaused));
+        toggleButton.setAttribute("aria-label", userPaused ? "Reanudar el carrusel de reseñas" : "Pausar el carrusel de reseñas");
+        toggleButton.textContent = userPaused ? "▶" : "❚❚";
+      }
+    };
+
+    if (toggleButton) {
+      toggleButton.hidden = false;
+      toggleButton.addEventListener("click", () => {
+        userPaused = !userPaused;
+        syncAutoplay();
+      });
+    }
+
+    reviewCarousel.addEventListener("mouseenter", () => { hovering = true; syncAutoplay(); });
+    reviewCarousel.addEventListener("mouseleave", () => { hovering = false; syncAutoplay(); });
+    track.addEventListener("focusin", () => { focused = true; syncAutoplay(); });
+    track.addEventListener("focusout", () => { focused = false; syncAutoplay(); });
+    track.addEventListener("pointerdown", () => { userPaused = true; syncAutoplay(); });
+    [previousButton, nextButton].forEach((button) =>
+      button.addEventListener("click", () => { userPaused = true; syncAutoplay(); }));
+    document.addEventListener("visibilitychange", syncAutoplay);
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(([entry]) => {
+        inView = entry.isIntersecting;
+        syncAutoplay();
+      }, { threshold: 0.4 }).observe(reviewCarousel);
+    } else {
+      inView = true;
+    }
+    syncAutoplay();
   }
 }
 
