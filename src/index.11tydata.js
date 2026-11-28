@@ -14,7 +14,7 @@ module.exports = {
       name: `${site.name} - Centro de Kinesiología y Fisiatría`,
       url: `${site.url}/`,
       image: `${site.url}/assets/img/logo-icon.png`,
-      description: "Centro de kinesiología y rehabilitación en Bella Vista. Atención traumatológica, postoperatoria, respiratoria (adultos y niños), de piso pélvico y ultrasonido terapéutico.",
+      description: "Centro de kinesiología y rehabilitación en Bella Vista. Atención traumatológica, postoperatoria, respiratoria (adultos y niños), de piso pélvico, parálisis facial y ultrasonido terapéutico.",
       priceRange: "$$",
       telephone: `+${site.whatsapp}`,
       medicalSpecialty: "https://schema.org/Physiotherapy",

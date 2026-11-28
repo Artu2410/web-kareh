@@ -28,6 +28,11 @@
           "label": "Ultrasonido terapéutico",
           "url": "/servicios/ultrasonido-terapeutico/",
           "description": "Uso de ultrasonido y otros agentes físicos como complemento, según evaluación y objetivo terapéutico."
+        },
+        {
+          "label": "Parálisis facial",
+          "url": "/servicios/paralisis-facial/",
+          "description": "Rehabilitación de la parálisis facial periférica y la parálisis de Bell en adultos, niños y adolescentes, con orden médica, por obra social según convenio o particular."
         }
       ]
     },
@@ -61,6 +66,9 @@
     },
     "/servicios/ultrasonido-terapeutico/": {
       "service": "ultrasonido"
+    },
+    "/servicios/paralisis-facial/": {
+      "service": "paralisis_facial"
     }
   },
   "breadcrumbs": {
@@ -90,6 +98,10 @@
     "/servicios/ultrasonido-terapeutico/": [
       { "label": "Servicios", "url": "/servicios/" },
       { "label": "Ultrasonido terapéutico" }
+    ],
+    "/servicios/paralisis-facial/": [
+      { "label": "Servicios", "url": "/servicios/" },
+      { "label": "Parálisis facial" }
     ],
     "/blog/": [
       { "label": "Blog" }
